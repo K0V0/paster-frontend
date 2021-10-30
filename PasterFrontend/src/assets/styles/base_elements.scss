@@ -1,0 +1,15 @@
+
+input, button {
+  box-sizing: border-box;
+  margin: 0.25em;
+  padding: 0.25em;
+  border-radius: 0.25em;
+}
+
+input, button {
+  display: inline-block;
+  border-width: 0.125em;
+  border-style: solid;
+  border-color: transparent;
+  background-color: #DDDDDD;
+}

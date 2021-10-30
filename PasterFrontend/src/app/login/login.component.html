@@ -1,10 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
+<form class="login"
+      [formGroup]="login"
+      (ngSubmit)="doLogin()">
 
-</body>
-</html>
+  <div>
+    <input type="text"
+           formControlName="user"
+           placeholder="Username...">
+    <div class="errorPlaceholder">
+      <span *ngIf="user.errors?.required && (user.touched || user.dirty)">
+        Username is required</span>
+    </div>
+  </div>
+
+  <div>
+    <input type="password"
+           formControlName="pass"
+           placeholder="Password">
+    <div class="errorPlaceholder">
+      <span *ngIf="pass.errors?.required && (pass.touched || pass.dirty)">
+        Password is required</span>
+    </div>
+  </div>
+
+  <span>{{ 'tioririri' | t }}</span>
+
+  <button [disabled] = "!login.valid"> Submit </button>
+
+</form>
