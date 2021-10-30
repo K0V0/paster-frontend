@@ -1,0 +1,17 @@
+{
+  "sk": {
+    "login": {
+      "page": {
+
+      },
+      "validationErrors": {
+        "user": {
+          "required": "Nevyplnené meno používateľa"
+        },
+        "pass": {
+          "required": "Nevyplnené heslo"
+        }
+      }
+    }
+  }
+}
