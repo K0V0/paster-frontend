@@ -6,20 +6,31 @@ import { Injectable } from '@angular/core';
 export class TranslateService {
 
   private availableLanguages: string[] = ['en', 'sk'];
+  private currentLang: string;
 
   constructor() {
-    // TODO mechanizmus na dostanie locales z prehliadaca / vyber pouzivatela
+    this.currentLang = 'sk';
+  }
+
+  private readVocabFile() {
+
   }
 
   checkLang() {
-
+    // TODO mechanizmus na dostanie locales z prehliadaca / vyber pouzivatela
+    this.currentLang = 'sk';
   }
 
   setLang(countryCode: string) {
-
+    if (this.availableLanguages.indexOf(countryCode) >= 0) {
+      // TODO vyber jazyk
+    }
   }
 
+  //const swaggerDoc = require('../swagger.json')
+
   translate(path: string) {
+
     return "";
   }
 
