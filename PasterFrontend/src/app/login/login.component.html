@@ -8,7 +8,8 @@
            placeholder="Username...">
     <div class="errorPlaceholder">
       <span *ngIf="user.errors?.required && (user.touched || user.dirty)">
-        Username is required</span>
+        {{ 'login.validationErrors.user.required' | t }}
+      </span>
     </div>
   </div>
 

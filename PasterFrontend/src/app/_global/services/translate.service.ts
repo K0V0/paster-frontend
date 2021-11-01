@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import {JsonArray, JsonObject} from "@angular/compiler-cli/ngcc/src/packages/entry_point";
+import {JSONFile} from "@angular/cli/utilities/json-file";
 
 @Injectable({
   providedIn: 'root',
@@ -7,13 +9,24 @@ export class TranslateService {
 
   private availableLanguages: string[] = ['en', 'sk'];
   private currentLang: string;
+  private vocab: JsonArray;
 
   constructor() {
     this.currentLang = 'sk';
+    this.vocab = [];
+    this.readVocabFiles()
   }
 
-  private readVocabFile() {
-
+  private readVocabFiles() {
+    // TODO dalej zistovat ako dostat v angular zoznam suborov v nejakom assets subfoldri
+    //this.availableLanguages.forEach((language: string) => {
+      fetch('/assets/i18n/' + this.currentLang + '.json')
+      .then(response => response.json())
+      .then(data => {
+        //console.log(Object.keys(data));
+        this.vocab.push(data);
+      });
+    //});
   }
 
   checkLang() {
@@ -27,10 +40,22 @@ export class TranslateService {
     }
   }
 
-  //const swaggerDoc = require('../swagger.json')
-
   translate(path: string) {
-
+    // TODO prvykrat spustene pred tym nez su natiahnute data zo suborov
+    let parts: string[] = path.split('.');
+    let tmp: any = this.vocab[0];
+    if (Object.keys(tmp).indexOf(this.currentLang) >= 0) {
+      console.log("lang found");
+    }
+    //tmp = (this.vocab[0]);
+    parts.forEach(part => {
+      console.log(part);
+      console.log(tmp);
+      //if(Object.keys(tmp).indexOf(part: string) >= 0) {
+        //tmp = tmp[part];
+      //}
+      //tmp = tmp[part];
+    });
     return "";
   }
 
