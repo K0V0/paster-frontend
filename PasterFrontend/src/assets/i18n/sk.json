@@ -3,7 +3,8 @@
     "login": {
       "page": {
         "user": "Meno užívatela...",
-        "pass": "Heslo..."
+        "pass": "Heslo...",
+        "submit": "Prihlásiť sa"
       },
       "validationErrors": {
         "user": {

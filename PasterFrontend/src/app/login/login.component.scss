@@ -1,5 +1,9 @@
+@import '../../assets/styles/colors';
+
 form {
   display: table;
+  background-color: $base-theme-color;
+  padding: 0.5em;
 
   div {
 
