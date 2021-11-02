@@ -1,0 +1,12 @@
+div.errorPlaceholder {
+  text-align: right;
+  max-height: 3em;
+
+  span {
+    display: inline-block;
+    margin: 0.25em;
+    padding: 0.25em;
+    border-radius: 0.25em;
+    background-color: #ff0088;
+  }
+}

@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../_shared/services/login.service';
-//import { LoginModel } from './login.model';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import { t } from "../_global/services/translate.service";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-login',
@@ -21,16 +19,6 @@ export class LoginComponent {
   }
 
   doLogin() {
-    //console.log(this.login);
-    //console.log(this.title);
     this.loginService.doLogin(this.login.value.user, this.login.value.pass);
-  }
-
-  get user() {
-    return this.login.controls.user;
-  }
-
-  get pass() {
-    return this.login.controls.pass;
   }
 }

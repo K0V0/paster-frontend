@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import {JsonArray, JsonObject} from "@angular/compiler-cli/ngcc/src/packages/entry_point";
-import {JSONFile} from "@angular/cli/utilities/json-file";
+import { JsonArray } from "@angular/compiler-cli/ngcc/src/packages/entry_point";
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +8,7 @@ export class TranslateService {
 
   private availableLanguages: string[] = ['en', 'sk'];
   private currentLang: string;
-  private vocab: JsonArray;
+  private readonly vocab: JsonArray;
 
   constructor() {
     this.currentLang = 'sk';
@@ -19,14 +18,15 @@ export class TranslateService {
 
   private readVocabFiles() {
     // TODO dalej zistovat ako dostat v angular zoznam suborov v nejakom assets subfoldri
-    //this.availableLanguages.forEach((language: string) => {
-      fetch('/assets/i18n/' + this.currentLang + '.json')
-      .then(response => response.json())
-      .then(data => {
-        //console.log(Object.keys(data));
-        this.vocab.push(data);
-      });
-    //});
+    var request = new XMLHttpRequest();
+    request.open(
+      'GET',
+      '/assets/i18n/' + this.currentLang + '.json',
+      false);
+    request.send(null);
+    if (request.status === 200) {
+      this.vocab.push(JSON.parse(request.responseText)[this.currentLang]);
+    }
   }
 
   checkLang() {
@@ -36,31 +36,20 @@ export class TranslateService {
 
   setLang(countryCode: string) {
     if (this.availableLanguages.indexOf(countryCode) >= 0) {
-      // TODO vyber jazyk
+      this.currentLang = countryCode;
     }
   }
 
   translate(path: string) {
-    // TODO prvykrat spustene pred tym nez su natiahnute data zo suborov
     let parts: string[] = path.split('.');
     let tmp: any = this.vocab[0];
-    if (Object.keys(tmp).indexOf(this.currentLang) >= 0) {
-      console.log("lang found");
-    }
-    //tmp = (this.vocab[0]);
     parts.forEach(part => {
-      console.log(part);
-      console.log(tmp);
-      //if(Object.keys(tmp).indexOf(part: string) >= 0) {
-        //tmp = tmp[part];
-      //}
-      //tmp = tmp[part];
+      if(Object.keys(tmp).indexOf(part) >= 0) {
+        tmp = tmp[part];
+      }
     });
-    return "";
+    if (tmp.constructor.name !== "String") { return path; }
+    return tmp;
   }
 
-}
-
-export function t(path: string){
-  console.log(path);
 }
