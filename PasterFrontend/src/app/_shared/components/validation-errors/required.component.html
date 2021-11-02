@@ -1,0 +1,7 @@
+<div @errorMessagesAnimation
+     class="errorPlaceholder"
+     *ngIf="obj.errors?.required && (obj.dirty || obj.touched)">
+      <span>
+        {{ errorMessageI18n | t }}
+      </span>
+</div>

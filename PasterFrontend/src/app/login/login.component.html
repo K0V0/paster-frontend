@@ -5,26 +5,23 @@
   <div>
     <input type="text"
            formControlName="user"
-           placeholder="Username...">
-    <div class="errorPlaceholder">
-      <span *ngIf="user.errors?.required && (user.touched || user.dirty)">
-        {{ 'login.validationErrors.user.required' | t }}
-      </span>
-    </div>
+           placeholder="{{ 'login.page.user' | t }}">
+    <app-required-error [obj]="login.controls.user"
+                        [errorMessageI18n]="'login.validationErrors.user.required'">
+    </app-required-error>
   </div>
 
   <div>
     <input type="password"
            formControlName="pass"
-           placeholder="Password">
-    <div class="errorPlaceholder">
-      <span *ngIf="pass.errors?.required && (pass.touched || pass.dirty)">
-        Password is required</span>
-    </div>
+           placeholder="{{ 'login.page.pass' | t }}">
+    <app-required-error [obj]="login.controls.pass"
+                        [errorMessageI18n]="'login.validationErrors.pass.required'">
+    </app-required-error>
   </div>
 
-  <span>{{ 'tioririri' | t }}</span>
-
-  <button [disabled] = "!login.valid"> Submit </button>
+  <div class="text-right">
+    <button [disabled] = "!login.valid"> Submit </button>
+  </div>
 
 </form>

@@ -1,15 +1,39 @@
-
-input, button {
+* {
+  font-size: 1em;
   box-sizing: border-box;
-  margin: 0.25em;
-  padding: 0.25em;
-  border-radius: 0.25em;
 }
 
 input, button {
+  position: relative;
+  margin: 0.25em;
+  padding: 0.25em;
+  border-radius: 0.25em;
   display: inline-block;
   border-width: 0.125em;
   border-style: solid;
   border-color: transparent;
   background-color: #DDDDDD;
+  box-shadow: 0.125em 0.125em 0.125em #888888;
+
+  &:focus {
+    border-color: #000000;
+  }
+}
+
+input {
+  transition: 0.25s ease-in-out;
+}
+
+button {
+  cursor: pointer;
+  transition: 0.125s ease-in-out;
+
+  &:enabled {
+    &:hover, &:focus { background-color: #BBBBBB; }
+    &:active {
+      box-shadow: 0em 0em 0.125em #888888;
+      transform: translate(0.125em, 0.125em);
+      background-color: #DDDDDD;
+    }
+  }
 }
