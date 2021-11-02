@@ -1,12 +1,15 @@
+@import '../../../../assets/styles/colors';
+
 div.errorPlaceholder {
   text-align: right;
   max-height: 3em;
 
   span {
+    font-size: 0.875em;
     display: inline-block;
     margin: 0.25em;
     padding: 0.25em;
     border-radius: 0.25em;
-    background-color: #ff0088;
+    background-color: $error-message-background;
   }
 }
