@@ -1,0 +1,45 @@
+<form class="register"
+      [formGroup]="register"
+      (ngSubmit)="doRegistration()">
+
+  <div>
+    <input type="text"
+           formControlName="user"
+           placeholder="{{ 'register.page.user' | t }}">
+    <app-required-error [obj]="register.controls.user"
+                        [errorMessageI18n]="'register.validationErrors.user.required'">
+    </app-required-error>
+  </div>
+
+  <div>
+    <input type="text"
+           formControlName="email"
+           placeholder="{{ 'register.page.email' | t }}">
+    <app-required-error [obj]="register.controls.email"
+                        [errorMessageI18n]="'register.validationErrors.email.required'">
+    </app-required-error>
+  </div>
+
+  <div>
+    <input type="password"
+           formControlName="pass"
+           placeholder="{{ 'register.page.pass' | t }}">
+    <app-required-error [obj]="register.controls.pass"
+                        [errorMessageI18n]="'register.validationErrors.pass.required'">
+    </app-required-error>
+  </div>
+
+  <div>
+    <input type="password"
+           formControlName="pass2"
+           placeholder="{{ 'register.page.pass2' | t }}">
+    <app-required-error [obj]="register.controls.pass2"
+                        [errorMessageI18n]="'register.validationErrors.pass2.required'">
+    </app-required-error>
+  </div>
+
+  <div class="text-right">
+    <button [disabled] = "!register.valid"> {{ 'register.page.submit' | t }} </button>
+  </div>
+
+</form>

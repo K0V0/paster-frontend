@@ -1,5 +1,12 @@
 {
   "sk": {
+
+    "nav": {
+      "home": "Domov",
+      "login": "Prihlásiť sa",
+      "register": "Registrácia"
+    },
+
     "login": {
       "page": {
         "user": "Meno užívatela...",
@@ -14,6 +21,31 @@
           "required": "Nevyplnené heslo"
         }
       }
+    },
+
+    "register": {
+      "page": {
+        "user": "Meno užívatela...",
+        "pass": "Heslo...",
+        "pass2": "Zopakovať heslo...",
+        "email": "E-mail...",
+        "submit": "Zaregistrovať sa"
+      },
+      "validationErrors": {
+        "user": {
+          "required": "Nevyplnené meno používateľa"
+        },
+        "pass": {
+          "required": "Nevyplnené heslo"
+        },
+        "email": {
+          "required": "Nezadaný e-mail"
+        },
+        "pass2": {
+          "required": "Nevyplnené kontrolné heslo"
+        }
+      }
     }
+
   }
 }

@@ -1,0 +1,22 @@
+@import '../../../../assets/styles/colors';
+
+nav {
+  background-color: $base-theme-color;
+  text-align: right;
+
+  ul {
+    display: inline-block;
+    padding: 0 0.25em;
+
+    li {
+      display: inline-block;
+      padding: 0.25em;
+
+      a {
+        font-size: 1.25em;
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+}
