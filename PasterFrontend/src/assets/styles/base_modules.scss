@@ -1,0 +1,7 @@
+@import '../../assets/styles/colors';
+
+form.register, form.login {
+  display: table;
+  background-color: $base-theme-color;
+  padding: 0.5em;
+}

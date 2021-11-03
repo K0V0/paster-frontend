@@ -14,6 +14,7 @@ export class LoginService {
 
   doLogin(user: string, pass: string) {
     console.log("doLogin(username: " + user + ", password:" + pass +")");
+
   }
 
 }

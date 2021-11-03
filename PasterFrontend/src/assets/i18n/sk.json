@@ -1,5 +1,12 @@
 {
   "sk": {
+
+    "nav": {
+      "home": "Domov",
+      "login": "Prihlásiť sa",
+      "register": "Registrácia"
+    },
+
     "login": {
       "page": {
         "user": "Meno užívatela...",
@@ -14,6 +21,17 @@
           "required": "Nevyplnené heslo"
         }
       }
+    },
+
+    "register": {
+      "page": {
+        "user": "Meno užívatela...",
+        "pass": "Heslo...",
+        "pass2": "Zopakovať heslo...",
+        "email": "E-mail...",
+        "submit": "Zaregistrovať sa"
+      }
     }
+
   }
 }
