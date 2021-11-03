@@ -10,6 +10,9 @@ export class RegisterComponent {
   title = 'PasterRegister';
   register: FormGroup;
 
+  // TODO servica ktora by pri dopisani mena spravila request na backend pre zistenie
+  //  ci nie je uz obsadene
+
   constructor() {
     this.register = new FormGroup({
       "user": new FormControl("", Validators.required),

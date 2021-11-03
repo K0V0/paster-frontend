@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LoginService } from './_shared/services/login.service';
+import { LoginService } from './login/login.service';
 import { TranslateService } from "./_global/services/translate.service";
 
 @Component({

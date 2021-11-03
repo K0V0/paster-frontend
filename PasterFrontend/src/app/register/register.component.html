@@ -7,7 +7,7 @@
            formControlName="user"
            placeholder="{{ 'register.page.user' | t }}">
     <app-required-error [obj]="register.controls.user"
-                        [errorMessageI18n]="'login.validationErrors.user.required'">
+                        [errorMessageI18n]="'register.validationErrors.user.required'">
     </app-required-error>
   </div>
 
@@ -15,8 +15,8 @@
     <input type="text"
            formControlName="email"
            placeholder="{{ 'register.page.email' | t }}">
-    <app-required-error [obj]="register.controls.user"
-                        [errorMessageI18n]="'login.validationErrors.user.required'">
+    <app-required-error [obj]="register.controls.email"
+                        [errorMessageI18n]="'register.validationErrors.email.required'">
     </app-required-error>
   </div>
 
@@ -25,7 +25,7 @@
            formControlName="pass"
            placeholder="{{ 'register.page.pass' | t }}">
     <app-required-error [obj]="register.controls.pass"
-                        [errorMessageI18n]="'login.validationErrors.pass.required'">
+                        [errorMessageI18n]="'register.validationErrors.pass.required'">
     </app-required-error>
   </div>
 
@@ -34,7 +34,7 @@
            formControlName="pass2"
            placeholder="{{ 'register.page.pass2' | t }}">
     <app-required-error [obj]="register.controls.pass2"
-                        [errorMessageI18n]="'login.validationErrors.pass.required'">
+                        [errorMessageI18n]="'register.validationErrors.pass2.required'">
     </app-required-error>
   </div>
 
