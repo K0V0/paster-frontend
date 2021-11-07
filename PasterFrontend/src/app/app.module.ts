@@ -13,6 +13,8 @@ import { ValidationErrorsModule } from "./_shared/modules/validation-errors/vali
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NavigationComponent } from "./_shared/components/navigation/navigation.component";
 import { HomeComponent } from "./home/home.component";
+import { RegisterService } from "./register/register.service";
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,10 +31,12 @@ import { HomeComponent } from "./home/home.component";
     FormsModule,
     ReactiveFormsModule,
     TranslateModule,
-    ValidationErrorsModule
+    ValidationErrorsModule,
+    HttpClientModule
   ],
   providers: [
-    LoginService
+    LoginService,
+    RegisterService
   ],
   bootstrap: [AppComponent]
 })
