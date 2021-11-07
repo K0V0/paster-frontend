@@ -12,7 +12,7 @@ export class LoginComponent {
   login: FormGroup;
 
   constructor(private loginService: LoginService) {
-    this.login = new FormGroup({
+    this. login = new FormGroup({
       "user": new FormControl("", Validators.required),
       "pass": new FormControl("", Validators.required),
     });
