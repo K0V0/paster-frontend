@@ -1,5 +1,11 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Error } from "../_shared/interfaces/dtos.interface";
+
+export interface Login {
+  status: string;
+  jwtToken: string;
+}
 
 @Injectable({
   providedIn: 'root',
@@ -19,17 +25,15 @@ export class LoginService {
 
   doLogin(user: string, pass: string) {
     this.http.post<any>('http://0.0.0.0:4004/api/v1/user/login',
-      { user: user, pass: pass },
+      { name: user, pass: pass },
       { headers: this.headers })
     .subscribe(
-      //console.log(data);
-      (data: any) => console.log(data), // for handling data
-        (error: any) => console.log(error), // for handling error
-        () => console.log('completed') // for handling completion
+      (data: Login) => console.log(data), // for handling data
+      (error: Error) => console.log(error), // for handling error
+      () => console.log('completed') // for handling completion
     )
 
     console.log("doLogin(username: " + user + ", password:" + pass +")");
-
   }
 
 }
