@@ -19,6 +19,7 @@ export class LoginComponent {
   }
 
   doLogin() {
-    this.loginService.doLogin(this.login.value.user, this.login.value.pass);
+    this.loginService.doLogin(this.login.value.user, this.login.value.pass)
+    .subscribe((response) => console.log(response));
   }
 }
