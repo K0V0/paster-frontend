@@ -10,3 +10,7 @@ export interface Error extends Response {
 export interface Login extends Response {
   jwtToken: string;
 }
+
+export interface Register extends Response {
+
+}
