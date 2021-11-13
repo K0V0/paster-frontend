@@ -1,0 +1,7 @@
+<div @errorMessagesAnimation
+     class="errorPlaceholder"
+     *ngIf="!(errorMessage.length == 0)">
+      <span #serverFormErrorText>
+        {{ errorMessage }}
+      </span>
+</div>

@@ -1,7 +1,8 @@
 import {NgModule} from "@angular/core";
-import {RequiredErrorComponent} from "./required.component";
+import {RequiredErrorComponent} from "./frontend-side/required.component";
 import {TranslateModule} from "../../../_global/pipes/translate.module";
 import {BrowserModule} from "@angular/platform-browser";
+import {ServerMultipleErrorComponent} from "./server-side/server-multiple.component";
 
 @NgModule({
   imports: [
@@ -9,10 +10,12 @@ import {BrowserModule} from "@angular/platform-browser";
     BrowserModule,
   ],
   declarations: [
-    RequiredErrorComponent
+    RequiredErrorComponent,
+    ServerMultipleErrorComponent
   ],
   exports: [
-    RequiredErrorComponent
+    RequiredErrorComponent,
+    ServerMultipleErrorComponent
   ]
 })
 

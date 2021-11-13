@@ -24,4 +24,11 @@
     <button [disabled] = "!login.valid"> {{ 'login.page.submit' | t }} </button>
   </div>
 
+  <div class="text-right">
+    <app-server-multiple-error
+      [errorMessage]="serverFormErrorMessage"
+      [bouncer]="serverFormBouncer">
+    </app-server-multiple-error>
+  </div>
+
 </form>
