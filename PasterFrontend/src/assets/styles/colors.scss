@@ -15,4 +15,5 @@ $inputs-shadow: #888;
 
 $button-background-hover: #ddd;
 
-$error-message-background: #fcc;
+$error-message-text: #fff;
+$error-message-background: $inputs-border-invalid;
