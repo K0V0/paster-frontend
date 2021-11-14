@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LoginService } from './login.service';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { JsonObject } from "@angular/compiler-cli/ngcc/src/packages/entry_point";
@@ -9,25 +9,34 @@ import { Login } from "../_abstract/interfaces/dtos.interface";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
+  // TODO extrahovat spolocnu logiku pre vsetky formulare hlavne server error handling
+  //  do abstraktnej triedy
   title = 'PasterLogin';
+  user: FormControl;
+  pass: FormControl;
   serverFieldsErrorMessages: JsonObject;
-  serverFormErrorMessage: string;
-  serverFormBouncer: string;
+  serverFormErrorMessage: JsonObject;
   login: FormGroup;
 
   constructor(private loginService: LoginService) {
+    this.user = new FormControl("", Validators.required);
+    this.pass = new FormControl("", Validators.required);
     this.login = new FormGroup({
-      "user": new FormControl("", Validators.required),
-      "pass": new FormControl("", Validators.required),
+      "user": this.user,
+      "pass": this.pass
     });
     this.serverFieldsErrorMessages = {};
-    this.serverFormErrorMessage = "";
-    this.serverFormBouncer = "";
+    this.serverFormErrorMessage = {};
+  }
+
+  ngOnInit() {
+    this.login.valueChanges.subscribe(() => {
+      this.clearServerErrors();
+    })
   }
 
   doLogin() {
-    //this.clearServerErrors();
     this.loginService
       .doLogin(this.login.value.user, this.login.value.pass)
       .subscribe(
@@ -38,13 +47,13 @@ export class LoginComponent {
         (error) => {
           let e;
           if ((e = error.error.message) != null) {
-            if (e == this.serverFormErrorMessage) {
-              this.serverFormBouncer = Math.random().toString(16);
-            } else {
-              this.serverFormErrorMessage = e;
-            }
+              // treba zabalit do objektu lebo primitivny typ nespusti ngOnChange() akciu ak sa
+              // jeho obsah nezmeni, co kvoli logike aplikacie tuna chcem
+              this.serverFormErrorMessage = { form: e };
           }
-          if ((e = error.error.messages) != null) { this.serverFieldsErrorMessages = e; }
+          if ((e = error.error.messages) != null) {
+              this.serverFieldsErrorMessages = e;
+          }
         },
         () => {
           this.clearServerErrors();
@@ -53,12 +62,7 @@ export class LoginComponent {
 
   private clearServerErrors() {
     this.serverFieldsErrorMessages = {};
-    this.serverFormErrorMessage = "";
+    this.serverFormErrorMessage = {};
   }
 
-  //ngOnChanges() {
-    ///**********THIS FUNCTION WILL TRIGGER WHEN PARENT COMPONENT UPDATES 'someInput'**************/
-    //Write your code here
-    //console.log("change");
-  //}*/
 }

@@ -10,6 +10,12 @@ div.errorPlaceholder {
     margin: 0.25em;
     padding: 0.25em;
     border-radius: 0.25em;
+    color: $error-message-text;
     background-color: $error-message-background;
+    transition: transform $transition-fast ease-in-out;
+
+    &.blink {
+      transform: scale(1.1);
+    }
   }
 }

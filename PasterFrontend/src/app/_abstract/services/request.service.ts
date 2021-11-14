@@ -6,11 +6,11 @@ import { JsonObject } from "@angular/compiler-cli/ngcc/src/packages/entry_point"
 @Injectable({
   providedIn: 'root',
 })
-export class RequestService {
+export abstract class RequestService {
   private static readonly BASE_URL = "http://0.0.0.0:4004/";
   private http: HttpClient;
 
-  constructor() {
+  protected constructor() {
     this.http = new HttpClient(new HttpXhrBackend({ build: () => new XMLHttpRequest() }));
   }
 

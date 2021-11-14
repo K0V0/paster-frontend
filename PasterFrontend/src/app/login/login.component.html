@@ -9,6 +9,9 @@
     <app-required-error [obj]="login.controls.user"
                         [errorMessageI18n]="'login.validationErrors.user.required'">
     </app-required-error>
+    <app-server-error [fieldName]="'user'"
+                      [errorsObject]="serverFieldsErrorMessages">
+    </app-server-error>
   </div>
 
   <div>
@@ -18,6 +21,9 @@
     <app-required-error [obj]="login.controls.pass"
                         [errorMessageI18n]="'login.validationErrors.pass.required'">
     </app-required-error>
+    <app-server-error [fieldName]="'pass'"
+                      [errorsObject]="serverFieldsErrorMessages">
+    </app-server-error>
   </div>
 
   <div class="text-right">
@@ -25,10 +31,9 @@
   </div>
 
   <div class="text-right">
-    <app-server-multiple-error
-      [errorMessage]="serverFormErrorMessage"
-      [bouncer]="serverFormBouncer">
-    </app-server-multiple-error>
+    <app-server-error [fieldName]="'form'"
+                      [errorsObject]="serverFormErrorMessage">
+    </app-server-error>
   </div>
 
 </form>
