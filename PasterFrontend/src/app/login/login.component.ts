@@ -19,7 +19,9 @@ export class LoginComponent implements OnInit {
   serverFormErrorMessage: JsonObject;
   login: FormGroup;
 
-  constructor(private loginService: LoginService) {
+  constructor(
+    private loginService: LoginService,
+  ) {
     this.user = new FormControl("", Validators.required);
     this.pass = new FormControl("", Validators.required);
     this.login = new FormGroup({
@@ -41,8 +43,8 @@ export class LoginComponent implements OnInit {
       .doLogin(this.login.value.user, this.login.value.pass)
       .subscribe(
         (data) => {
-          console.log(<Login>data);
-          // TODO ulozit jwt token ?
+          this.loginService.saveJwtToken((<Login>data).jwtToken);
+          // TODO skryt login popup / nejaka akcia na UI po prihlaseni
         },
         (error) => {
           let e;
