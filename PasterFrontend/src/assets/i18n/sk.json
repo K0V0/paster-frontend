@@ -4,7 +4,8 @@
     "nav": {
       "home": "Domov",
       "login": "Prihlásiť sa",
-      "register": "Registrácia"
+      "register": "Registrácia",
+      "board":  "Board"
     },
 
     "login": {
@@ -45,6 +46,10 @@
           "required": "Nevyplnené kontrolné heslo"
         }
       }
+    },
+
+    "board": {
+
     }
 
   }

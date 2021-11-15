@@ -8,15 +8,24 @@
     </a> </li>-->
 
     <li> <a routerLink='register'
+            *ngIf="!loggedIn"
             [routerLinkActiveOptions]="{ exact: true }"
             routerLinkActive="active">
       {{ 'nav.register' | t }}
     </a> </li>
 
     <li> <a routerLink='login'
+            *ngIf="!loggedIn"
             [routerLinkActiveOptions]="{ exact: true }"
             routerLinkActive="active">
       {{ 'nav.login' | t }}
+    </a> </li>
+
+    <li> <a routerLink='board'
+            *ngIf="loggedIn"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active">
+      {{ 'nav.board' | t }}
     </a> </li>
 
   </ul>
