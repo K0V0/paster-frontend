@@ -1,5 +1,5 @@
 import { TranslationPipe } from './translate.pipe';
-import {NgModule} from "@angular/core";
+import { NgModule } from "@angular/core";
 
 @NgModule({
   imports: [

@@ -37,7 +37,8 @@
           "required": "Nevyplnené meno používateľa"
         },
         "pass": {
-          "required": "Nevyplnené heslo"
+          "required": "Nevyplnené heslo",
+          "minlength": "Heslo je príliš krátke"
         },
         "email": {
           "required": "Nezadaný e-mail"

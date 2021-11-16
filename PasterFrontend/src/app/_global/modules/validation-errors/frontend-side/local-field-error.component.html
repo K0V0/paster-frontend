@@ -1,0 +1,10 @@
+
+<div @errorMessagesAnimation
+     class="errorPlaceholder"
+     *ngIf="(keys != null) && (field?.touched || field?.dirty)">
+
+    <span>
+      {{ messages }}
+    </span>
+
+</div>

@@ -9,9 +9,9 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginService } from "./login/login.service";
 import { TranslateModule } from "./_global/pipes/translate.module";
-import { ValidationErrorsModule } from "./_shared/modules/validation-errors/validationErrors.module";
+import { ValidationErrorsModule } from "./_global/modules/validation-errors/validationErrors.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { NavigationComponent } from "./_shared/components/navigation/navigation.component";
+import { NavigationComponent } from "./_global/components/navigation/navigation.component";
 import { HomeComponent } from "./home/home.component";
 import { RegisterService } from "./register/register.service";
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
@@ -37,7 +37,7 @@ import { GuardInterceptor } from "./_global/interceptors/guard.interceptor";
     ReactiveFormsModule,
     TranslateModule,
     ValidationErrorsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     LoginService,
