@@ -11,7 +11,7 @@ import {JsonObject} from "@angular/compiler-cli/ngcc/src/packages/entry_point";
 
 @Component({
   selector: 'app-server-error',
-  templateUrl: './server-error.component.html',
+  templateUrl: './server-field-error.component.html',
   styleUrls: ['../validationErrors.component.scss'],
   animations: [ ValidationErrorsAnimations.errorMessagesAnimation ]
 })

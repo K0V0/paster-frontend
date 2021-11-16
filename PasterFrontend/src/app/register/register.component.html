@@ -24,9 +24,8 @@
     <input type="password"
            formControlName="pass"
            placeholder="{{ 'register.page.pass' | t }}">
-    <app-required-error [obj]="register.controls.pass"
-                        [errorMessageI18n]="'register.validationErrors.pass.required'">
-    </app-required-error>
+    <app-local-error [obj]="register.controls.pass">
+    </app-local-error>
   </div>
 
   <div>

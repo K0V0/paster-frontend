@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { RegisterService } from "./register.service";
 
@@ -9,6 +9,10 @@ import { RegisterService } from "./register.service";
 })
 export class RegisterComponent {
   title = 'Register new user';
+  user: FormControl;
+  pass: FormControl;
+  pass2: FormControl;
+  email: FormControl;
   register: FormGroup;
 
   // destsystem - ds_airline
@@ -17,15 +21,29 @@ export class RegisterComponent {
   //  ci nie je uz obsadene
 
   constructor(private registerService: RegisterService) {
+    this.user = new FormControl("", Validators.required);
+    this.pass = new FormControl("", [
+      Validators.required,
+      Validators.minLength(6)
+    ]);
+    this.pass2 = new FormControl("", [
+      Validators.required,
+      Validators.minLength(6)
+    ]);
+    this.email = new FormControl("", Validators.required);
     this.register = new FormGroup({
-      "user": new FormControl("", Validators.required),
-      "pass": new FormControl("", Validators.required),
-      "pass2": new FormControl("", Validators.required),
-      "email": new FormControl("", Validators.required),
+      'user': this.user,
+      'pass': this.pass,
+      'pass2': this.pass2,
+      'email': this.email
     });
   }
 
   doRegistration() {
+
+  }
+
+  checkName(name: string) {
 
   }
 
