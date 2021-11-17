@@ -15,10 +15,11 @@ export class RegisterComponent {
   email: FormControl;
   register: FormGroup;
 
-  // destsystem - ds_airline
-
   // TODO servica ktora by pri dopisani mena spravila request na backend pre zistenie
   //  ci nie je uz obsadene
+
+  // TODO custom input validations podla backendu na backend chcem posielat len overovanie
+  //  ci uzivatel uz existuje a podobne
 
   constructor(private registerService: RegisterService) {
     this.user = new FormControl("", Validators.required);
@@ -27,8 +28,7 @@ export class RegisterComponent {
       Validators.minLength(6)
     ]);
     this.pass2 = new FormControl("", [
-      Validators.required,
-      Validators.minLength(6)
+      Validators.required
     ]);
     this.email = new FormControl("", Validators.required);
     this.register = new FormGroup({

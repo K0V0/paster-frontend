@@ -1,10 +1,10 @@
 
 <div @errorMessagesAnimation
      class="errorPlaceholder"
-     *ngIf="(keys != null) && (obj.touched || obj.dirty)">
+     *ngIf="(keys != null) && (field?.touched || field?.dirty)">
 
     <span>
-      {{ keys }}
+      {{ messages }}
     </span>
 
 </div>
