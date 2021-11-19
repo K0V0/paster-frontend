@@ -3,9 +3,11 @@
       (ngSubmit)="doLogin()">
 
   <div>
-    <input type="text"
-           formControlName="user"
-           placeholder="{{ 'login.page.user' | t }}">
+    <div class="wrap">
+      <input type="text"
+             formControlName="user"
+             placeholder="{{ 'login.page.user' | t }}">
+    </div>
     <app-local-error fieldRef="user"
                      formGroupRef="register"
                      [componentRef]="this">
@@ -16,9 +18,11 @@
   </div>
 
   <div>
-    <input type="password"
-           formControlName="pass"
-           placeholder="{{ 'login.page.pass' | t }}">
+    <div class="wrap">
+      <input type="password"
+             formControlName="pass"
+             placeholder="{{ 'login.page.pass' | t }}">
+    </div>
     <app-local-error fieldRef="pass"
                      formGroupRef="register"
                      [componentRef]="this">
@@ -32,7 +36,7 @@
     <button [disabled] = "!login.valid"> {{ 'login.page.submit' | t }} </button>
   </div>
 
-  <div class="text-right">
+  <div>
     <app-server-error [fieldName]="'form'"
                       [errorsObject]="serverFormErrorMessage">
     </app-server-error>

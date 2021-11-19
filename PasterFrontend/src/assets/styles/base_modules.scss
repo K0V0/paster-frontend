@@ -4,4 +4,20 @@ form.register, form.login {
   display: table;
   background-color: $base-theme-color;
   padding: 0.5em;
+  width: 16em;
+  max-width: 16em;
+
+  div {
+    width: 100%;
+
+    div.wrap {
+      padding: 0.25em;
+      width: 100%;
+
+      input {
+        width: 100%;
+        margin:0;
+      }
+    }
+  }
 }
