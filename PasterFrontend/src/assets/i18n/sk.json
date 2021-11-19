@@ -34,7 +34,8 @@
       },
       "validationErrors": {
         "user": {
-          "required": "Nevyplnené meno používateľa"
+          "required": "Nevyplnené meno používateľa",
+          "forbiddenCharacters": "Nepovolené znaky. Povolené sú písmená, číslice, bodka, pomlčka, medzera a podtržník."
         },
         "pass": {
           "required": "Nevyplnené heslo",

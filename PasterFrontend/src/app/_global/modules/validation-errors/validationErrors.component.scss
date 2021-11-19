@@ -13,6 +13,7 @@ div.errorPlaceholder {
     color: $error-message-text;
     background-color: $error-message-background;
     transition: transform $transition-fast ease-in-out;
+    text-align: left;
 
     &.blink {
       transform: scale(1.1);

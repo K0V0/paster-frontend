@@ -1,6 +1,8 @@
 import {Component, Input} from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { RegisterService } from "./register.service";
+import {CustomValidators} from "../_global/modules/validation-errors/validators/_shared/custom.validator";
+import {UserRegistrationValidators} from "../_global/modules/validation-errors/validators/user-registration/user-registration.validator";
 
 @Component({
   selector: 'app-register',
@@ -22,7 +24,10 @@ export class RegisterComponent {
   //  ci uzivatel uz existuje a podobne
 
   constructor(private registerService: RegisterService) {
-    this.user = new FormControl("", Validators.required);
+    this.user = new FormControl("", [
+      Validators.required,
+      CustomValidators.forbiddenCharacters
+    ]);
     this.pass = new FormControl("", [
       Validators.required,
       Validators.minLength(6)
@@ -36,6 +41,10 @@ export class RegisterComponent {
       'pass': this.pass,
       'pass2': this.pass2,
       'email': this.email
+    }, {
+      validators: [
+        UserRegistrationValidators.passwordMatch
+      ]
     });
   }
 

@@ -14,13 +14,16 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NavigationComponent } from "./_global/components/navigation/navigation.component";
 import { HomeComponent } from "./home/home.component";
 import { RegisterService } from "./register/register.service";
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { JwtService } from "./_global/services/jwt.service";
 import { LocalStorageService } from "./_global/services/local-storage.service";
 import { BoardComponent } from "./board/board.component";
 import { GuardInterceptor } from "./_global/interceptors/guard.interceptor";
 
 @NgModule({
+  bootstrap: [
+    AppComponent
+  ],
   declarations: [
     AppComponent,
     LoginComponent,
@@ -45,7 +48,6 @@ import { GuardInterceptor } from "./_global/interceptors/guard.interceptor";
     JwtService,
     LocalStorageService,
     { provide: HTTP_INTERCEPTORS, useClass: GuardInterceptor, multi: true }
-  ],
-  bootstrap: [AppComponent]
+  ]
 })
 export class AppModule { }
