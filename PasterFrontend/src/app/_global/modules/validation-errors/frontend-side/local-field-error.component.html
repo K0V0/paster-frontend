@@ -1,7 +1,7 @@
 
 <div @errorMessagesAnimation
      class="errorPlaceholder"
-     *ngIf="(keys != null) && (field?.touched || field?.dirty)">
+     *ngIf="(messages != null && messages.length > 0) && (field?.touched || field?.dirty)">
 
     <span>
       {{ messages }}
