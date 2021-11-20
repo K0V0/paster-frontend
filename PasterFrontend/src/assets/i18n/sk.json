@@ -35,7 +35,7 @@
       "validationErrors": {
         "user": {
           "required": "Nevyplnené meno používateľa",
-          "forbiddenCharacters": "Nepovolené znaky. Povolené sú písmená, číslice, bodka, pomlčka, medzera a podtržník."
+          "forbiddenCharacters": "Nepovolené znaky. Povolené sú písmená, číslice a \". - _\""
         },
         "pass": {
           "required": "Nevyplnené heslo",
@@ -46,7 +46,8 @@
         },
         "pass2": {
           "required": "Nevyplnené kontrolné heslo"
-        }
+        },
+        "passwordControlNotMatch": "Heslá sa nezhodujú"
       }
     },
 
