@@ -9,29 +9,26 @@ import {
 import { ValidationErrorsAnimations } from "../validationErrors.animations";
 
 @Component({
-  selector: 'app-server-field-error',
-  templateUrl: './server-field-error.component.html',
+  selector: 'app-server-form-error',
+  templateUrl: './server-form-error.component.html',
   styleUrls: ['../validationErrors.component.scss'],
   animations: [ ValidationErrorsAnimations.errorMessagesAnimation ]
 })
-export class ServerFieldErrorComponent implements OnChanges {
+export class ServerFormErrorComponent implements OnChanges {
   title = 'Error message(s) from server used for single field(s)';
 
-  @Input() fieldRef: string;
   @Input() errorsObject: any;
-  @ViewChild('serverFieldErrorText') serverErrorSpanElem: any;
+  @ViewChild('serverFormErrorText') serverErrorSpanElem: any;
   errorMessage: string;
 
   constructor(private renderer: Renderer2) {
-    this.fieldRef = "";
     this.errorMessage = "";
   }
 
-  // TODO preco tu proste nejde vlozit parent kontext a sledovat changes na nom pomocou
-  //  subscribe
   ngOnChanges(changes: SimpleChanges) {
     let e;
-    if ((e = this.errorsObject[this.fieldRef]) != null) {
+    if ((e = this.errorsObject['form']) != null) {
+      console.log(e);
       if (this.errorMessage == e) {
         // bounce
         this.renderer.addClass(this.serverErrorSpanElem.nativeElement, 'blink');

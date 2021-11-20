@@ -1,43 +1,42 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from './login.service';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { JsonObject } from "@angular/compiler-cli/ngcc/src/packages/entry_point";
 import { Login } from "../_abstract/interfaces/dtos.interface";
+import { BaseComponent } from "../_abstract/components/base.component";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
-  // TODO extrahovat spolocnu logiku pre vsetky formulare hlavne server error handling
-  //  do abstraktnej triedy
+export class LoginComponent extends BaseComponent implements OnInit {
   title = 'PasterLogin';
   user: FormControl;
   pass: FormControl;
-  serverFieldsErrorMessages: JsonObject;
-  serverFormErrorMessage: JsonObject;
   login: FormGroup;
 
   constructor(
     private loginService: LoginService,
   ) {
+    super();
     this.user = new FormControl("", Validators.required);
     this.pass = new FormControl("", Validators.required);
     this.login = new FormGroup({
       "user": this.user,
       "pass": this.pass
     });
-    this.serverFieldsErrorMessages = {};
-    this.serverFormErrorMessage = {};
   }
 
   ngOnInit() {
     this.login.valueChanges.subscribe(() => {
-      this.clearServerErrors();
+      this.clearAllServerErrors();
     })
   }
 
+  // TODO nejak vymysliet ak user po obdrzani chybovej hlasky zo servera nic nezmenil
+  //  nerobit znova request
+  // TODO skusit spravit nejaku abstrakciu aj pre observable
+  //  co by obsahovala handlovanie server errorov uz v sebe
   doLogin() {
     this.loginService
       .doLogin(this.login.value.user, this.login.value.pass)
@@ -47,24 +46,11 @@ export class LoginComponent implements OnInit {
           // TODO skryt login popup / nejaka akcia na UI po prihlaseni
         },
         (error) => {
-          let e;
-          if ((e = error.error.message) != null) {
-              // treba zabalit do objektu lebo primitivny typ nespusti ngOnChange() akciu ak sa
-              // jeho obsah nezmeni, co kvoli logike aplikacie tuna chcem
-              this.serverFormErrorMessage = { form: e };
-          }
-          if ((e = error.error.messages) != null) {
-              this.serverFieldsErrorMessages = e;
-          }
+          this.setAllServerErrors(error);
         },
         () => {
-          this.clearServerErrors();
+          this.clearAllServerErrors();
         });
-  }
-
-  private clearServerErrors() {
-    this.serverFieldsErrorMessages = {};
-    this.serverFormErrorMessage = {};
   }
 
 }

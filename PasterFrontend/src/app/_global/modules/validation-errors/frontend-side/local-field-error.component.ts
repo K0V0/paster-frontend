@@ -4,7 +4,7 @@ import { FormControl } from "@angular/forms";
 import { TranslateService } from "../../../services/translate.service";
 
 @Component({
-  selector: 'app-local-error',
+  selector: 'app-local-field-error',
   templateUrl: './local-field-error.component.html',
   styleUrls: ['../validationErrors.component.scss'],
   animations: [ ValidationErrorsAnimations.errorMessagesAnimation ]
@@ -12,7 +12,7 @@ import { TranslateService } from "../../../services/translate.service";
 export class LocalFieldErrorComponent implements OnInit {
   title = 'Field error message handled by frontend';
 
-  @Input() componentRef: any;
+  @Input() parentComponentContext: any;
   @Input() fieldRef: String;
   @Input() formGroupRef: String;
   field: FormControl | undefined ;
@@ -25,7 +25,7 @@ export class LocalFieldErrorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.field = <FormControl>this.componentRef['' + this.fieldRef];
+    this.field = <FormControl>this.parentComponentContext['' + this.fieldRef];
     this.getActiveErrorsKeys();
     this.field?.valueChanges.subscribe((val: string) => {
       this.getActiveErrorsKeys();

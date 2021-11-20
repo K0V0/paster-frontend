@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ValidationErrorsAnimations } from "../validationErrors.animations";
-import { FormControl } from "@angular/forms";
+import {FormControl, FormGroup} from "@angular/forms";
 import { TranslateService } from "../../../services/translate.service";
 
 @Component({
-  selector: 'app-local-error-form',
+  selector: 'app-local-form-error',
   templateUrl: './local-form-error.component.html',
   styleUrls: ['../validationErrors.component.scss'],
   animations: [ ValidationErrorsAnimations.errorMessagesAnimation ]
@@ -12,33 +12,30 @@ import { TranslateService } from "../../../services/translate.service";
 export class LocalFormErrorComponent implements OnInit {
   title = 'Form error message handled by frontend';
 
-  @Input() componentRef: any;
-  @Input() fieldRef: String;
-  @Input() formGroupRef: String;
-  field: FormControl | undefined ;
+  @Input() parentComponentContext: any;
+  @Input() formGroupRef: string;
+  formGroup: FormGroup | undefined ;
   messages: string[];
 
   constructor(private translateService: TranslateService) {
-    this.fieldRef = "";
     this.formGroupRef = "";
     this.messages = [];
   }
 
   ngOnInit(): void {
-    this.field = <FormControl>this.componentRef['' + this.fieldRef];
+    this.formGroup = <FormGroup>this.parentComponentContext[this.formGroupRef];
     this.getActiveErrorsKeys();
-    this.field?.valueChanges.subscribe((val: string) => {
-      console.log(this.componentRef);
+    this.formGroup?.valueChanges.subscribe(() => {
       this.getActiveErrorsKeys();
     })
   }
 
   private getActiveErrorsKeys(): void {
-    let errors = this.field?.errors;
+    let errors = this.formGroup?.errors;
     let keys = errors ? Object.keys(errors) : null;
     this.messages = [];
     keys?.forEach((key: string) => {
-      let translationPath: string = this.formGroupRef + '.validationErrors.' +  this.fieldRef + '.' + key;
+      let translationPath: string = this.formGroupRef + '.validationErrors.' + key;
       this.messages.push(this.translateService.translate(translationPath));
     });
   }

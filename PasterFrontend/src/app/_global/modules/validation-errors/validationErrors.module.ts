@@ -6,6 +6,7 @@ import { LocalFieldErrorComponent } from "./frontend-side/local-field-error.comp
 import { LocalFormErrorComponent } from "./frontend-side/local-form-error.component";
 import { CustomValidators } from "./validators/_shared/custom.validator";
 import { UserRegistrationValidators } from "./validators/user-registration/user-registration.validator";
+import {ServerFormErrorComponent} from "./server-side/server-form-error.component";
 
 @NgModule({
   imports: [
@@ -14,11 +15,13 @@ import { UserRegistrationValidators } from "./validators/user-registration/user-
   ],
   declarations: [
     ServerFieldErrorComponent,
+    ServerFormErrorComponent,
     LocalFieldErrorComponent,
     LocalFormErrorComponent
   ],
   exports: [
     ServerFieldErrorComponent,
+    ServerFormErrorComponent,
     LocalFieldErrorComponent,
     LocalFormErrorComponent
   ],
