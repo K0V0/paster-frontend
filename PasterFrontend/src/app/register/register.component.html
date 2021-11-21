@@ -12,6 +12,9 @@
                            formGroupRef="register"
                            [parentComponentContext]="this">
     </app-local-field-error>
+    <app-server-field-error fieldRef="user"
+                            [errorsObject]="this.serverFieldsErrors">
+    </app-server-field-error>
   </div>
 
   <div>
@@ -24,6 +27,9 @@
                            formGroupRef="register"
                            [parentComponentContext]="this">
     </app-local-field-error>
+    <app-server-field-error fieldRef="email"
+                            [errorsObject]="this.serverFieldsErrors">
+    </app-server-field-error>
   </div>
 
   <div>
@@ -36,6 +42,9 @@
                            formGroupRef="register"
                            [parentComponentContext]="this">
     </app-local-field-error>
+    <app-server-field-error fieldRef="pass"
+                            [errorsObject]="this.serverFieldsErrors">
+    </app-server-field-error>
   </div>
 
   <div>
@@ -48,6 +57,9 @@
                            formGroupRef="register"
                            [parentComponentContext]="this">
     </app-local-field-error>
+    <app-server-field-error fieldRef="pass2"
+                            [errorsObject]="this.serverFieldsErrors">
+    </app-server-field-error>
   </div>
 
   <div class="text-right">
@@ -57,5 +69,7 @@
   <app-local-form-error formGroupRef="register"
                         [parentComponentContext]="this">
   </app-local-form-error>
+  <app-server-form-error [errorsObject]="this.serverFormError">
+  </app-server-form-error>
 
 </form>

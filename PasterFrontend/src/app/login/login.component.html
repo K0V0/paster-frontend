@@ -36,9 +36,7 @@
     <button [disabled] = "!login.valid"> {{ 'login.page.submit' | t }} </button>
   </div>
 
-  <div>
-    <app-server-form-error [errorsObject]="this.serverFormError">
-    </app-server-form-error>
-  </div>
+  <app-server-form-error [errorsObject]="this.serverFormError">
+  </app-server-form-error>
 
 </form>
