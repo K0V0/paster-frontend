@@ -1,15 +1,16 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { RegisterService } from "./register.service";
 import {CustomValidators} from "../_global/modules/validation-errors/validators/_shared/custom.validator";
 import {UserRegistrationValidators} from "../_global/modules/validation-errors/validators/user-registration/user-registration.validator";
+import {BaseComponent} from "../_abstract/components/base.component";
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent {
+export class RegisterComponent extends BaseComponent implements OnInit {
   title = 'Register new user';
   user: FormControl;
   pass: FormControl;
@@ -24,6 +25,7 @@ export class RegisterComponent {
   //  ci uzivatel uz existuje a podobne
 
   constructor(private registerService: RegisterService) {
+    super();
     this.user = new FormControl("", [
       Validators.required,
       CustomValidators.forbiddenCharacters
@@ -47,6 +49,13 @@ export class RegisterComponent {
       ]
     });
   }
+
+  ngOnInit() {
+    this.register.valueChanges.subscribe(() => {
+      this.clearAllServerErrors();
+    })
+  }
+
 
   doRegistration() {
 
