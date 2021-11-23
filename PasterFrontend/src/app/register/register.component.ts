@@ -1,9 +1,11 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { RegisterService } from "./register.service";
-import {CustomValidators} from "../_global/modules/validation-errors/validators/_shared/custom.validator";
-import {UserRegistrationValidators} from "../_global/modules/validation-errors/validators/user-registration/user-registration.validator";
-import {BaseComponent} from "../_abstract/components/base.component";
+import { CustomValidators } from "../_global/modules/validation-errors/validators/_shared/custom.validator";
+import { UserRegistrationValidators } from "../_global/modules/validation-errors/validators/user-registration/user-registration.validator";
+import { BaseComponent } from "../_abstract/components/base.component";
+import { LoginService } from "../login/login.service";
+import { Login } from "../_abstract/interfaces/dtos.interface";
 
 @Component({
   selector: 'app-register',
@@ -24,7 +26,10 @@ export class RegisterComponent extends BaseComponent implements OnInit {
   // TODO custom input validations podla backendu na backend chcem posielat len overovanie
   //  ci uzivatel uz existuje a podobne
 
-  constructor(private registerService: RegisterService) {
+  constructor(
+    private registerService: RegisterService,
+    private loginService: LoginService
+  ) {
     super();
     this.user = new FormControl("", [
       Validators.required,
@@ -32,12 +37,16 @@ export class RegisterComponent extends BaseComponent implements OnInit {
     ]);
     this.pass = new FormControl("", [
       Validators.required,
-      Validators.minLength(6)
+      Validators.minLength(6),
+      CustomValidators.forbiddenCharacters
     ]);
     this.pass2 = new FormControl("", [
       Validators.required
     ]);
-    this.email = new FormControl("", Validators.required);
+    this.email = new FormControl("", [
+      Validators.required,
+      Validators.email
+    ]);
     this.register = new FormGroup({
       'user': this.user,
       'pass': this.pass,
@@ -56,9 +65,18 @@ export class RegisterComponent extends BaseComponent implements OnInit {
     })
   }
 
-
   doRegistration() {
-
+    this.registerService.doRegister(
+      this.user.value, this.pass.value, this.pass2.value, this.email.value)
+    .subscribe((data) => {
+      this.loginService.saveJwtToken((<Login>data).jwtToken);
+    },
+    (error) => {
+      this.setAllServerErrors(error);
+    },
+    () => {
+      this.clearAllServerErrors();
+    });
   }
 
   checkName(name: string) {
