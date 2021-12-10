@@ -52,7 +52,10 @@
     },
 
     "board": {
-
+      "page": {
+        "text": "Text...",
+        "submit": "Odoslať"
+      }
     }
 
   }
