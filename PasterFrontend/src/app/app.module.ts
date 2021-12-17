@@ -19,6 +19,7 @@ import { JwtService } from "./_global/services/jwt.service";
 import { LocalStorageService } from "./_global/services/local-storage.service";
 import { BoardComponent } from "./board/board.component";
 import { GuardInterceptor } from "./_global/interceptors/guard.interceptor";
+import { LoggerService } from "./_global/services/logger.service";
 
 @NgModule({
   bootstrap: [
@@ -43,6 +44,7 @@ import { GuardInterceptor } from "./_global/interceptors/guard.interceptor";
     HttpClientModule,
   ],
   providers: [
+    LoggerService,
     LoginService,
     RegisterService,
     JwtService,

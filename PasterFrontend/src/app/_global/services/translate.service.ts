@@ -31,6 +31,7 @@ export class TranslateService {
 
   checkLang() {
     // TODO mechanizmus na dostanie locales z prehliadaca / vyber pouzivatela
+    console.log("checkLang()");
     this.currentLang = 'sk';
   }
 
