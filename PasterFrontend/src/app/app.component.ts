@@ -18,7 +18,7 @@ export class AppComponent implements OnInit, OnDestroy {
   // TODO is equivalent of jquery document.ready ?
   ngOnInit() {
     this.translateService.checkLang();
-    this.loginService.checkLogin();
+    //this.loginService.checkLogin(); // uz raz niekde ide
   }
 
   ngOnDestroy(): void {

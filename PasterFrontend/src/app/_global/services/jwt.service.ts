@@ -12,15 +12,19 @@ export class JwtService {
     this.decodedToken = {};
   }
 
-  setToken(token: string) {
+  setToken(token: string): void {
     if (token) {
       this.jwtToken = token;
       this.decodeToken();
     }
   }
 
+  getTokenWithPrefix(): string {
+    return "Bearer " + this.jwtToken;
+  }
+
   getUser() {
-    return this.decodedToken ? this.decodedToken.user : null;
+    return this.decodedToken ? this.decodedToken.userId : null;
   }
 
   isTokenExpired(): boolean {
@@ -29,6 +33,10 @@ export class JwtService {
       return ((1000 * Number(expiryTime)) - (new Date()).getTime()) < 5000;
     }
     return false;
+  }
+
+  isValid(): boolean {
+    return (this.getUser() != null && !this.isTokenExpired());
   }
 
   private getExpiryTime() {
