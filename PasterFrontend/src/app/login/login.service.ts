@@ -1,25 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
-import { RequestService } from "../_abstract/services/request.service";
+import { RequestService } from "../_global/services/request.service";
 import { JwtService } from "../_global/services/jwt.service";
 import { LocalStorageService } from "../_global/services/local-storage.service";
 
 @Injectable({
   providedIn: 'root',
 })
-export class LoginService extends RequestService {
+export class LoginService {
   loggedIn: boolean;
 
   constructor(
     private jwtService: JwtService,
-    private localStorageService: LocalStorageService
+    private localStorageService: LocalStorageService,
+    private requestService: RequestService
   ) {
-    super();
     this.loggedIn = false;
   }
 
   checkLogin(): boolean {
-    //console.log("checkLogin()");
     if (this.loggedIn) {
       console.log("checkLogin() user already logged");
       return true;
@@ -41,13 +40,15 @@ export class LoginService extends RequestService {
   }
 
   doLogin(user: string, pass: string): Observable<any> {
-    return this.post(
+    return this.requestService.post(
       'api/v1/user/login',
       { name: user, pass: pass });
   }
 
   doLogout(): void {
     //TODO spravit logout
+    this.jwtService.removeToken();
+    this.localStorageService.remove('jwtToken');
   }
 
   saveJwtToken(jwtToken: string): void {

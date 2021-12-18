@@ -1,25 +1,20 @@
 import { Injectable } from "@angular/core";
-import { RequestService } from "../_abstract/services/request.service";
+import { RequestService } from "../_global/services/request.service";
 import { Observable } from "rxjs";
-import { JwtService } from "../_global/services/jwt.service";
 
 @Injectable({
   providedIn: 'root',
 })
-export class BoardService extends RequestService {
+export class BoardService {
   title = 'boardService';
 
-  constructor(
-    private jwtService: JwtService
-  ) {
-    super();
-  }
+  constructor(private requestService: RequestService) {}
 
   // TODO odoslat jwt token s requestom
   sendText(text: string): Observable<any> {
-    return this.post(
+    return this.requestService.post(
       'api/v1/board/item',
-      { item: text });
+      { text: text });
   }
 
 }

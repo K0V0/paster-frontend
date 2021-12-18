@@ -4,8 +4,8 @@ import jwt_decode from "jwt-decode";
 @Injectable()
 export class JwtService {
 
-  jwtToken: string;
-  decodedToken: { [key: string]: string };
+  jwtToken: string | null;
+  decodedToken: { [key: string]: string } | null;
 
   constructor() {
     this.jwtToken = "";
@@ -37,6 +37,11 @@ export class JwtService {
 
   isValid(): boolean {
     return (this.getUser() != null && !this.isTokenExpired());
+  }
+
+  removeToken(): void {
+    this.jwtToken = null;
+    this.decodedToken = null;
   }
 
   private getExpiryTime() {

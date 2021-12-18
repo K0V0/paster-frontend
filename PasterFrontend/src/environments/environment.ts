@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  backendUrl: "http://0.0.0.0:4004",
+  apiVersion: 1,
+  excludedJwtInterceptorEndpoints: [
+    "/user/login",
+    "/user/register",
+    "/user/logout"
+  ]
 };
 
 /*

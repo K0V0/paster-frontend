@@ -20,6 +20,7 @@ import { LocalStorageService } from "./_global/services/local-storage.service";
 import { BoardComponent } from "./board/board.component";
 import { GuardInterceptor } from "./_global/interceptors/guard.interceptor";
 import { LoggerService } from "./_global/services/logger.service";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
   bootstrap: [
@@ -34,6 +35,7 @@ import { LoggerService } from "./_global/services/logger.service";
     BoardComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -41,7 +43,7 @@ import { LoggerService } from "./_global/services/logger.service";
     ReactiveFormsModule,
     TranslateModule,
     ValidationErrorsModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [
     LoggerService,
@@ -50,6 +52,7 @@ import { LoggerService } from "./_global/services/logger.service";
     JwtService,
     LocalStorageService,
     { provide: HTTP_INTERCEPTORS, useClass: GuardInterceptor, multi: true }
-  ]
+  ],
+  exports: [ HttpClientModule ]
 })
 export class AppModule { }

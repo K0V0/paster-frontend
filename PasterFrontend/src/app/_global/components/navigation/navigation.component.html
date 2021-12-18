@@ -28,5 +28,12 @@
       {{ 'nav.board' | t }}
     </a> </li>
 
+    <li> <a routerLink='logout'
+            *ngIf="loggedIn"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active">
+      {{ 'nav.logout' | t }}
+    </a> </li>
+
   </ul>
 </nav>
