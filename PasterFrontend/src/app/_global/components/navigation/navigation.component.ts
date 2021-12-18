@@ -1,5 +1,5 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {LoginService} from "../../../login/login.service";
+import { Component } from '@angular/core';
+import { LoginService } from "../../../login/login.service";
 
 @Component({
   selector: 'app-navigation',

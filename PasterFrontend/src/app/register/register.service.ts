@@ -1,22 +1,20 @@
 import { Injectable } from '@angular/core';
-import {RequestService} from "../_abstract/services/request.service";
+import {RequestService} from "../_global/services/request.service";
 
 @Injectable({
   providedIn: 'root',
 })
-export class RegisterService extends RequestService {
+export class RegisterService {
 
-  constructor() {
-    super();
-  }
+  constructor(private requestService: RequestService) {}
 
   checkNameExist(): boolean {
-    // TODO nutna funkncos na backende
+    // TODO nutna funkncost na backende
     return false;
   }
 
   doRegister(user: string, pass: string, pass2: string, email: string) {
-    return this.post(
+    return this.requestService.post(
       'api/v1/user/register',
       { name: user, pass: pass, pass2: pass2, email: email });
   }
