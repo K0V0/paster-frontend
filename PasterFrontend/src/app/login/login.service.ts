@@ -47,6 +47,8 @@ export class LoginService {
 
   doLogout(): void {
     //TODO spravit logout
+    this.jwtService.removeToken();
+    this.localStorageService.remove('jwtToken');
   }
 
   saveJwtToken(jwtToken: string): void {

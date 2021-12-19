@@ -5,7 +5,8 @@
       "home": "Domov",
       "login": "Prihlásiť sa",
       "register": "Registrácia",
-      "board":  "Board"
+      "board":  "Board",
+      "logout": "Odhlásiť sa"
     },
 
     "login": {

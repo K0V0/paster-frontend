@@ -23,6 +23,10 @@ const routes: Routes = [
     path: "board",
     component: BoardComponent,
     canActivate: [Guard]
+  },
+  {
+    path: "logout",
+    component: HomeComponent
   }
 ];
 

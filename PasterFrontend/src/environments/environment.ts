@@ -8,7 +8,8 @@ export const environment = {
   apiVersion: 1,
   excludedJwtInterceptorEndpoints: [
     "/user/login",
-    "/user/register"
+    "/user/register",
+    "/user/logout"
   ]
 };
 
