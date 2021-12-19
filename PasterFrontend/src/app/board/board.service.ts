@@ -14,7 +14,7 @@ export class BoardService {
   sendText(text: string): Observable<any> {
     return this.requestService.post(
       'api/v1/board/item',
-      { item: text });
+      { text: text });
   }
 
 }
