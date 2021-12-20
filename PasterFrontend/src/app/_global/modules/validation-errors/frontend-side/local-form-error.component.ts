@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ValidationErrorsAnimations } from "../validationErrors.animations";
 import {FormControl, FormGroup} from "@angular/forms";
-import { TranslateService } from "../../../services/translate.service";
+import { TranslateService } from "../../translate/translate.service";
 
 @Component({
   selector: 'app-local-form-error',

@@ -7,13 +7,12 @@ import { environment } from "../../../environments/environment";
 @Injectable({
   providedIn: 'root',
 })
-export class GuardInterceptor implements HttpInterceptor {
+export class JwtInterceptor implements HttpInterceptor {
 
   constructor(private jwtService: JwtService) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     console.log("intercept()");
-    //console.log(this.applyFilter(req.url));
     if (this.applyFilter(req.url)) {
       return next.handle(req.clone({
         setHeaders: { "Authorization": this.jwtService.getTokenWithPrefix() }
