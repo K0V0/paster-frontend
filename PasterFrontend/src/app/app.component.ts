@@ -1,6 +1,5 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import { LoginService } from './login/login.service';
-import { TranslateService } from "./_global/services/translate.service";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { TranslateService } from "./_global/modules/translate/translate.service";
 
 @Component({
   selector: 'app-root',
@@ -11,7 +10,7 @@ export class AppComponent implements OnInit, OnDestroy {
   title = 'PasterFrontend';
 
   constructor(
-    private loginService: LoginService,
+    //private loginService: LoginService,
     private translateService: TranslateService
   ) {}
 
