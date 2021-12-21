@@ -7,12 +7,3 @@ export interface Error extends Response {
   messages?: Map<string, string>;
 }
 
-export interface Login extends Response {
-  jwtToken: string;
-}
-
-export interface Register extends Response {
-
-}
-
-
