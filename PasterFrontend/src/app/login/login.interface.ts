@@ -1,5 +1,5 @@
-import { Response } from "../_abstract/interfaces/dtos.interface";
+import { ResponseDTO } from "../_abstract/interfaces/dtos.interface";
 
-export interface Login extends Response {
+export interface LoginResponseDTO extends ResponseDTO {
   jwtToken: string;
 }

@@ -1,5 +1,5 @@
-import { Response } from "../_abstract/interfaces/dtos.interface";
+import { LoginResponseDTO } from "../login/login.interface";
 
-export interface Register extends Response {
+export interface RegisterDTO extends LoginResponseDTO {
 
 }

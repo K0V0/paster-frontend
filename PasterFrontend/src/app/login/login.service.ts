@@ -3,6 +3,7 @@ import { Observable } from "rxjs";
 import { RequestService } from "../_global/services/request.service";
 import { JwtService } from "../_global/services/jwt.service";
 import { LocalStorageService } from "../_global/services/local-storage.service";
+import {LoginResponseDTO} from "./login.interface";
 
 @Injectable({
   providedIn: 'root',
@@ -39,8 +40,8 @@ export class LoginService {
     }
   }
 
-  doLogin(user: string, pass: string): Observable<any> {
-    return this.requestService.post(
+  doLogin(user: string, pass: string): Observable<LoginResponseDTO> {
+    return this.requestService.post<LoginResponseDTO>(
       'api/v1/user/login',
       { name: user, pass: pass });
   }

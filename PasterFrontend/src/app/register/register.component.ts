@@ -5,7 +5,6 @@ import { CustomValidators } from "../_global/modules/validation-errors/validator
 import { UserRegistrationValidators } from "../_global/modules/validation-errors/validators/user-registration/user-registration.validator";
 import { BaseComponent } from "../_abstract/components/base.component";
 import { LoginService } from "../login/login.service";
-import { Login } from "../_abstract/interfaces/dtos.interface";
 
 @Component({
   selector: 'app-register',
@@ -69,7 +68,7 @@ export class RegisterComponent extends BaseComponent implements OnInit {
     this.registerService.doRegister(
       this.user.value, this.pass.value, this.pass2.value, this.email.value)
     .subscribe((data) => {
-      this.loginService.saveJwtToken((<Login>data).jwtToken);
+      this.loginService.saveJwtToken(data.jwtToken);
     },
     (error) => {
       this.setAllServerErrors(error);

@@ -1,9 +1,13 @@
-export interface Response {
+export interface ResponseDTO {
   status: string;
 }
 
-export interface Error extends Response {
+export interface ErrorDTO extends ResponseDTO {
   message?: string;
   messages?: Map<string, string>;
+}
+
+export interface Model {
+
 }
 
