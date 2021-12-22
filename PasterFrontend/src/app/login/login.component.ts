@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from './login.service';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { Login } from "../_abstract/interfaces/dtos.interface";
 import { BaseComponent } from "../_abstract/components/base.component";
 
 @Component({
@@ -42,7 +41,7 @@ export class LoginComponent extends BaseComponent implements OnInit {
       .doLogin(this.login.value.user, this.login.value.pass)
       .subscribe(
         (data) => {
-          this.loginService.saveJwtToken((<Login>data).jwtToken);
+          this.loginService.saveJwtToken(data.jwtToken);
           // TODO skryt login popup / nejaka akcia na UI po prihlaseni
         },
         (error) => {
