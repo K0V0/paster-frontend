@@ -9,17 +9,17 @@ import {DtoMapperUtil, Schema} from "../../../_CoreModule/utils/dto-mapper.util"
   styleUrls: ['./items-table.component.scss']
 })
 export class ItemsTableComponent implements OnInit {
-  title = 'copy/paste board';
+  mapper: DtoMapperUtil<BoardItemResponseDTO, BoardItem>;
 
   constructor(
-    private boardService: BoardService,
-    private dtoMapperService: DtoMapperUtil<BoardItemResponseDTO, BoardItem>
+    private boardService: BoardService
   ) {
-    this.dtoMapperService.setRules({
+    this.mapper = new DtoMapperUtil<BoardItemResponseDTO, BoardItem>();
+    // TODO sformatovat cas a odskusat deal so zonami a zimnym/letnym
+    this.mapper.setRules({
       id: null,
       status: null,
       timestamp: (x:number) => new Date(x*1000),
-      //large: null
     })
   }
 
@@ -32,11 +32,7 @@ export class ItemsTableComponent implements OnInit {
     .subscribe((data) => {
       console.log("prijate itemy");
       console.log(data);
-      /*data.items.forEach(item => {
-        let dataItem: BoardItem = this.mapper.remap(item);
-        //console.log(dataItem);
-      });*/
-      let boardItems: BoardItem[] = data.items.map(item => this.dtoMapperService.remap(item));
+      let boardItems: BoardItem[] = data.items.map(item => this.mapper.remap(item));
       console.log(boardItems);
     });
   }

@@ -4,6 +4,8 @@ export interface Schema {
   [key: string]: boolean | Function | string | number | null;
 }
 
+// TODO naucit mapper pracovat aj rekurzivne
+
 @Injectable({
   providedIn: 'root'
 })
