@@ -6,9 +6,9 @@ import { HomeModule } from "../home/home.module";
 import { LoggerService } from "./services/logger.service";
 import { JwtService } from "./services/jwt.service";
 import { LocalStorageService } from "./services/local-storage.service";
-import { DtoMapperService } from "./services/dto-mapper.service";
+import { DtoMapperUtil } from "./utils/dto-mapper.util";
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
-import { JwtInterceptor } from "./services/jwt-interceptor.service";
+import { JwtInterceptor } from "./interceptors/jwt.interceptor";
 import { RequestService } from "./services/request.service";
 
 @NgModule({
@@ -30,7 +30,7 @@ import { RequestService } from "./services/request.service";
     LoggerService,
     JwtService,
     LocalStorageService,
-    DtoMapperService,
+    DtoMapperUtil,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     RequestService
   ]

@@ -12,6 +12,10 @@ export interface BoardItemResponseDTO extends ResponseDTO {
   isLarge: boolean;
 }
 
+export interface BoardItems {
+  items: BoardItem[];
+}
+
 export interface BoardItem {
   id: number;
   preview: string;

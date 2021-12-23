@@ -7,7 +7,7 @@ export interface Schema {
 @Injectable({
   providedIn: 'root'
 })
-export class DtoMapperService<Source, Destination> {
+export class DtoMapperUtil<Source, Destination> {
   private conversionRules: Schema;
 
   constructor() {
@@ -22,19 +22,13 @@ export class DtoMapperService<Source, Destination> {
     let source: Schema = input as unknown as Schema;
     let result: any = {}
     Object.keys(input).forEach(key => {
-      //console.log(key);
-      //console.log(this.conversionRules[key]);
       let schemaCommand = this.conversionRules[key];
       if (schemaCommand !== null) {
         if (schemaCommand === undefined) {
-          //console.log("key: " + key + " is undefined");
           result[key] = source[key];
         } else if (typeof schemaCommand === 'function') {
-          //console.log("key: " + key + " is Function()");
-          //console.log(schemaCommand(5));
           result[key] = schemaCommand(source[key]);
         } else {
-          //console.log("key: " + key + " is some value");
           result[key] = schemaCommand;
         }
       }

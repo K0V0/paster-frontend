@@ -23,6 +23,7 @@ export class RequestService/*<RQdto, RSdto>*/ {
       { headers: new HttpHeaders({ ...this.headers, ...headers }) });
   }
 
+  // TODO params pre get request
   public get<RSdto>(endpoint: String, params = {}, headers = {}): Observable<RSdto> {
     return this.http.get<RSdto>(RequestService.BASE_URL + endpoint);
   }
