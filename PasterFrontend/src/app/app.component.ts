@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { TranslateService } from "./_global/modules/translate/translate.service";
+import { TranslateService } from "./_SharedModule/modules/translate/translate.service";
 
 @Component({
   selector: 'app-root',

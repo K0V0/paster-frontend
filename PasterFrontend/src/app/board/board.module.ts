@@ -1,18 +1,13 @@
 import { NgModule } from "@angular/core";
-import { SendItemComponent } from "./send-item/send-item.component";
-import { TranslateModule } from "../_global/modules/translate/translate.module";
-import { BrowserModule } from "@angular/platform-browser";
-import { ValidationErrorsModule } from "../_global/modules/validation-errors/validationErrors.module";
-import { ReactiveFormsModule } from "@angular/forms";
-import { BoardComponent } from "./board.component";
-import { ItemsTableComponent } from "./items-table/items-table.component";
+import { SendItemComponent } from "./components/send-item/send-item.component";
+import { BoardComponent } from "./components/board.component";
+import { ItemsTableComponent } from "./components/items-table/items-table.component";
+import { SharedModule } from "../_SharedModule/shared.module";
+import { BoardService } from "./services/board.service";
 
 @NgModule({
   imports: [
-    TranslateModule,
-    BrowserModule,
-    ValidationErrorsModule,
-    ReactiveFormsModule
+    SharedModule
   ],
   declarations: [
     SendItemComponent,
@@ -25,7 +20,7 @@ import { ItemsTableComponent } from "./items-table/items-table.component";
     ItemsTableComponent
   ],
   providers: [
-
+    BoardService
   ]
 })
 
