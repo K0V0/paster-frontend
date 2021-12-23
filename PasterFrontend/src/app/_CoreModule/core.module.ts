@@ -10,6 +10,7 @@ import { DtoMapperUtil } from "./utils/dto-mapper.util";
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { JwtInterceptor } from "./interceptors/jwt.interceptor";
 import { RequestService } from "./services/request.service";
+import {Router} from "@angular/router";
 
 @NgModule({
   imports: [
@@ -32,7 +33,8 @@ import { RequestService } from "./services/request.service";
     LocalStorageService,
     DtoMapperUtil,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    RequestService
+    RequestService,
+    //Router
   ]
 })
 

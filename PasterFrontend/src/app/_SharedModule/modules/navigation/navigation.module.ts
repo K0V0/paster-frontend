@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from "../../../login/components/login.component";
+import { LoginComponent } from "../../../login/components/login/login.component";
 import { RegisterComponent } from "../../../register/components/register.component";
 import { HomeComponent } from "../../../home/components/home.component";
 import { Guard } from "./guard.service";
@@ -8,6 +8,7 @@ import { BoardComponent } from "../../../board/components/board.component";
 import { NavigationComponent } from "./navigation.component";
 import { TranslateModule } from "../translate/translate.module";
 import {BrowserModule} from "@angular/platform-browser";
+import {LogoutComponent} from "../../../login/components/logout/logout.component";
 
 const routes: Routes = [
   {
@@ -29,7 +30,7 @@ const routes: Routes = [
   },
   {
     path: "logout",
-    component: HomeComponent
+    component: LogoutComponent
   }
 ];
 
