@@ -2,6 +2,16 @@
   <thead></thead>
   <tbody id="boardItems">
 
+    <tr *ngFor="let item of boardItems.items; index as i;">
+      <td>{{ i }}</td>
+      <td>{{ item.preview }}</td>
+      <td>{{ item.timestamp }}</td>
+      <td>
+        <button (click)="deleteItem(item.id)"> {{ "board.page.itemsTable.delete" | t }} </button>
+      </td>
+      <td></td>
+    </tr>
+
   </tbody>
   <tfoot></tfoot>
 </table>

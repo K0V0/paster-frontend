@@ -55,7 +55,10 @@
     "board": {
       "page": {
         "text": "Text...",
-        "submit": "Odoslať"
+        "submit": "Odoslať",
+        "itemsTable": {
+          "delete": "Odstrániť"
+        }
       }
     }
 
