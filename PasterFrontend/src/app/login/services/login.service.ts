@@ -3,7 +3,7 @@ import { Observable } from "rxjs";
 import { RequestService } from "../../_CoreModule/services/request.service";
 import { JwtService } from "../../_CoreModule/services/jwt.service";
 import { LocalStorageService } from "../../_CoreModule/services/local-storage.service";
-import {LoginResponseDTO} from "../dtos/login.dto.interface";
+import { LoginResponseDTO } from "../dtos/login.dto.interface";
 
 @Injectable({
   providedIn: 'root',

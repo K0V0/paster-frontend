@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../services/login.service';
+import { LoginService } from '../../services/login.service';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { BaseComponent } from "../../_Base/components/base.component";
+import { BaseComponent } from "../../../_Base/components/base.component";
 
 @Component({
   selector: 'app-login',
