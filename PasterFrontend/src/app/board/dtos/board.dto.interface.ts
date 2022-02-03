@@ -1,10 +1,10 @@
-import { ResponseDTO } from "../../_Base/interfaces/base.dto.interface";
+import { Response } from "../../_Base/interfaces/base.dto.interface";
 
-export interface BoardItemsResponseDTO extends ResponseDTO {
+export interface BoardItemsResponseDTO extends Response {
   items: BoardItemResponseDTO[];
 }
 
-export interface BoardItemResponseDTO extends ResponseDTO {
+export interface BoardItemResponseDTO extends Response {
   id: number;
   text: string;
   preview: string;

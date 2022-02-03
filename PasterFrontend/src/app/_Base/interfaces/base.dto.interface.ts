@@ -1,10 +1,10 @@
 import { JsonObject } from "@angular/compiler-cli/ngcc/src/packages/entry_point";
 
-export interface ResponseDTO {
+export interface Response {
   status: string;
 }
 
-export interface ErrorDTO extends ResponseDTO {
+export interface Error extends Response {
   message?: string;
   messages?: Map<string, string>;
 }
@@ -15,4 +15,11 @@ export interface ServerError {
 
 export interface ServerErrors {
   serverFieldsErrorMessages: JsonObject;
+}
+
+export interface Ws {
+
+}
+export interface WsRefresh extends Ws {
+  autosync: boolean;
 }
