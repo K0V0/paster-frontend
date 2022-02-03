@@ -1,3 +1,4 @@
+import { WsRefresh } from './../../../_Base/interfaces/base.dto.interface';
 // angular stuff
 import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { formatDate } from '@angular/common';
@@ -56,8 +57,11 @@ export class ItemsTableComponent implements OnInit {
   }
 
   private listenForChangeTrigger(): void {
-    this.websocketService.getWebsocket().subscribe(
-      (msg: any) => { console.log('message received: ' + msg); }, // Called whenever there is a message from the server.
+    this.websocketService.getWebSocket().subscribe(
+      (msg: WsRefresh) => {
+        this.refreshContent();
+        console.log('message received: ' + msg.autosync);
+      },
       (err: any) => { console.log('message received: ' + err); }, // Called if at any point WebSocket API signals some kind of error.
       () => { console.log('complete'); } // Called when connection is closed (for whatever reason).
     );

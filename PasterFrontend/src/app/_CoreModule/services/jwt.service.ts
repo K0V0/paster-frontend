@@ -19,6 +19,10 @@ export class JwtService {
     }
   }
 
+  getToken(): string {
+    return "" + this.jwtToken;
+  }
+
   getTokenWithPrefix(): string {
     return "Bearer " + this.jwtToken;
   }
