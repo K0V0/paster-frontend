@@ -7,11 +7,13 @@ import { BoardService } from "../../services/board.service";
 import { BoardItem, BoardItemResponseDTO, BoardItems } from "../../dtos/board.dto.interface";
 import { DtoMapperUtil } from "../../../_CoreModule/utils/dto-mapper.util";
 import { WebsocketService } from "../../../_CoreModule/services/websocket.service";
+import { TableItemsAnimations } from './items-table-animations';
 
 @Component({
   selector: 'app-board-items-list',
   templateUrl: './items-table.component.html',
-  styleUrls: ['./items-table.component.scss']
+  styleUrls: ['./items-table.component.scss'],
+  animations: [ TableItemsAnimations.tableItemAppendAnimation ]
 })
 export class ItemsTableComponent implements OnInit {
   mapper: DtoMapperUtil<BoardItemResponseDTO, BoardItem>;
@@ -50,8 +52,22 @@ export class ItemsTableComponent implements OnInit {
 
   private refreshContent(): void {
     this.boardService.getItems().subscribe((data) => {
-      console.log("prijate itemy");
-      this.boardItems.items = data.items.map(item => this.mapper.remap(item));
+      if (this.boardItems.items === undefined) {
+        // first run
+        this.boardItems.items = data.items.map(item => this.mapper.remap(item));
+      } else {
+        // delete case
+        let newItemsIds: number[] = data.items.map(d => d.id);
+        this.boardItems.items = this.boardItems.items.filter(i => newItemsIds.indexOf(i.id) !== -1);
+        // add case
+        let currentItemsIds = this.boardItems.items.map(i => i.id);
+        data.items
+          .filter(i => currentItemsIds.indexOf(i.id) === -1)
+          .map(item => this.mapper.remap(item))
+          .forEach((item) => {
+            this.boardItems.items.unshift(item);
+          });
+      }
       console.log(this.boardItems.items);
     });
   }
