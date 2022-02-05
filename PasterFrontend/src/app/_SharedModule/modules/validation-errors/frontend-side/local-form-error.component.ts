@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ValidationErrorsAnimations } from "../validationErrors.animations";
-import {FormControl, FormGroup} from "@angular/forms";
+import { FormControl, FormGroup } from "@angular/forms";
 import { TranslateService } from "../../translate/translate.service";
 
 @Component({
