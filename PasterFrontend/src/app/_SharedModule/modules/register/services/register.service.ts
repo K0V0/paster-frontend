@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {RequestService} from "../../_CoreModule/services/request.service";
+import {RequestService} from "../../../../_CoreModule/services/request.service";
 import {RegisterDTO} from "../dtos/register.dto.interface";
 import {Observable} from "rxjs";
 

@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from "../../../login/components/login/login.component";
-import { RegisterComponent } from "../../../register/components/register.component";
-import { HomeComponent } from "../../../home/components/home.component";
-import { Guard } from "./guard.service";
+import { LogregComponent } from 'src/app/logreg/components/logreg.component';
 import { BoardComponent } from "../../../board/components/board.component";
-import { NavigationComponent } from "./navigation.component";
+import { HomeComponent } from "../../../home/components/home.component";
+import { LogoutComponent } from "../login/components/logout/logout.component";
+import { LoginModule } from '../login/login.module';
+import { RegisterModule } from '../register/register.module';
 import { TranslateModule } from "../translate/translate.module";
-import {BrowserModule} from "@angular/platform-browser";
-import {LogoutComponent} from "../../../login/components/logout/logout.component";
+import { Guard } from "./guard.service";
+import { NavigationComponent } from "./navigation.component";
 
 const routes: Routes = [
   {
@@ -17,11 +18,11 @@ const routes: Routes = [
   },
   {
     path: "login",
-    component: LoginComponent
+    component: LogregComponent
   },
   {
     path: "register",
-    component: RegisterComponent
+    component: LogregComponent
   },
   {
     path: "board",
@@ -39,6 +40,8 @@ const routes: Routes = [
     NavigationComponent
   ],
   imports: [
+    LoginModule,
+    RegisterModule,
     TranslateModule,
     BrowserModule,
     RouterModule.forRoot(routes)

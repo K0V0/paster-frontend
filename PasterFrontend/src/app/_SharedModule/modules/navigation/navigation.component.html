@@ -7,33 +7,60 @@
       {{ 'nav.home' | t }}
     </a> </li>-->
 
-    <li> <a routerLink='register'
-            *ngIf="!loggedIn"
+    <li *ngIf="!loggedIn">
+      <div>
+        <a routerLink='register'
             [routerLinkActiveOptions]="{ exact: true }"
             routerLinkActive="active">
-      {{ 'nav.register' | t }}
-    </a> </li>
+          <span (click)="toggleRegisterWidget($event)">
+            {{ 'nav.register' | t }}
+          </span>
+        </a>
+      </div>
+      <div class="widget"
+           *ngIf="!isOnRegistrationPage && !isOnLoginPage && showRegistrationWidget"
+           [@loginRegisterWidgetAnimation]>
+        <app-register></app-register>
+      </div>
+    </li>
 
-    <li> <a routerLink='login'
-            *ngIf="!loggedIn"
+    <li *ngIf="!loggedIn">
+      <div>
+        <a routerLink='login'
             [routerLinkActiveOptions]="{ exact: true }"
             routerLinkActive="active">
-      {{ 'nav.login' | t }}
-    </a> </li>
+          <span (click)="toggleLoginWidget($event)">
+            {{ 'nav.login' | t }}
+          </span>
+        </a>
+      </div>
+      <div class="widget"
+           *ngIf="!isOnLoginPage && !isOnRegistrationPage && showLoginWidget"
+           [@loginRegisterWidgetAnimation]>
+        <app-login></app-login>
+      </div>
+    </li>
 
-    <li> <a routerLink='board'
-            *ngIf="loggedIn"
+    <li *ngIf="loggedIn">
+      <div>
+        <a routerLink='board'
             [routerLinkActiveOptions]="{ exact: true }"
             routerLinkActive="active">
-      {{ 'nav.board' | t }}
-    </a> </li>
+          {{ 'nav.board' | t }}
+        </a>
+      </div>
+    </li>
 
-    <li> <a routerLink='logout'
-            *ngIf="loggedIn"
+    <li *ngIf="loggedIn">
+      <div>
+        <a routerLink='logout'
             [routerLinkActiveOptions]="{ exact: true }"
             routerLinkActive="active">
-      {{ 'nav.logout' | t }}
-    </a> </li>
+          {{ 'nav.logout' | t }}
+        </a>
+      </div>
+      <app-logout></app-logout>
+    </li>
 
   </ul>
 </nav>

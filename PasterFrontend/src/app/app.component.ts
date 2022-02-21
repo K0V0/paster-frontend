@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { TranslateService } from "./_SharedModule/modules/translate/translate.service";
 
 @Component({
@@ -11,7 +11,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(
     //private loginService: LoginService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
   ) {}
 
   // TODO is equivalent of jquery document.ready ?
