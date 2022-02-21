@@ -1,11 +1,15 @@
 import { NgModule } from "@angular/core";
 import { RegisterComponent } from "./components/register.component";
 import { RegisterService } from "./services/register.service";
-import { SharedModule } from "../_SharedModule/shared.module";
+import { ReactiveFormsModule } from "@angular/forms";
+import { TranslateModule } from "../translate/translate.module";
+import { ValidationErrorsModule } from "../validation-errors/validationErrors.module";
 
 @NgModule({
   imports: [
-    SharedModule,
+    ReactiveFormsModule,
+    ValidationErrorsModule,
+    TranslateModule
   ],
   declarations: [
     RegisterComponent

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { RegisterService } from "../services/register.service";
-import { CustomValidators } from "../../_SharedModule/modules/validation-errors/validators/custom.validator";
-import { UserRegistrationValidators } from "../utils/register.validator";
-import { BaseComponent } from "../../_Base/components/base.component";
+import { BaseComponent } from "../../../../_Base/components/base.component";
 import { LoginService } from "../../login/services/login.service";
+import { CustomValidators } from "../../validation-errors/validators/custom.validator";
+import { RegisterService } from "../services/register.service";
+import { UserRegistrationValidators } from "../utils/register.validator";
 
 @Component({
   selector: 'app-register',
