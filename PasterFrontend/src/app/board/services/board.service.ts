@@ -22,7 +22,6 @@ export class BoardService {
     return this.requestService.get<BoardItemsResponseDTO>('api/v1/board/items');
   }
 
-  //deleteItem(id: number): Observable<null> {
   deleteItem(id: number): Observable<null> {
     return this.requestService.delete('api/v1/board/item/' + id);
   }

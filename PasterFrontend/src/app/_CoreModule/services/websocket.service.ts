@@ -1,8 +1,8 @@
-import { WsRefresh } from './../../_Base/interfaces/base.dto.interface';
-import { JwtService } from './jwt.service';
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
 import { webSocket } from "rxjs/webSocket";
+import { WsRefresh } from './../../_Base/interfaces/base.dto.interface';
+import { JwtService } from './jwt.service';
 
 @Injectable({
   providedIn: 'root',

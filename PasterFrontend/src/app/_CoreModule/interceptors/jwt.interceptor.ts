@@ -1,21 +1,21 @@
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpInterceptor, HttpHandler, HttpRequest, HttpEvent} from '@angular/common/http';
 import { Observable } from "rxjs";
-import { JwtService } from "../services/jwt.service";
 import { environment } from "../../../environments/environment";
+import { JwtService } from './../services/jwt.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class JwtInterceptor implements HttpInterceptor {
 
-  constructor(private jwtService: JwtService) {}
+  constructor(private JwtService: JwtService) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     console.log("intercept()");
     if (this.applyFilter(req.url)) {
       return next.handle(req.clone({
-        setHeaders: { "Authorization": this.jwtService.getTokenWithPrefix() }
+        setHeaders: { "Authorization": this.JwtService.getTokenWithPrefix() }
       }));
     } else {
       return next.handle(req);
