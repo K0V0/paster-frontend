@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { Router } from '@angular/router';
 import { BaseComponent } from "../../../../../_Base/components/base.component";
 import { LoginService } from '../../services/login.service';
 
@@ -15,7 +16,9 @@ export class LoginComponent extends BaseComponent implements OnInit {
   login: FormGroup;
 
   constructor(
+        //setHeaders: { "Authorization": this.jwtService.getTokenWithPrefix() }
     private loginService: LoginService,
+    private router: Router
   ) {
     super();
     this.user = new FormControl("", Validators.required);
@@ -42,7 +45,7 @@ export class LoginComponent extends BaseComponent implements OnInit {
       .subscribe(
         (data) => {
           this.loginService.saveJwtToken(data.jwtToken);
-          // TODO skryt login popup / nejaka akcia na UI po prihlaseni
+          this.router.navigate(['board']);
         },
         (error) => {
           this.setAllServerErrors(error);

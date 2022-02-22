@@ -19,8 +19,9 @@ export class LogoutComponent  implements OnInit {
   }
 
   ngOnInit() {
-    this.doLogout();
-    this.router.navigate(["/"]);
+    // todo nevolat preboha
+    //this.doLogout();
+    //this.router.navigate(["/"]);
   }
 
   doLogout(): void {

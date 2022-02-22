@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
 import jwt_decode from "jwt-decode";
 
-@Injectable()
+@Injectable(
+  { providedIn: 'root' }
+)
 export class JwtService {
 
-  jwtToken: string | null;
-  decodedToken: { [key: string]: string } | null;
+  jwtToken: string | null = "";
+  decodedToken: { [key: string]: string } | null = {};
 
   constructor() {
-    this.jwtToken = "";
-    this.decodedToken = {};
+    console.log("instantiated");
   }
 
   setToken(token: string): void {
@@ -20,11 +21,12 @@ export class JwtService {
   }
 
   getToken(): string {
+    console.log(this.jwtToken);
     return "" + this.jwtToken;
   }
 
   getTokenWithPrefix(): string {
-    return "Bearer " + this.jwtToken;
+    return "Bearer " + this.getToken();
   }
 
   getUser() {
@@ -44,6 +46,7 @@ export class JwtService {
   }
 
   removeToken(): void {
+    console.log("token removed");
     this.jwtToken = null;
     this.decodedToken = null;
   }
@@ -59,3 +62,8 @@ export class JwtService {
   }
 
 }
+
+/*function providedIn(providedIn: any, arg1: string) {
+  throw new Error('Function not implemented.');
+}*/
+

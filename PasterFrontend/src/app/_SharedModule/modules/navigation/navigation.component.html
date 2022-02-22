@@ -20,7 +20,7 @@
       <div class="widget"
            *ngIf="!isOnRegistrationPage && !isOnLoginPage && showRegistrationWidget"
            [@loginRegisterWidgetAnimation]>
-        <app-register></app-register>
+        <app-register class="logregFormWidget"></app-register>
       </div>
     </li>
 
@@ -37,7 +37,7 @@
       <div class="widget"
            *ngIf="!isOnLoginPage && !isOnRegistrationPage && showLoginWidget"
            [@loginRegisterWidgetAnimation]>
-        <app-login></app-login>
+        <app-login class="logregFormWidget"></app-login>
       </div>
     </li>
 

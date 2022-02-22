@@ -30,24 +30,17 @@ export class NavigationComponent implements OnInit {
     private router: Router
   ) {}
 
-  /*@HostListener('click')
-  clickInside(event: any) {
-    console.log("event")
-    console.log(event);
-  }*/
-
   @HostListener('document:click', ['$event.target'])
   clickOutside(element: any) {
-    // todo prerobit bezpecnejsie, moze byt viac komponent rovnakeho typu
-    // pada, prerobit
-    if (!document.getElementsByTagName("app-login")[0].contains(element)
-        || !document.getElementsByTagName("app-register")[0].contains(element)) {
-      this.showLoginWidget = this.showRegistrationWidget = false;
+    let elements: any = document.getElementsByClassName("logregFormWidget");
+    if (elements.length > 0) {
+      if (!elements[0].contains(element)) {
+        this.showLoginWidget = this.showRegistrationWidget = false;
+      }
     }
   }
 
   ngOnInit(): void {
-    this.checkUserLogged();
     this.trackNavigationEvent(this.router);
   }
 
@@ -66,6 +59,7 @@ export class NavigationComponent implements OnInit {
   private trackNavigationEvent(router: Router): void {
     router.events.subscribe(events => {
       if (events instanceof NavigationStart) {
+        // je spustene aj pri prvom spusteni appky
         this.checkUserLogged();
         if (!this.loggedIn) {
           this.checkRegistration(events);
@@ -94,10 +88,6 @@ export class NavigationComponent implements OnInit {
     }
   }
 
-  // TODO implementovac close na click mimo
-
   //TODO zobrazovat ponuky podla toho ci je user logged alebo nie - refresh
-
-
 
 }

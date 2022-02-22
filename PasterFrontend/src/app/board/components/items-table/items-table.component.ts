@@ -1,8 +1,8 @@
-import { WsRefresh } from './../../../_Base/interfaces/base.dto.interface';
 // angular stuff
 import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { formatDate } from '@angular/common';
 // my imports
+import { WsRefresh } from './../../../_Base/interfaces/base.dto.interface';
 import { BoardService } from "../../services/board.service";
 import { BoardItem, BoardItemResponseDTO, BoardItems } from "../../dtos/board.dto.interface";
 import { DtoMapperUtil } from "../../../_CoreModule/utils/dto-mapper.util";
@@ -37,7 +37,7 @@ export class ItemsTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.refreshContent();
+    //this.refreshContent();
     this.listenForChangeTrigger();
   }
 
@@ -51,6 +51,7 @@ export class ItemsTableComponent implements OnInit {
   }
 
   private refreshContent(): void {
+    console.log("refreshContent");
     this.boardService.getItems().subscribe((data) => {
       if (this.boardItems.items === undefined) {
         // first run
