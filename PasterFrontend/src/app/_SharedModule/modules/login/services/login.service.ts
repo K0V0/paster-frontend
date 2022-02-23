@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from "rxjs";
+import { Observable, of } from "rxjs";
 import { LoginResponseDTO } from "../dtos/login.dto.interface";
 import { JwtService } from "../../../../_CoreModule/services/jwt.service";
 import { LocalStorageService } from "../../../../_CoreModule/services/local-storage.service";
@@ -45,11 +45,12 @@ export class LoginService {
       { name: user, pass: pass });
   }
 
-  doLogout(): void {
-    console.log("do logout called");
-    //TODO spravit logout
+  doLogout(): Observable<boolean> {
+    this.loggedIn = false;
     this.jwtService.removeToken();
     this.localStorageService.remove('jwtToken');
+    let logoutObservable: Observable<boolean> = of(true);
+    return logoutObservable;
   }
 
   saveJwtToken(jwtToken: string): void {

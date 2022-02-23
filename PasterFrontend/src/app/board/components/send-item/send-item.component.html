@@ -1,27 +1,29 @@
-<form class="login"
+<form class="board"
       [formGroup]="board"
       (ngSubmit)="sendText()">
 
   <div>
     <div class="wrap">
-      <input type="text"
-             formControlName="text"
-             placeholder="{{ 'board.page.text' | t }}">
+      <textarea type="text"
+                formControlName="text"
+                placeholder="{{ 'board.page.text' | t }}"></textarea>
+      <div class="textareaStatusbar">
+        <div></div>
+        <div class="text-right">
+          <button [disabled] = "!board.valid"> {{ 'board.page.submit' | t }} </button>
+        </div>
+      </div>
     </div>
-    <app-local-field-error fieldRef="text"
+    <!--<app-local-field-error fieldRef="text"
                            formGroupRef="board"
                            [parentComponentContext]="this">
     </app-local-field-error>
     <app-server-field-error fieldRef="text"
                             [errorsObject]="this.serverFieldsErrors">
-    </app-server-field-error>
+    </app-server-field-error>-->
   </div>
 
-  <div class="text-right">
-    <button [disabled] = "!board.valid"> {{ 'board.page.submit' | t }} </button>
-  </div>
-
-  <app-server-form-error [errorsObject]="this.serverFormError">
-  </app-server-form-error>
+  <!--<app-server-form-error [errorsObject]="this.serverFormError">
+  </app-server-form-error>-->
 
 </form>

@@ -27,12 +27,10 @@ html {
 }
 
 
-form.register, form.login {
+form.register, form.login, form.logout {
   display: table;
   background-color: $base-theme-color;
   padding: 0.5em;
-  width: 16em;
-  max-width: 16em;
 
   div {
     width: 100%;
@@ -47,4 +45,9 @@ form.register, form.login {
       }
     }
   }
+}
+
+form.login, form.register {
+  width: 16em;
+  max-width: 16em;
 }
