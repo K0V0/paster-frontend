@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../services/login.service';
 import {Router} from "@angular/router";
-
-// TODO komponent ktory bude hlaskou oznamujucov odhlasenie na domovskej stranke alebo
-//  redirect po jeho potvrdeni
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-logout',
@@ -12,20 +10,21 @@ import {Router} from "@angular/router";
 })
 export class LogoutComponent  implements OnInit {
 
+  logout: FormGroup;
+
   constructor(
     private loginService: LoginService,
     private router: Router
   ) {
+    this.logout = new FormGroup({});
   }
 
-  ngOnInit() {
-    // todo nevolat preboha
-    //this.doLogout();
-    //this.router.navigate(["/"]);
-  }
+  ngOnInit() {}
 
   doLogout(): void {
-    this.loginService.doLogout();
+    this.loginService.doLogout().subscribe(data => {
+      this.router.navigate(['/']);
+    });
   }
 
 }

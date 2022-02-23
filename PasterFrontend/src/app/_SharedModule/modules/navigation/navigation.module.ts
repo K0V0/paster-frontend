@@ -31,7 +31,7 @@ const routes: Routes = [
   },
   {
     path: "logout",
-    component: LogoutComponent
+    component: LogregComponent
   }
 ];
 

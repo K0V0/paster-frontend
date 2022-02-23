@@ -1,11 +1,17 @@
 <nav>
   <ul>
 
-    <!--<li> <a routerLink=''
+    <li>
+      <div>
+        <a routerLink=''
             [routerLinkActiveOptions]="{ exact: true }"
             routerLinkActive="active">
-      {{ 'nav.home' | t }}
-    </a> </li>-->
+          <span>
+            {{ 'nav.home' | t }}
+          </span>
+        </a>
+      </div>
+    </li>
 
     <li *ngIf="!loggedIn">
       <div>
@@ -56,10 +62,16 @@
         <a routerLink='logout'
             [routerLinkActiveOptions]="{ exact: true }"
             routerLinkActive="active">
-          {{ 'nav.logout' | t }}
+          <span (click)="toggleLogoutWidget($event)">
+            {{ 'nav.logout' | t }}
+          </span>
         </a>
       </div>
-      <app-logout></app-logout>
+      <div class="widget"
+           *ngIf="showLogoutWidget"
+           [@loginRegisterWidgetAnimation]>
+        <app-logout class="logregFormWidget"></app-logout>
+      </div>
     </li>
 
   </ul>

@@ -27,8 +27,6 @@ export class ItemsTableComponent implements OnInit {
     this.mapper = new DtoMapperUtil<BoardItemResponseDTO, BoardItem>();
     // TODO sformatovat cas a odskusat deal so zonami a zimnym/letnym
     // TODO lokalizacia formatu casu a datumu (America/EU verzia)
-    // TODO skontrolovat nastavenie backendu pri pouzivani casu - ci je zhodne s databazou,
-    //  pripadne prerobit backend len na timestamp
     this.mapper.setRules({
       status: null,
       timestamp: (x:number) => formatDate(new Date(x), 'dd. MM. yyyy', this.locale),
@@ -37,7 +35,8 @@ export class ItemsTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //this.refreshContent();
+    console.log("on init board")
+    this.refreshContent();
     this.listenForChangeTrigger();
   }
 

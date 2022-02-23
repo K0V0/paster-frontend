@@ -24,6 +24,7 @@ export class NavigationComponent implements OnInit {
   isOnLoginPage: boolean = false;
   showRegistrationWidget: boolean = false;
   showLoginWidget: boolean = false;
+  showLogoutWidget: boolean = false;
 
   constructor(
     private loginService: LoginService,
@@ -35,12 +36,13 @@ export class NavigationComponent implements OnInit {
     let elements: any = document.getElementsByClassName("logregFormWidget");
     if (elements.length > 0) {
       if (!elements[0].contains(element)) {
-        this.showLoginWidget = this.showRegistrationWidget = false;
+        this.showLoginWidget = this.showRegistrationWidget = this.showLogoutWidget = false;
       }
     }
   }
 
   ngOnInit(): void {
+    console.log("on init() navigation comp.");
     this.trackNavigationEvent(this.router);
   }
 
@@ -56,14 +58,21 @@ export class NavigationComponent implements OnInit {
     this.showRegistrationWidget = false;
   }
 
+  toggleLogoutWidget(event: Event): void {
+    this.stopEvent(event);
+    this.showLogoutWidget = !this.showLogoutWidget;
+  }
+
   private trackNavigationEvent(router: Router): void {
     router.events.subscribe(events => {
       if (events instanceof NavigationStart) {
+        console.log("navigationEvnetStrat");
         // je spustene aj pri prvom spusteni appky
         this.checkUserLogged();
         if (!this.loggedIn) {
           this.checkRegistration(events);
           this.checkLogin(events);
+          this.showLoginWidget = this.showRegistrationWidget = false;
         }
       }
     });
@@ -71,6 +80,7 @@ export class NavigationComponent implements OnInit {
 
   private checkUserLogged(): void {
     this.loggedIn = this.loginService.checkLogin();
+    console.log(this.loggedIn);
   }
 
   private checkRegistration(events: NavigationStart): void {
