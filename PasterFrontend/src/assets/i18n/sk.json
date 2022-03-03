@@ -64,6 +64,16 @@
 
     "logout": {
       "logout": "Odhlásiť sa"
+    },
+
+    "server": {
+      "user": {
+        "login": {
+          "credentials": {
+            "wrong": "Nesprávne používateľské meno alebo heslo."
+          }
+        }
+      }
     }
 
   }
