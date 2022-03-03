@@ -3,6 +3,6 @@
      class="errorPlaceholder"
      *ngIf="errorMessage.length > 0">
       <span #serverFormErrorText>
-        {{ errorMessage }}
+        {{ errorMessage | ts }}
       </span>
 </div>

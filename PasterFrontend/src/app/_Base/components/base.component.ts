@@ -25,7 +25,7 @@ export abstract class BaseComponent implements ServerError, ServerErrors {
 
   protected setFormServerError(error: any) {
     let e;
-    if ((e = error.error.message) != null) {
+    if ((e = error.error.code) != null) {
       // treba zabalit do objektu lebo primitivny typ nespusti ngOnChange() akciu ak sa
       // jeho obsah nezmeni, co kvoli logike aplikacie tuna chcem
       this.serverFormErrorMessage = { form: e };
@@ -35,6 +35,7 @@ export abstract class BaseComponent implements ServerError, ServerErrors {
   protected setFieldsServerErrors(errors: any) {
     let e;
     if ((e = errors.error.messages) != null) {
+      // todo vyparsocat vsetky error cody v array, rovno prelozit. ak nie tak vyplut default message zo serveru
       this.serverFieldsErrorMessages = e;
     }
   }

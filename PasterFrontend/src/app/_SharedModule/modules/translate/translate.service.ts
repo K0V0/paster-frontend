@@ -41,7 +41,7 @@ export class TranslateService {
     }
   }
 
-  translate(path: string) {
+  translate(path: string, defaultTranslation: string | undefined = undefined) {
     let parts: string[] = path.split('.');
     let tmp: any = this.vocab[0];
     parts.forEach(part => {
@@ -49,8 +49,16 @@ export class TranslateService {
         tmp = tmp[part];
       }
     });
-    if (tmp.constructor.name !== "String") { return path; }
+    if (tmp.constructor.name !== "String" && defaultTranslation === undefined) { return path; }
+    if (tmp.constructor.name !== "String" && defaultTranslation !== undefined && defaultTranslation.length > 0) {
+      return defaultTranslation;
+    }
     return tmp;
+  }
+
+  translateServer(path: string, defaultTranslation: string | undefined = undefined) {
+      path = "server." + path;
+      return this.translate(path, defaultTranslation);
   }
 
 }

@@ -1,3 +1,4 @@
+import { TranslationServerPipe } from './translate.server.pipe';
 import { TranslationPipe } from './translate.pipe';
 import { NgModule } from "@angular/core";
 import { TranslateService } from "./translate.service";
@@ -7,10 +8,12 @@ import { TranslateService } from "./translate.service";
 
   ],
   declarations: [
-    TranslationPipe
+    TranslationPipe,
+    TranslationServerPipe
   ],
   exports: [
-    TranslationPipe
+    TranslationPipe,
+    TranslationServerPipe
   ],
   providers: [
     TranslateService

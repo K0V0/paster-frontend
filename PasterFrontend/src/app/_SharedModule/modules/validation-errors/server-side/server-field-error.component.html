@@ -1,7 +1,7 @@
 <div @errorMessagesAnimation
      class="errorPlaceholder"
-     *ngIf="errorMessage.length > 0">
+     *ngFor="let em of errorMessage | keyvalue">
       <span #serverFieldErrorText>
-        {{ errorMessage }}
+          {{ em.key | ts: em.value }}
       </span>
 </div>
