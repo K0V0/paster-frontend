@@ -71,10 +71,88 @@
         "login": {
           "credentials": {
             "wrong": "Nesprávne používateľské meno alebo heslo."
+          },
+          "username": {
+            "required":"Nevyplnené meno používateľa",
+            "empty": "Nevyplnené meno používateľa",
+            "format": {
+              "whitespaces": {
+                "denied": "Použitie medzier kdekoľvek v mene používateľa nie je povolené"
+              }
+            }
+          },
+          "password": {
+            "required":"Nevyplnené heslo",
+            "empty": "Nevyplnené heslo"
+          }
+        },
+        "register": {
+          "username": {
+            "required":"Nevyplnené meno používateľa",
+            "empty": "Nevyplnené meno používateľa",
+            "format": {
+              "whitespaces": {
+                "denied": "Použitie medzier kdekoľvek v mene používateľa nie je povolené",
+                "around": {
+                  "denied":"Použitie medzier kdekoľvek v mene používateľa nie je povolené"
+                },
+                "beginning": {
+                  "denied":"Použitie medzier kdekoľvek v mene používateľa nie je povolené"
+                },
+                "end": {
+                  "denied":"Použitie medzier kdekoľvek v mene používateľa nie je povolené"
+                }
+              },
+              "characters": {
+                "denied": "Nepovolené znaky. Povolené sú písmená, číslice a \". - _\""
+              }
+            },
+            "taken": "Zvolené používateľské meno už je obsadené."
+          },
+          "password": {
+            "required": "Nevyplnené heslo",
+            "empty": "Nevyplnené heslo",
+            "format": {
+              "whitespaces": {
+                "around": {
+                  "denied": "Heslo nesmie začínať alebo končiť medzerou"
+                }
+              },
+              "length":{
+                "long": "Heslo je príliš dlhé, povolené rozmedzie je 8-32 znakov",
+                "short": "Heslo je príliš krátke, minimum je 8 znakov"
+              }
+            }
+          },
+          "passwordConfirmation": {
+            "required": "Nevyplnené kontrolné heslo",
+            "empty": "Nevyplnené kontrolné heslo",
+            "nomatch": "Heslá sa nezhodujú"
+          },
+          "email": {
+            "required": "Nezadaný e-mail",
+            "empty": "Nezadaný e-mail",
+            "format": {
+              "wrong": "Neplatná e-mailová adresa"
+            }
+          }
+        }
+      },
+      "item": {
+        "request": {
+          "missing": "Položka chýba",
+          "empty": "Položka chýba",
+          "maxsize": {
+            "reached": "Prekročená maximálna povolená velkosť"
+          }
+        },
+        "repsonse": {
+          "missing": "Položka nenájdená",
+          "access": {
+            "denied": "Nemáte právo na prístup k tejto položke"
           }
         }
       }
     }
-
   }
 }
