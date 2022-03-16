@@ -2,11 +2,16 @@
 
 nav {
   background-color: $base-theme-color;
+  color: $base-theme-text;
   text-align: right;
+  padding: 0.5em 0;
 
   ul {
+    font-size: 1.25em;
     display: inline-block;
     padding: 0 0.25em;
+    width: 100%;
+    z-index: 100;
 
     li {
       display: inline-block;
@@ -19,13 +24,34 @@ nav {
           position: absolute;
           top:100%;
           right: 0;
+          padding-top: 1.25em;
+          padding-right: 0.75em;
         }
       }
 
       a {
         font-size: 1.25em;
         text-decoration: none;
-        color: black;
+        color: #888;
+        //text-shadow: 0px 0px 2px #000;
+        background-color: #fff;
+        padding: 0.125em 0.5em;
+        border-radius: 5em;
+        transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+
+        &.widgetEnabled {
+          box-shadow: 0em 0em 0.25em white;
+          background-color: $base-theme-color-hover;
+          color: #fff;
+        }
+      }
+
+      &:hover {
+
+        a {
+          background-color: $base-theme-color-hover;
+          color: #fff;
+        }
       }
     }
   }

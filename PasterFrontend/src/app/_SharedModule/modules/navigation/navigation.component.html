@@ -17,7 +17,9 @@
       <div>
         <a routerLink='register'
             [routerLinkActiveOptions]="{ exact: true }"
-            routerLinkActive="active">
+            routerLinkActive="active"
+            [ngClass]="{'widgetEnabled': !isOnRegistrationPage && !isOnLoginPage && showRegistrationWidget }"
+            >
           <span (click)="toggleRegisterWidget($event)">
             {{ 'nav.register' | t }}
           </span>
@@ -34,7 +36,9 @@
       <div>
         <a routerLink='login'
             [routerLinkActiveOptions]="{ exact: true }"
-            routerLinkActive="active">
+            routerLinkActive="active"
+            [ngClass]="{'widgetEnabled': !isOnRegistrationPage && !isOnLoginPage && showLoginWidget }"
+            >
           <span (click)="toggleLoginWidget($event)">
             {{ 'nav.login' | t }}
           </span>
@@ -61,7 +65,9 @@
       <div>
         <a routerLink='logout'
             [routerLinkActiveOptions]="{ exact: true }"
-            routerLinkActive="active">
+            routerLinkActive="active"
+            [ngClass]="{'widgetEnabled': showLogoutWidget }"
+            >
           <span (click)="toggleLogoutWidget($event)">
             {{ 'nav.logout' | t }}
           </span>
