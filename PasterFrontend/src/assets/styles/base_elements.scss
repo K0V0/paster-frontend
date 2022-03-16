@@ -20,6 +20,7 @@ input, button {
   box-shadow: 0.125em 0.125em 0.125em $inputs-shadow;
 
   &:focus {
+    background-color: $inputs-background-active;
     border-color: $inputs-border-focus;
   }
 
