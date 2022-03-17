@@ -16,6 +16,7 @@ nav {
     li {
       display: inline-block;
       padding: 0.25em;
+      margin: 0.25em 0em;
       position: relative;
 
       div {
@@ -32,23 +33,11 @@ nav {
       a {
         font-size: 1.25em;
         text-decoration: none;
-        color: #888;
         //text-shadow: 0px 0px 2px #000;
-        background-color: #fff;
         padding: 0.125em 0.5em;
-        border-radius: 5em;
-        transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
 
         &.widgetEnabled {
           box-shadow: 0em 0em 0.25em white;
-          background-color: $base-theme-color-hover;
-          color: #fff;
-        }
-      }
-
-      &:hover {
-
-        a {
           background-color: $base-theme-color-hover;
           color: #fff;
         }

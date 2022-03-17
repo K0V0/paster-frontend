@@ -9,21 +9,34 @@ form {
   div {
 
     div.wrap {
-      margin: 0.25em;
+      margin-bottom: 0.25em;
 
       textarea {
         background-color: $base-theme-color;
+        border-top-left-radius: 0.25em;
+        border-top-right-radius: 0.25em;
         width: 100%;
         max-width: 100%;
         padding: 0.5em;
         display: block;
+        resize: vertical;
       }
 
       div.textareaStatusbar {
         background-color: $base-theme-color;
+        border-bottom-right-radius: 0.25em;
+        border-bottom-left-radius: 0.25em;
 
         div {
 
+          &.text-right {
+
+            button {
+              margin-bottom: 0.5em;
+              margin-right: 0.5em;
+              font-weight: bold;
+            }
+          }
         }
       }
     }

@@ -6,7 +6,10 @@
         <span>{{ item.timestamp }}</span>
       </div>
       <div class="itemButtonsSection">
-        <button (click)="deleteItem(item.id)"> {{ "board.page.itemsTable.delete" | t }} </button>
+        <button (click)="deleteItem(item.id)"
+                class="buttonComponent deleteItem">
+          {{ "board.page.itemsTable.delete" | t }}
+        </button>
       </div>
       <div class="itemMoreSection"></div>
     </div>

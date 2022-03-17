@@ -46,12 +46,57 @@ button {
   transition: $transition-fast ease-in-out;
 
   &:enabled {
+
     &:hover, &:focus {
       background-color: $button-background-hover;
     }
+
     &:active {
       box-shadow: 0em 0em 0.125em $inputs-shadow;
       transform: translate(0.125em, 0.125em);
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+a.buttonComponent, button.buttonComponent {
+  color: #888;
+  background-color: #fff;
+  border-radius: 5em;
+  transition:
+    background-color 0.25s ease-in-out,
+    color 0.25s ease-in-out,
+    box-shadow 0.25s ease-in-out,
+    transform 0.125s ease-in-out;
+  box-shadow: 0em 0em 0.125em $inputs-shadow;
+  //transform: translate(0.125em, 0.125em);
+
+  &:hover {
+    background-color: $base-theme-color-hover;
+    color: #fff;
+  }
+
+  &:disabled {
+    color: #888;
+    background-color: #fff;
+    cursor: not-allowed;
+  }
+
+  &:focus {
+    box-shadow: 0em 0em 0.25em white;
+    background-color: $base-theme-color-hover;
+    color: #fff;
+    border-color: transparent;
+  }
+
+  &:enabled {
+
+    &:hover, &:focus {
+      background-color: $base-theme-color-hover;
+      color: #fff;
     }
   }
 }
