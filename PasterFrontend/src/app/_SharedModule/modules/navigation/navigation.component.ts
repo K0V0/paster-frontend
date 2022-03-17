@@ -11,6 +11,8 @@ zobrazeny full page formular.
 V opacnom pripade, ked sa nachadza na domovskej stranke a chce sa prihlasit,
 ponuknut mu widget.
 */
+
+// TODO pri zobrazeni nejakeho widgetu zosvetlit/zblurovat stranku
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
