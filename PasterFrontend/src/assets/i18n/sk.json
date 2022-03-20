@@ -57,7 +57,9 @@
         "text": "Text...",
         "submit": "Odoslať",
         "itemsTable": {
-          "delete": "X"
+          "delete": "X",
+          "more": "Zobraziť celý text...",
+          "hideFullText": "Zobraziť len náhľad"
         }
       }
     },

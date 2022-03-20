@@ -10,6 +10,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ClipboardModule } from "ngx-clipboard";
 
 @NgModule({
   exports: [
@@ -23,7 +24,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ClipboardModule
   ]
 })
 
