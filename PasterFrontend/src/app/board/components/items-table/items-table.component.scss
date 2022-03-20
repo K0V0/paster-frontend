@@ -4,6 +4,7 @@ section#boardItems {
 
   & > div {
     overflow: hidden;
+    cursor: pointer;
     //height: 0;
 
     & > div {
@@ -13,6 +14,7 @@ section#boardItems {
       background-color: $base-theme-color;
       position: relative;
       min-height: 3em;
+      transition: background-color 0.25s ease-in-out;
 
       div.itemButtonsSection {
         position: absolute;
@@ -31,13 +33,48 @@ section#boardItems {
               background-color: $inputs-border-invalid;
             }
           }
+
+          &.hideFullText {
+
+            &:hover {
+              background-color: $button-background-hover;
+              color: black;
+            }
+          }
+        }
+
+        span {
+          display: inline-block;
+          background-color: $base-theme-background;
+          line-height: 2em;
+          border-radius: 3em;
+          padding: 0 0.25em;
+          margin: 0 0.25em;
         }
       }
 
       &:hover {
+        background-color: $base-theme-color-hover;
 
         div.itemButtonsSection {
           opacity: 1;
+        }
+      }
+
+      div.itemMoreSection {
+        margin-top: 0.125em;
+        padding-top: 0.125em;
+        text-align: center;
+
+        span {
+          margin-top: 0.25em;
+          display: block;
+          font-weight: bold;
+          cursor:pointer;
+
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
     }

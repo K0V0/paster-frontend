@@ -20,4 +20,5 @@ export interface BoardItem {
   id: number;
   preview: string;
   timestamp: string;
+  text: string;
 }

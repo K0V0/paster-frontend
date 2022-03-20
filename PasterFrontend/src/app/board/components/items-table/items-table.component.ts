@@ -1,8 +1,10 @@
 // angular stuff
 import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { formatDate } from '@angular/common';
+import { ClipboardService } from 'ngx-clipboard';
 // my imports
 import { WsRefresh } from './../../../_Base/interfaces/base.dto.interface';
+import { IHash } from './../../../_Base/interfaces/base.dto.interface';
 import { BoardService } from "../../services/board.service";
 import { BoardItem, BoardItemResponseDTO, BoardItems } from "../../dtos/board.dto.interface";
 import { DtoMapperUtil } from "../../../_CoreModule/utils/dto-mapper.util";
@@ -18,10 +20,12 @@ import { TableItemsAnimations } from './items-table-animations';
 export class ItemsTableComponent implements OnInit {
   mapper: DtoMapperUtil<BoardItemResponseDTO, BoardItem>;
   boardItems: BoardItems;
+  boardItemsExtraTextVisibility: IHash;
 
   constructor(
     private boardService: BoardService,
     private websocketService: WebsocketService,
+    private clipboardService: ClipboardService,
     @Inject(LOCALE_ID) private locale: string
   ) {
     this.mapper = new DtoMapperUtil<BoardItemResponseDTO, BoardItem>();
@@ -32,6 +36,7 @@ export class ItemsTableComponent implements OnInit {
       timestamp: (x:number) => formatDate(new Date(x), 'dd. MM. yyyy', this.locale),
     })
     this.boardItems = <BoardItems>{};
+    this.boardItemsExtraTextVisibility = {};
   }
 
   ngOnInit(): void {
@@ -49,12 +54,26 @@ export class ItemsTableComponent implements OnInit {
     });
   }
 
+  copyToClipboard(text: string): void {
+    console.log("copied to clipboard");
+    this.clipboardService.copyFromContent(text);
+  }
+
+  loadWholeText(id: number): void {
+    this.boardItemsExtraTextVisibility[id] = !this.boardItemsExtraTextVisibility[id];
+    console.log("show whole text");
+  }
+
   private refreshContent(): void {
     console.log("refreshContent");
     this.boardService.getItems().subscribe((data) => {
       if (this.boardItems.items === undefined) {
         // first run
+        let totok = this;
         this.boardItems.items = data.items.map(item => this.mapper.remap(item));
+        this.boardItems.items.forEach(function(item) {
+          totok.boardItemsExtraTextVisibility[item.id] = false;
+        });
       } else {
         // delete case
         let newItemsIds: number[] = data.items.map(d => d.id);

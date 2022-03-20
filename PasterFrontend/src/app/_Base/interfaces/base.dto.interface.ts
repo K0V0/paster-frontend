@@ -1,7 +1,7 @@
 import { JsonObject } from "@angular/compiler-cli/ngcc/src/packages/entry_point";
 
 export interface IHash {
-  [details: string] : string;
+  [details: string] : any;
 }
 
 export interface Response {

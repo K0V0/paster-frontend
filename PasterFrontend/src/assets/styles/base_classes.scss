@@ -5,3 +5,14 @@
 .text-left {
   text-align: left;
 }
+
+.separatingLine {
+  &:before {
+    content: " ";
+    display: block;
+    background-color: white;
+    background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,255,255,1), rgba(255,0,0,0));
+    height: 0.125em;
+    width: 100%;
+  }
+}
