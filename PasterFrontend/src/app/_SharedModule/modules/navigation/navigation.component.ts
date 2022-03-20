@@ -82,6 +82,8 @@ export class NavigationComponent implements OnInit {
 
   private checkUserLogged(): void {
     this.loggedIn = this.loginService.checkLogin();
+    // logout widget stays visible when logged back in immediately after logout
+    this.showLogoutWidget = false;
     console.log(this.loggedIn);
   }
 
