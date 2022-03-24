@@ -19,19 +19,14 @@ export class LoginService {
 
   checkLogin(): boolean {
     if (this.loggedIn) {
-      console.log("checkLogin() user already logged");
       return true;
     } else {
-      console.log("checkLogin() jwt sequence started");
       this.loggedIn = this.jwtService.isValid();
       if (!this.loggedIn) {
-        console.log("checkLogin() user not logged yet");
         let jwtToken = this.localStorageService.get('jwtToken');
         if (jwtToken != null) {
-          console.log("checkLogin() token obtained from local storage");
           this.jwtService.setToken(jwtToken);
           this.loggedIn = this.jwtService.isValid();
-          console.log("checkLogin() token from storage is: " + this.loggedIn);
         }
       }
       return this.loggedIn;
