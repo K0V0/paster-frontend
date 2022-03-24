@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "http://0.0.0.0:4004",
+    "target": "http://kovo.space:4004",
     "secure": false
   }
 }
