@@ -13,7 +13,7 @@ export class WebsocketService/*<RQdto, RSdto>*/ {
   private readonly webSocket: Observable<WsRefresh>;
 
   public constructor(private jwtService: JwtService) {
-    this.webSocket = webSocket(environment.backendUrl + "?jwtToken=" + jwtService.getToken());
+    this.webSocket = webSocket(environment.websocketUrl + "?jwtToken=" + jwtService.getToken());
   }
 
   public getWebSocket(): Observable<WsRefresh> {
