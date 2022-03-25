@@ -8,7 +8,6 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class RequestService/*<RQdto, RSdto>*/ {
-  private static readonly BASE_URL = "http://0.0.0.0:4004/";
 
   public constructor(private http: HttpClient) {}
 
