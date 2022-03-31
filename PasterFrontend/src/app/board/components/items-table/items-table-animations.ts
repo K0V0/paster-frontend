@@ -15,6 +15,19 @@ export const TableItemsAnimations = {
         animate('0.25s linear', style({ height:0, maxHeight:0 }))
       ])
     ]
+  ),
+
+  hideFullTextButtonAppendAnimation: trigger(
+    'hideFullTextButtonAppendAnimation',
+    [
+      transition(':enter', [
+        style({ opacity:0 }),
+        animate('0.25s linear', style({ opacity: 1 }))
+      ]),
+      transition(':leave', [
+        animate('0.25s linear', style({ opacity:0 }))
+      ])
+    ]
   )
 
 }

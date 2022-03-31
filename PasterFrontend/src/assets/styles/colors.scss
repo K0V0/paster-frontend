@@ -1,31 +1,40 @@
 
-$base-theme-background: #ebf6ff;
+$white: #fff;
+$base-theme-background-color: #ebf6ff;
 $base-theme-color: #b0ddff;
-$base-theme-color-hover: #90cfff;
-$base-theme-color-2: #eee;
-//$base-theme-color-hover: #fff;
-$base-theme-text: #222;
-$base-shadow: #000;
-
-$nav-text-coor: #fff;
+$base-theme-hover-color: #7cc6fe;
+$base-theme-shadow-color: #000;
+$base-theme-font-color: #222;
+$base-theme-hover-font-color: #000;
+$base-theme-danger-background-color: #D00;
 
 $transition-fast: 0.125s;
 $transition-med: 0.25s;
 
-$inputs-background: #f8f8f8;
-$inputs-background-active: #fff;
+// top menu, footer
+$menubars-background-color: $base-theme-color;
+$menubars-font-color: $base-theme-font-color;
+$menubars-shadow-color: $base-theme-shadow-color;
 
-$inputs-text: #000;
+// login, register, logout forms
+$widgets-background-color: $base-theme-color;
+$widgets-shadow-color: $base-theme-shadow-color;
+$widgets-error-background-color: transparent;
+$widgets-error-font-color: $base-theme-hover-font-color;
+$widgets-error-badge-background-color: $base-theme-danger-background-color;
+$widgets-error-badge-font-color: $white;
+$widgets-error-bagge-border-color: $base-theme-background-color;
+
+// input fields, buttons
+$inputs-background: $base-theme-background-color;
+$inputs-background-active: $white;
+$inputs-text: $base-theme-font-color;
 $inputs-text-disabled: #aaa;
-
-$inputs-border-focus: #000;
-$inputs-border-invalid: #D00;
-
+$inputs-border-focus: $base-theme-shadow-color;
+$inputs-border-invalid: $base-theme-danger-background-color;
 $inputs-shadow: #888;
 
-$button-background-hover: #ddd;
+// buttons
+$button-background-hover: $white;
 
-$error-message-text: #000000;
-$error-message-background: transparent;
 
-$item-odd-background: #e9faff;

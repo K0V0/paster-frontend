@@ -20,8 +20,23 @@ section#boardItems {
         position: absolute;
         top: 0.3125em;
         right: 0.3125em;
+        left: 0.3125em;
         opacity: 0;
         transition: opacity 0.25s ease-in-out;
+
+        div {
+          display: inline-block;
+          line-height: 2.25em;
+
+          &.left {
+            float: left;
+          }
+
+          &.right {
+            float:right;
+            opacity: 0.9;
+          }
+        }
 
         button {
           min-width: 2em;
@@ -31,6 +46,7 @@ section#boardItems {
 
             &:hover {
               background-color: $inputs-border-invalid;
+              color: white;
             }
           }
 
@@ -44,17 +60,35 @@ section#boardItems {
         }
 
         span {
+          position: relative;
           display: inline-block;
-          background-color: $base-theme-background;
-          line-height: 2em;
+          vertical-align: middle;
+          color: black;
+          font-weight: bold;
+          line-height: 1.5em;
           border-radius: 3em;
-          padding: 0 0.25em;
+          padding: 0 0.5em;
           margin: 0 0.25em;
+          overflow: hidden;
+          z-index: 2;
+
+          &::after {
+            display: block;
+            z-index: -1;
+            content: '';
+            position: absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            opacity: 0.9;
+            background-color: $base-theme-background-color;
+          }
         }
       }
 
       &:hover {
-        background-color: $base-theme-color-hover;
+        background-color: $base-theme-hover-color;
 
         div.itemButtonsSection {
           opacity: 1;
