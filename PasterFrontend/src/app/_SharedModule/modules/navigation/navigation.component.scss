@@ -1,8 +1,8 @@
 @import 'src/assets/styles/colors';
 
 nav {
-  background-color: $base-theme-color;
-  color: $base-theme-text;
+  background-color: $menubars-background-color;
+  color: $menubars-font-color;
   text-align: right;
   padding: 0.5em 0;
 
@@ -38,7 +38,7 @@ nav {
 
         &.widgetEnabled {
           box-shadow: 0em 0em 0.25em white;
-          background-color: $base-theme-color-hover;
+          background-color: red;
           color: #fff;
         }
       }

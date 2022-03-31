@@ -4,8 +4,10 @@
 
 export const environment = {
   production: false,
-  backendUrl: "http://0.0.0.0:4004",
-  websocketUrl: "ws://0.0.0.0:4004/websocket",
+  //backendUrl: "http://0.0.0.0:4004",
+  //websocketUrl: "ws://0.0.0.0:4004/websocket",
+  backendUrl: "http://kovo.space:4004",
+  websocketUrl: "ws://kovo.space:4004/websocket",
   apiVersion: 1,
   excludedJwtInterceptorEndpoints: [
     "/user/login",

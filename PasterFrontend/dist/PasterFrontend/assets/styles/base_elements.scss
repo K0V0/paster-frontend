@@ -75,7 +75,7 @@ a.buttonComponent, button.buttonComponent, span.buttonComponent {
   //transform: translate(0.125em, 0.125em);
 
   &:hover {
-    background-color: $base-theme-color-hover;
+    background-color: red;
     color: #fff;
   }
 
@@ -87,7 +87,7 @@ a.buttonComponent, button.buttonComponent, span.buttonComponent {
 
   &:focus {
     box-shadow: 0em 0em 0.25em white;
-    background-color: $base-theme-color-hover;
+    background-color: red;
     color: #fff;
     border-color: transparent;
   }
@@ -95,7 +95,7 @@ a.buttonComponent, button.buttonComponent, span.buttonComponent {
   &:enabled {
 
     &:hover, &:focus {
-      background-color: $base-theme-color-hover;
+      background-color: red;
       color: #fff;
     }
   }
