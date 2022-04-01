@@ -15,7 +15,7 @@ import { TableItemsAnimations } from './items-table-animations';
   selector: 'app-board-items-list',
   templateUrl: './items-table.component.html',
   styleUrls: ['./items-table.component.scss'],
-  animations: [ TableItemsAnimations.tableItemAppendAnimation ]
+  animations: [ TableItemsAnimations.tableItemAppendAnimation, TableItemsAnimations.hideFullTextButtonAppendAnimation ]
 })
 export class ItemsTableComponent implements OnInit {
   mapper: DtoMapperUtil<BoardItemResponseDTO, BoardItem>;

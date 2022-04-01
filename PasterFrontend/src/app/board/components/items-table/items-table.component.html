@@ -9,20 +9,24 @@
 
       <div class="itemButtonsSection">
 
-        <button *ngIf="boardItemsExtraTextVisibility[item.id]"
-                (click)="loadWholeText(item.id); $event.stopPropagation()"
-                class="buttonComponent hideFullText">
-          {{ "board.page.itemsTable.hideFullText" | t }}
-        </button>
+        <div class="left">
+          <span>
+            {{ item.timestamp }}
+          </span>
+        </div>
 
-        <span>
-          {{ item.timestamp }}
-        </span>
-
-        <button (click)="deleteItem(item.id); $event.stopPropagation()"
-                class="buttonComponent deleteItem">
-          {{ "board.page.itemsTable.delete" | t }}
-        </button>
+        <div class="right">
+          <button [@hideFullTextButtonAppendAnimation]
+                  *ngIf="boardItemsExtraTextVisibility[item.id]"
+                  (click)="loadWholeText(item.id); $event.stopPropagation()"
+                  class="hideFullText">
+            {{ "board.page.itemsTable.hideFullText" | t }}
+          </button>
+          <button (click)="deleteItem(item.id); $event.stopPropagation()"
+                  class="deleteItem">
+            {{ "board.page.itemsTable.delete" | t }}
+          </button>
+        </div>
 
       </div>
 
