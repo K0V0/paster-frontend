@@ -1,7 +1,7 @@
+import { WidgetsService } from './../../_SharedModule/modules/navigation/widgets.service';
 import { LogregAnimations } from './logreg.animations';
 import { Component, OnInit } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
-import { Constants } from 'src/app/_Base/config/constants';
 import { Location } from '@angular/common';
 
 @Component({
@@ -12,11 +12,13 @@ import { Location } from '@angular/common';
 })
 export class LogregComponent implements OnInit {
 
+  // TODO zrefaktorovat tento shit
   isOnLoginPage: boolean = false;
   isOnRegisterPage: boolean = false;
 
   constructor(
     private location: Location,
+    private widgetService: WidgetsService,
     private router: Router
   ) {}
 
@@ -34,8 +36,10 @@ export class LogregComponent implements OnInit {
   }
 
   private checkPage(url: string) {
-    this.isOnRegisterPage = url == Constants.registerUrl;
-    this.isOnLoginPage = url == Constants.loginUrl;
+    // TODO zrefaktorovat tento shit
+    console.log(url);
+    this.isOnRegisterPage = this.widgetService.isWidgetUrl(url);
+    this.isOnLoginPage = this.widgetService.isWidgetUrl(url);
   }
 
 }

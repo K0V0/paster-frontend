@@ -3,14 +3,27 @@
 
     <li>
       <div>
-        <a  *ngIf="!loggedIn"
+        <a
             routerLink=''
             [routerLinkActiveOptions]="{ exact: true }"
             routerLinkActive="active"
-            class="buttonComponent">
-          <span>
+            [ngClass]="{'widgetEnabled': widgetStates.get('/') }"
+        >
+          <span class="buttonComponent">
             {{ 'nav.home' | t }}
           </span>
+        </a>
+      </div>
+    </li>
+
+    <li *ngIf="loggedIn">
+      <div>
+        <a routerLink='board'
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active"
+            [ngClass]="{'widgetEnabled': widgetStates.get('/board') }"
+        >
+          <span class="buttonComponent"> {{ 'nav.board' | t }} </span>
         </a>
       </div>
     </li>
@@ -20,18 +33,14 @@
         <a routerLink='register'
             [routerLinkActiveOptions]="{ exact: true }"
             routerLinkActive="active"
-            [ngClass]="{'widgetEnabled': !isOnRegistrationPage && !isOnLoginPage && showRegistrationWidget }"
-            class="buttonComponent"
-            >
-          <span (click)="toggleRegisterWidget($event)">
+            [ngClass]="{'widgetEnabled': widgetStates.get('/register') }"
+        >
+          <span (click)="toggleWidget('/register', $event)"
+                class="buttonComponent"
+          >
             {{ 'nav.register' | t }}
           </span>
         </a>
-      </div>
-      <div class="widget"
-           *ngIf="!isOnRegistrationPage && !isOnLoginPage && showRegistrationWidget"
-           [@loginRegisterWidgetAnimation]>
-        <app-register class="logregFormWidget"></app-register>
       </div>
     </li>
 
@@ -40,51 +49,50 @@
         <a routerLink='login'
             [routerLinkActiveOptions]="{ exact: true }"
             routerLinkActive="active"
-            [ngClass]="{'widgetEnabled': !isOnRegistrationPage && !isOnLoginPage && showLoginWidget }"
-            class="buttonComponent"
-            >
-          <span (click)="toggleLoginWidget($event)">
+            [ngClass]="{'widgetEnabled': widgetStates.get('/login') }"
+        >
+          <span (click)="toggleWidget('/login', $event)"
+                class="buttonComponent"
+          >
             {{ 'nav.login' | t }}
           </span>
         </a>
       </div>
-      <div class="widget"
-           *ngIf="!isOnLoginPage && !isOnRegistrationPage && showLoginWidget"
-           [@loginRegisterWidgetAnimation]>
-        <app-login class="logregFormWidget"></app-login>
-      </div>
     </li>
-
-    <!--<li *ngIf="loggedIn">
-      <div>
-        <a routerLink='board'
-            [routerLinkActiveOptions]="{ exact: true }"
-            routerLinkActive="active"
-            class="buttonComponent">
-          {{ 'nav.board' | t }}
-        </a>
-      </div>
-    </li>-->
 
     <li *ngIf="loggedIn">
       <div>
         <a routerLink='logout'
             [routerLinkActiveOptions]="{ exact: true }"
             routerLinkActive="active"
-            [ngClass]="{'widgetEnabled': showLogoutWidget }"
-            class="buttonComponent"
-            >
-          <span (click)="toggleLogoutWidget($event)">
+            [ngClass]="{'widgetEnabled': widgetStates.get('/logout') }"
+        >
+          <span (click)="toggleWidget('/logout', $event)"
+                class="buttonComponent"
+          >
             {{ 'nav.logout' | t }}
           </span>
         </a>
-      </div>
-      <div class="widget"
-           *ngIf="showLogoutWidget"
-           [@loginRegisterWidgetAnimation]>
-        <app-logout class="logregFormWidget"></app-logout>
       </div>
     </li>
 
   </ul>
 </nav>
+
+<div class="widget"
+      *ngIf="widgetStates.get('/register')"
+      [@loginRegisterWidgetAnimation]>
+  <app-register class="logregFormWidget"></app-register>
+</div>
+
+<div class="widget"
+      *ngIf="widgetStates.get('/login')"
+      [@loginRegisterWidgetAnimation]>
+  <app-login class="logregFormWidget"></app-login>
+</div>
+
+<div class="widget"
+      *ngIf="widgetStates.get('/logout')"
+      [@loginRegisterWidgetAnimation]>
+  <app-logout class="logregFormWidget"></app-logout>
+</div>
