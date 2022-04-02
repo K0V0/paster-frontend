@@ -22,9 +22,16 @@ html {
       }
 
       main {
+        opacity: 1;
         flex: 1 0 auto;
         padding:0.75em;
         background-color: $base-theme-background-color;
+        transition: opacity $transition-med ease-in-out;
+
+        &.disabled {
+          opacity: 0.25;
+          pointer-events: none;
+        }
       }
     }
   }
