@@ -1,5 +1,5 @@
+import { WidgetsService } from './widgets.service';
 import { NavigationAnimations } from './navigation.animations';
-import { Constants } from './../../../_Base/config/constants';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 import { LoginService } from "../login/services/login.service";
@@ -21,87 +21,46 @@ ponuknut mu widget.
 })
 export class NavigationComponent implements OnInit {
   title = 'Main navigation';
-  loggedIn: boolean = false;
-  isOnRegistrationPage: boolean = false;
-  isOnLoginPage: boolean = false;
-  showRegistrationWidget: boolean = false;
-  showLoginWidget: boolean = false;
-  showLogoutWidget: boolean = false;
+  loggedIn: boolean;
+  widgetStates: Map<string, boolean>;
 
   constructor(
     private loginService: LoginService,
+    private widgetService: WidgetsService,
     private router: Router
-  ) {}
+  ) {
+    this.loggedIn = false;
+    this.widgetStates = new Map;
+  }
 
   @HostListener('document:click', ['$event.target'])
   clickOutside(element: any) {
     let elements: any = document.getElementsByClassName("logregFormWidget");
     if (elements.length > 0) {
       if (!elements[0].contains(element)) {
-        this.showLoginWidget = this.showRegistrationWidget = this.showLogoutWidget = false;
+        this.widgetService.clearAll();
       }
     }
   }
 
   ngOnInit(): void {
-    console.log("on init() navigation comp.");
     this.trackNavigationEvent(this.router);
   }
 
-  toggleRegisterWidget(event: Event): void {
-    this.stopEvent(event);
-    this.showRegistrationWidget = !this.showRegistrationWidget;
-    this.showLoginWidget = false;
-  }
-
-  toggleLoginWidget(event: Event): void {
-    this.stopEvent(event);
-    this.showLoginWidget = !this.showLoginWidget;
-    this.showRegistrationWidget = false;
-  }
-
-  toggleLogoutWidget(event: Event): void {
-    this.stopEvent(event);
-    this.showLogoutWidget = !this.showLogoutWidget;
+  toggleWidget(url: string, event: Event): void {
+    event.preventDefault();
+    event.stopPropagation();
+    this.widgetService.toggleState(url);
   }
 
   private trackNavigationEvent(router: Router): void {
     router.events.subscribe(events => {
       if (events instanceof NavigationStart) {
-        console.log("navigationEvnetStrat");
         // je spustene aj pri prvom spusteni appky
-        this.checkUserLogged();
-        if (!this.loggedIn) {
-          this.checkRegistration(events);
-          this.checkLogin(events);
-          this.showLoginWidget = this.showRegistrationWidget = false;
-        }
+        this.loggedIn = this.loginService.checkLogin();
+        this.widgetStates = this.widgetService.getStates();
       }
     });
   }
-
-  private checkUserLogged(): void {
-    this.loggedIn = this.loginService.checkLogin();
-    // logout widget stays visible when logged back in immediately after logout
-    this.showLogoutWidget = false;
-    console.log(this.loggedIn);
-  }
-
-  private checkRegistration(events: NavigationStart): void {
-    this.isOnRegistrationPage = events.url == Constants.registerUrl;
-  }
-
-  private checkLogin(events: NavigationStart): void {
-    this.isOnLoginPage = events.url == Constants.loginUrl;
-  }
-
-  private stopEvent(event: Event) {
-    if (!this.isOnLoginPage && !this.isOnRegistrationPage) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-  }
-
-  //TODO zobrazovat ponuky podla toho ci je user logged alebo nie - refresh
 
 }

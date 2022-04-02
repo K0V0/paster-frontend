@@ -16,31 +16,30 @@ nav {
       display: inline-block;
       position: relative;
 
-      div {
-
-        &.widget {
-          position: absolute;
-          top:100%;
-          right: 0;
-          padding-top: 1.25em;
-          padding-right: 0.75em;
-        }
-      }
-
       a {
         font-size: 1em;
         text-decoration: none;
         padding: 0;
 
-        &.widgetEnabled {
-          background-color: $button-background-hover;
-        }
-
         span {
           display: inline-block;
           padding: 0.125em 0.25em;
         }
+
+        &.widgetEnabled/*, &.active*/ {
+
+          span {
+            background-color: $button-background-hover;
+            border-color: $inputs-border-focus;
+          }
+        }
       }
     }
   }
+}
+
+div.widget {
+  position: fixed;
+  padding: 1em;
+  right:0;
 }
