@@ -1,3 +1,4 @@
+import { WidgetsService } from './_SharedModule/modules/navigation/widgets.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { LoginService } from './_SharedModule/modules/login/services/login.service';
 import { TranslateService } from "./_SharedModule/modules/translate/translate.service";
@@ -9,16 +10,21 @@ import { TranslateService } from "./_SharedModule/modules/translate/translate.se
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'PasterFrontend';
+  pageFaded = false;
 
   constructor(
     private translateService: TranslateService,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private widgetService: WidgetsService
   ) {}
 
   // TODO is equivalent of jquery document.ready ?
   ngOnInit() {
     this.translateService.checkLang();
     this.loginService.checkLogin();
+    this.widgetService.getStateObservable().subscribe(fadeBackground => {
+      this.pageFaded = fadeBackground;
+    });
   }
 
   ngOnDestroy(): void {

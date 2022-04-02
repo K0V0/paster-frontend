@@ -2,7 +2,7 @@
   <app-navigation></app-navigation>
 </header>
 
-<main>
+<main [ngClass]="{'disabled': pageFaded }">
   <router-outlet></router-outlet>
 </main>
 
