@@ -1,20 +1,21 @@
-import { Observable, Subject } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WidgetsService {
 
-  // TODO zablokovat zobrazenie widgetu ak niektora z adries
   private static readonly widgetsUrls: string[] = ["/register", "/login", "/logout"];
 
   private widgetStates: Map<string, boolean>;
   private openedState: Subject<boolean>;
+  private blocked: boolean;
 
   constructor() {
     this.widgetStates = new Map;
     this.openedState = new Subject();
+    this.blocked = false;
   }
 
   public getStates(): Map<string, boolean> {
@@ -38,6 +39,14 @@ export class WidgetsService {
 
   public isWidgetUrl(url: string): boolean {
     return WidgetsService.widgetsUrls.includes(url);
+  }
+
+  public setBlocked(bool: boolean): void {
+    this.blocked = bool;
+  }
+
+  public isBlocked(): boolean {
+    return this.blocked;
   }
 
   private emitStateEvent(): void {

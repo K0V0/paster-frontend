@@ -9,6 +9,13 @@
       "logout": "Užívateľ"
     },
 
+    "home": {
+      "banner1": {
+        "heading1": "Kopírovanie medzi zariadeniami ?",
+        "slogan1": "...ani klik naviac !"
+      }
+    },
+
     "login": {
       "page": {
         "user": "Meno užívatela...",
