@@ -1,0 +1,15 @@
+@import 'src/assets/styles/colors';
+
+/*@keyframes blinker {
+  from { opacity: 0; }
+  50% { opacity:1; }
+  to { opacity: 0; }
+}*/
+
+article {
+  padding: 2em 2em;
+}
+
+article.downloads {
+  background-color: $base-theme-background-color-2;
+}

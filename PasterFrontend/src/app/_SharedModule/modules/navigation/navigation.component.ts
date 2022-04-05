@@ -1,8 +1,8 @@
-import { WidgetsService } from './widgets.service';
-import { NavigationAnimations } from './navigation.animations';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 import { LoginService } from "../login/services/login.service";
+import { NavigationAnimations } from './navigation.animations';
+import { WidgetsService } from './widgets.service';
 
 /**
 logika tohoto componentu je nezobrazovat login/register dropdown widget
@@ -12,7 +12,6 @@ V opacnom pripade, ked sa nachadza na domovskej stranke a chce sa prihlasit,
 ponuknut mu widget.
 */
 
-// TODO pri zobrazeni nejakeho widgetu zosvetlit/zblurovat stranku
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
@@ -48,15 +47,18 @@ export class NavigationComponent implements OnInit {
   }
 
   toggleWidget(url: string, event: Event): void {
-    event.preventDefault();
-    event.stopPropagation();
-    this.widgetService.toggleState(url);
+    if (!this.widgetService.isBlocked()) {
+      event.preventDefault();
+      event.stopPropagation();
+      this.widgetService.toggleState(url);
+    }
   }
 
   private trackNavigationEvent(router: Router): void {
     router.events.subscribe(events => {
       if (events instanceof NavigationStart) {
         // je spustene aj pri prvom spusteni appky
+        this.widgetService.setBlocked(this.widgetService.isWidgetUrl(events.url));
         this.loggedIn = this.loginService.checkLogin();
         this.widgetStates = this.widgetService.getStates();
       }

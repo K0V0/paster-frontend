@@ -1,0 +1,252 @@
+
+@import 'src/assets/styles/colors';
+
+$pc-color: #999;
+$pc-monitor-color: #ddd;
+$pc-logo-color: #fff;
+$pc-highlight-color: $base-theme-hover-color;
+
+article {
+  padding: 2em 2em;
+
+  figure {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+  }
+}
+
+article.banner1 {
+
+  figure {
+    background-color: $pc-monitor-color;
+    border-color: $pc-color;
+    border-style: solid;
+    box-sizing: border-box;
+    margin: 1em;
+    border-width: 0.5em;
+
+    &::after, &::before {
+      content: "";
+      position: absolute;
+      display: block;
+    }
+
+    div {
+      height: 100%;
+      overflow: hidden;
+
+      div {
+        background-color: white;
+        height: 100%;
+
+        h1, span {
+          line-height: 1.125em;
+          font-weight: bold;
+        }
+
+        span {
+          background-color: $pc-highlight-color;
+          color: white;
+          vertical-align: middle;
+          display: inline-block;
+          position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            width:0.125em;
+            background-color: black;
+            vertical-align: middle;
+            top:0;
+            bottom:0%;
+            //animation: blinker 1s infinite;
+          }
+        }
+      }
+    }
+  }
+
+  figure.pc {
+    border-radius: 0.5em;
+    border-bottom-width: 2em;
+    width: 20em;
+    height: 14em;
+    margin-bottom: 5em;
+
+    &::after {
+      width: 10em;
+      top: 13.5em;
+      left: 4.5em;
+      background-color: $pc-color;
+      height: 5em;
+      border-top-left-radius: 5em;
+      border-top-right-radius: 5em;
+    }
+
+    &::before {
+      top: 12em;
+      background-color: $pc-logo-color;
+      width: 1em;
+      height: 1em;
+      border-radius: 0.5em;
+      left: 9em;
+    }
+
+    div {
+
+      div {
+        margin-top: 1em;
+        margin-left:1em;
+        margin-right: 1em;
+        padding-top:0.25em;
+        padding-left: 0.25em;
+        padding-right: 0.25em;
+
+        h1 {
+          font-size: 1.75em;
+        }
+
+        span {
+          font-size: 1.875em;
+        }
+      }
+    }
+  }
+
+  figure.notebook {
+    width: 16em;
+    height: 10em;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+
+    &::after {
+      width: 16em;
+      height: 1.25em;
+      background-color: $pc-color;
+      top: 9.75em;
+      left: -0.5em;
+      border-bottom-left-radius: 2em;
+      border-bottom-right-radius: 2em;
+    }
+
+    div {
+
+      div {
+        margin-top: 0.75em;
+        margin-left: 0.75em;
+        margin-right: 0.75em;
+        padding: 0.25em;
+
+        span, h1 {
+          font-size: 1.5em;
+          line-height: 1.125em;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  figure.phone {
+    width: 8em;
+    height: 12em;
+    border-radius: 0.5em;
+    border-bottom-width: 1.25em;
+
+    &::after {
+      background-color: $pc-logo-color;
+      top: 10.5em;
+      left: 3em;
+      width: 0.75em;
+      height: 0.75em;
+      border-radius: 0.75em;
+    }
+
+    div {
+
+      div {
+        margin-top: 1em;
+      }
+    }
+  }
+}
+
+article.banner2 {
+  background-color: $base-theme-background-color-2;
+
+  figure.clock {
+    width: 15em;
+    height: 15em;
+    border: 0.5em solid $pc-color;
+    background-color: $white;
+    border-radius: 16em;
+
+    &::before, &::after {
+      content: "";
+      display: block;
+      width: 1em;
+      height: 1em;
+      position: absolute;
+      background-color: $pc-color;
+      border-radius: 1em;
+    }
+
+    &::before {
+      top: 0.5em;
+      left: 6.5em;
+    }
+
+    &::after {
+      top: 7em;
+      left: 6.5em;
+    }
+
+    div {
+      width: 0.5em;
+      position: absolute;
+      left: 6.75em;
+      border-radius: 0.25em;
+      transform-origin: bottom center;
+
+      &.hours {
+        top: 3em;
+        height: 4.5em;
+        background-color: $pc-color;
+        transform: rotate(90deg);
+      }
+
+      &.minutes {
+        top:2em;
+        height: 5.5em;
+        background-color: $pc-color;
+        transform: rotate(30deg);
+
+        &.before {
+          background-color: $pc-highlight-color;
+          transform: rotate(-30deg);
+        }
+      }
+    }
+  }
+}
+
+article.banner3 {
+
+  figure.zero {
+    font-size: 18em;
+    font-weight: bold;
+
+    span {
+      letter-spacing: -0.0625em;
+
+      &.num {
+        color: $pc-highlight-color;
+      }
+
+      &.prc {
+        color: $pc-color;
+      }
+    }
+  }
+}
