@@ -1,22 +1,21 @@
-<article class="banner1">
 
-  <figure class="pc">
-    <div>
-      <div>
-        <h1>{{ "home.banner1.heading1" | t }}</h1>
-        <span>{{ "home.banner1.slogan1" | t }}</span>
-      </div>
-    </div>
-  </figure>
 
-  <figure class="notebook">
-    <div>
-      <div>
-        <span>{{ "home.banner1.slogan1" | t }}</span>
-      </div>
-    </div>
-  </figure>
+<app-intro></app-intro>
 
-  <figure class="phone"></figure>
+<article class="downloads downloads-pcs">
+
+  <app-download platform="win"></app-download>
+
+  <app-download platform="linux"></app-download>
+
+  <app-download platform="mac"></app-download>
+
+</article>
+
+<article class="downloads downloads-phones">
+
+  <app-download platform="android"></app-download>
+
+  <app-download platform="ios"></app-download>
 
 </article>

@@ -13,6 +13,34 @@
       "banner1": {
         "heading1": "Kopírovanie medzi zariadeniami ?",
         "slogan1": "...ani klik naviac !"
+      },
+      "banner2": {
+        "heading1": "Nestraťte nič!",
+        "slogan1": "Vďaka histórií, ktorá si pamätá všetko...",
+        "slogan2": "Ani v prípade, že sa Vaše zariadenia rozhodnú ísť do 'kremíkového neba'.\nVšetky dáta sú dostupné po prihlásení aj cez túto web stránku."
+      },
+      "banner3": {
+        "heading1": "Zadarmo a žiadne háčiky.",
+        "slogan1": "Prevádzka je hradená z príjmov z reklamy/inzercie.",
+        "slogan2": "Žiadne KGB alebo CIA. Aplikácie sú vyvíjané ako slobodný softvér a zdrojové kódy sú verejne dostupné.",
+        "slogan3": "Verzia zadarmo nie je z hľadiska počtu funkcií alebo časového obmedzenia žiadnou podradnou verziou. Platená verzia len navyšuje inak dostupné funkcie a služby ako napríklad množtvo pamäti a podobne."
+      },
+      "download": {
+        "win": {
+
+        },
+        "linux": {
+
+        },
+        "mac": {
+
+        },
+        "android": {
+
+        },
+        "ios": {
+          
+        }
       }
     },
 
