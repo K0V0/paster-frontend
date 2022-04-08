@@ -1,8 +1,21 @@
 <section>
   <div>
+
+    <figure>
+      <picture>
+
+      </picture>
+    </figure>
+
     <h2>{{ platforms.get(platform)?.getPlatformName() }}</h2>
+
     <span class="versionNumber">{{ platforms.get(platform)?.getReleasedVersionNumber() }}</span>
+
     <h3>{{ platforms.get(platform)?.getDescription() }}</h3>
-    <button>{{ platforms.get(platform)?.getDownloadButtonText() }}</button>
+
+    <div>
+      <button>{{ platforms.get(platform)?.getDownloadButtonText() }}</button>
+    </div>
+
   </div>
 </section>

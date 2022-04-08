@@ -1,15 +1,20 @@
 @import 'src/assets/styles/colors';
 
-/*@keyframes blinker {
-  from { opacity: 0; }
-  50% { opacity:1; }
-  to { opacity: 0; }
-}*/
-
 article {
-  padding: 2em 2em;
+  padding: 2em;
 }
 
 article.downloads {
+  padding: 1em;
   background-color: $base-theme-background-color-2;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  app-download {
+    width: 33%;
+    min-width: 20em;
+  }
 }

@@ -1,0 +1,45 @@
+@import 'src/assets/styles/colors';
+
+section {
+  width: 100%;
+  text-align: center;
+  padding: 1em;
+  vertical-align: top;
+
+  div {
+
+    figure {
+      width: 10em;
+      height: 10em;
+      background-color: $base-theme-background-color;
+      display: inline-block;
+      margin: 1em;
+
+      picture {
+
+      }
+    }
+
+    h2 {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    h3 {
+      padding-top: 0.75em;
+    }
+
+    span.versionNumber {
+      font-style: italic;
+      font-size: 0.875em;
+    }
+
+    div {
+      margin: 1em 0;
+
+      button {
+
+      }
+    }
+  }
+}
