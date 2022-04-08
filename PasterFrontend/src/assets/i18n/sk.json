@@ -27,20 +27,27 @@
       },
       "download": {
         "win": {
-
+          "download": "Stiahnuť",
+          "description": ""
         },
         "linux": {
-
+          "download": "Stiahnuť",
+          "description": ""
         },
         "mac": {
-
+          "download": "Stiahnuť",
+          "description": ""
         },
         "android": {
-
+          "download": "Google Play store",
+          "description": ""
         },
         "ios": {
-          
-        }
+          "download": "Apple AppStore",
+          "description": ""
+        },
+        "notReleased": "Verzia zatiaľ nebola vydaná.",
+        "soon": "Už čoskoro"
       }
     },
 

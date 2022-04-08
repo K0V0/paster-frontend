@@ -1,6 +1,8 @@
 <section>
   <div>
-    <h1>Windows</h1>
-    <h2></h2>
+    <h2>{{ platforms.get(platform)?.getPlatformName() }}</h2>
+    <span class="versionNumber">{{ platforms.get(platform)?.getReleasedVersionNumber() }}</span>
+    <h3>{{ platforms.get(platform)?.getDescription() }}</h3>
+    <button>{{ platforms.get(platform)?.getDownloadButtonText() }}</button>
   </div>
 </section>
