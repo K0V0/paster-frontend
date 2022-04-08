@@ -27,20 +27,27 @@
       },
       "download": {
         "win": {
-
+          "download": "Stiahnuť",
+          "description": "Inštalačný .exe súbor pre operačné systémy windows verzie 7, 9, 10 a 11"
         },
         "linux": {
-
+          "download": "Stiahnuť",
+          "description": "Inštalačný balíček .deb pre systémy debian/ubuntu a ich deriváty"
         },
         "mac": {
-
+          "download": "Stiahnuť",
+          "description": "Balík .dmg pre počítače Apple so systémom OS X Leopard a vyšší"
         },
         "android": {
-
+          "download": "Google Play store",
+          "description": "Aplikácia pre smartfóny so systémom Android"
         },
         "ios": {
-          
-        }
+          "download": "Apple AppStore",
+          "description": "Aplikácia pre telefóny/tablety/iPody Apple so systémom iOS verzie 8 a vyššie"
+        },
+        "notReleased": "Verzia zatiaľ nebola vydaná.",
+        "soon": "Už čoskoro"
       }
     },
 
