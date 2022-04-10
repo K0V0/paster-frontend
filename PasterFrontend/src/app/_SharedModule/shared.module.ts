@@ -4,6 +4,7 @@ import { LoginModule } from './modules/login/login.module';
 import { TranslateModule } from "./modules/translate/translate.module";
 import { NavigationModule } from "./modules/navigation/navigation.module";
 import { RegisterModule } from './modules/register/register.module';
+import { PipesModule } from './pipes/pipes.module';
 
 // angular stuff
 import { NgModule } from "@angular/core";
@@ -20,6 +21,7 @@ import { ClipboardModule } from "ngx-clipboard";
     ValidationErrorsModule,
     LoginModule,
     RegisterModule,
+    PipesModule,
     // angular stuff
     FormsModule,
     ReactiveFormsModule,

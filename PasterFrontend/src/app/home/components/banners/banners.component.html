@@ -30,7 +30,9 @@
   </section>
 
   <section class="infos">
-
+    <span> <h2> <b>Paster.cloud</b> {{ "home.banner1.slogan2" | t }}</h2> </span>
+    <span [innerHtml]="('home.banner1.slogan3' | t) + '<br>' + ('home.banner1.slogan4' | t )"></span>
+    <span [innerHtml]="('home.banner1.slogan5' | t)"></span>
   </section>
 
 </article>
@@ -48,7 +50,23 @@
   <section class="infos">
     <span> <h1>{{ "home.banner2.heading1" | t }}</h1> </span>
     <span> <h2>{{ "home.banner2.slogan1" | t }}</h2> </span>
-    <span> {{ "home.banner2.slogan2" | t }} </span>
+    <span> {{ "home.banner2.slogan2" | t }} <br> {{ "home.banner2.slogan3" | t }} </span>
+  </section>
+
+</article>
+
+<article class="banner4">
+
+  <section class="figures">
+    <figure class="timer">
+      <div></div>
+    </figure>
+  </section>
+
+  <section class="infos">
+    <span> <h1> {{ "home.banner4.heading1" | t }} </h1> </span>
+    <span> {{ "home.banner4.slogan1" | t }} </span>
+    <span> {{ "home.banner4.slogan2" | t }} </span>
   </section>
 
 </article>
@@ -65,7 +83,7 @@
       <span> <h1> {{ "home.banner3.heading1" | t }} </h1> </span>
       <span> {{ "home.banner3.slogan1" | t }} </span>
       <span> {{ "home.banner3.slogan2" | t }} </span>
-      <span> {{ "home.banner3.slogan3" | t }} </span>
+      <span> {{ "home.banner3.slogan3" | t }} <br> {{ "home.banner3.slogan3-2" | t }} </span>
   </section>
 
 </article>

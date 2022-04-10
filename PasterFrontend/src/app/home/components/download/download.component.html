@@ -14,7 +14,9 @@
     <h3>{{ platforms.get(platform)?.getDescription() }}</h3>
 
     <div>
-      <button>{{ platforms.get(platform)?.getDownloadButtonText() }}</button>
+      <button [disabled]="!platforms.get(platform)?.getHasRelease()">
+        {{ platforms.get(platform)?.getDownloadButtonText() }}
+      </button>
     </div>
 
   </div>
