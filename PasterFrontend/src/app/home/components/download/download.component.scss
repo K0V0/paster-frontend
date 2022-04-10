@@ -11,7 +11,7 @@ section {
     figure {
       width: 10em;
       height: 10em;
-      background-color: $base-theme-background-color;
+      background-color: $base-theme-background-color-2;
       display: inline-block;
       margin: 1em;
 
@@ -38,7 +38,7 @@ section {
       margin: 1em 0;
 
       button {
-
+        font-weight: bold;
       }
     }
   }
