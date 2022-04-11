@@ -1,0 +1,45 @@
+@import 'src/assets/styles/colors';
+
+article {
+  padding: 0.5em 1em;
+  padding-bottom: 1em;
+  background-color: $base-theme-background-color-2;
+  display: flex;
+
+  section {
+    line-height: 1.125em;
+    color: $base-theme-font-color-2;
+
+    a {
+      color: $base-theme-font-color-2;
+
+      &:hover {
+        color: $base-theme-font-color;
+      }
+    }
+
+    div {
+      padding-left: 0.5em;
+      margin: 0.25em 0;
+      line-height: 1em;
+    }
+
+    span {
+      font-size: 0.75em;
+      display: inline-block;
+    }
+
+    &.left {
+      flex-grow: 2;
+    }
+
+    &.middle {
+      flex-grow: 1;
+    }
+
+    &.right {
+      flex-grow: 2;
+      text-align: right;
+    }
+  }
+}
