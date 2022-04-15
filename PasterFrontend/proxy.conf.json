@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "http://kovo.space:4004",
+    "target": "https://api.paster.cloud",
     "secure": false
   }
 }
