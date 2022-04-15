@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
-  backendUrl: "http://kovo.space:4004",
-  websocketUrl: "ws://kovo.space:4004/websocket",
+  backendUrl: "https://api.paster.cloud",
+  websocketUrl: "ws://api.paster.cloud/websocket",
   apiVersion: 1,
   excludedJwtInterceptorEndpoints: [
     "/user/login",
