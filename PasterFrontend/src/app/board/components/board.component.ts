@@ -1,14 +1,24 @@
-import { Component } from "@angular/core";
+import { WidgetsService } from './../../_SharedModule/modules/navigation/widgets.service';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.scss']
 })
-export class BoardComponent {
+export class BoardComponent implements OnInit {
 
+  constructor(private widgetsService: WidgetsService) {}
 
-  constructor() {}
-
+  ngOnInit(): void {
+    this.widgetsService.clearAll();
+  }
 
 }
+
+
+
+
+
+
+

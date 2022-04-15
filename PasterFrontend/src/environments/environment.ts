@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   //backendUrl: "http://0.0.0.0:4004",
   //websocketUrl: "ws://0.0.0.0:4004/websocket",
-  backendUrl: "http://api.paster.cloud",
+  backendUrl: "https://api.paster.cloud",
   websocketUrl: "wss://api.paster.cloud/websocket",
   apiVersion: 1,
   excludedJwtInterceptorEndpoints: [
