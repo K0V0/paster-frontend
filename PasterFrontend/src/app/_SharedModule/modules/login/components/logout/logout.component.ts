@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../../services/login.service';
-import {Router} from "@angular/router";
 import { FormGroup } from '@angular/forms';
+import { Router } from "@angular/router";
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-logout',
@@ -19,7 +19,8 @@ export class LogoutComponent  implements OnInit {
     this.logout = new FormGroup({});
   }
 
-  ngOnInit() {}
+  ngOnInit(): void {
+  }
 
   doLogout(): void {
     this.loginService.doLogout().subscribe(data => {

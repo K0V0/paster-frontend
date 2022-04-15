@@ -23,8 +23,9 @@ html {
       }
 
       main {
+        min-height: 100%;
         opacity: 1;
-        padding-top: 3em;
+        padding-top: 4em;
         background-color: $base-theme-background-color;
         transition: opacity $transition-med ease-in-out;
 
