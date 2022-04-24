@@ -121,6 +121,11 @@
       "page": {
         "text": "Text...",
         "submit": "Odoslať",
+        "clear": "Vymazať text",
+        "notifications": {
+          "textCopied": "Položka bola skopírovaná do Vašej schránky.",
+          "textPasted": "Položka bola vložená z Vašej schránky."
+        },
         "itemsTable": {
           "delete": "X",
           "more": "Zobraziť celý text...",

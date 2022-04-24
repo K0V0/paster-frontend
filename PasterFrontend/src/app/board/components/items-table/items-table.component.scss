@@ -5,7 +5,12 @@ section#boardItems {
   & > div {
     overflow: hidden;
     cursor: pointer;
+    transition: transform 0.125s ease-in-out;
     //height: 0;
+
+    &.jump {
+      transform: scale(1.05);
+    }
 
     & > div {
       padding:0.25em;

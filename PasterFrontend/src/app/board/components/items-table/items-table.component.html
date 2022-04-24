@@ -1,6 +1,10 @@
 <section id="boardItems">
-  <div [@tableItemAppendAnimation] *ngFor="let item of boardItems.items; index as i;">
-    <div (click)="copyToClipboard(item.text);">
+  <div  [@tableItemAppendAnimation]
+        *ngFor="let item of boardItems.items; index as i;"
+        [ngClass]="(boardItemsJumpClass.get(item.id) === true) ? 'jump' : ''">
+
+    <div  (click)="copyToClipboard(item.id);"
+          [id]="'item' + item.id">
 
       <div class="itemBaseSection"
             *ngIf="!boardItemsExtraTextVisibility[item.id]">
