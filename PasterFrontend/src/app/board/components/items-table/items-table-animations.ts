@@ -28,6 +28,18 @@ export const TableItemsAnimations = {
         animate('0.25s linear', style({ opacity:0 }))
       ])
     ]
-  )
+  ),
+
+  /*copyToClipboardAnimation: trigger(
+    'hideFullTextButtonAppendAnimation',
+    [
+      transition(':enter', [
+        //style({ opacity:0 }),
+        animate('0.25s linear', style({ scale: 1.05 }))
+      ]),
+      transition(':leave', [
+        animate('0.25s linear', style({ scale: 1 }))
+      ])
+    ]*/
 
 }

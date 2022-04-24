@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ClipboardModule } from "ngx-clipboard";
+import { NotificationModule } from "./modules/notification/notification.module";
 
 @NgModule({
   exports: [
@@ -22,6 +23,7 @@ import { ClipboardModule } from "ngx-clipboard";
     LoginModule,
     RegisterModule,
     PipesModule,
+    NotificationModule,
     // angular stuff
     FormsModule,
     ReactiveFormsModule,

@@ -1,14 +1,12 @@
-// angular stuff
-import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { formatDate } from '@angular/common';
+import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { ClipboardService } from 'ngx-clipboard';
-// my imports
-import { WsRefresh } from './../../../_Base/interfaces/base.dto.interface';
-import { IHash } from './../../../_Base/interfaces/base.dto.interface';
-import { BoardService } from "../../services/board.service";
-import { BoardItem, BoardItemResponseDTO, BoardItems } from "../../dtos/board.dto.interface";
-import { DtoMapperUtil } from "../../../_CoreModule/utils/dto-mapper.util";
 import { WebsocketService } from "../../../_CoreModule/services/websocket.service";
+import { DtoMapperUtil } from "../../../_CoreModule/utils/dto-mapper.util";
+import { BoardItem, BoardItemResponseDTO, BoardItems } from "../../dtos/board.dto.interface";
+import { BoardService } from "../../services/board.service";
+import { IHash, WsRefresh } from './../../../_Base/interfaces/base.dto.interface';
+import { NotificationService } from './../../../_SharedModule/modules/notification/notification.service';
 import { TableItemsAnimations } from './items-table-animations';
 
 @Component({
@@ -21,12 +19,14 @@ export class ItemsTableComponent implements OnInit {
   mapper: DtoMapperUtil<BoardItemResponseDTO, BoardItem>;
   boardItems: BoardItems;
   boardItemsExtraTextVisibility: IHash;
+  boardItemsJumpClass: Map<number, boolean>;
 
   constructor(
     private boardService: BoardService,
     private websocketService: WebsocketService,
     private clipboardService: ClipboardService,
-    @Inject(LOCALE_ID) private locale: string
+    @Inject(LOCALE_ID) private locale: string,
+    private notificationService: NotificationService
   ) {
     this.mapper = new DtoMapperUtil<BoardItemResponseDTO, BoardItem>();
     // TODO sformatovat cas a odskusat deal so zonami a zimnym/letnym
@@ -37,6 +37,7 @@ export class ItemsTableComponent implements OnInit {
     })
     this.boardItems = <BoardItems>{};
     this.boardItemsExtraTextVisibility = {};
+    this.boardItemsJumpClass = new Map;
   }
 
   ngOnInit(): void {
@@ -54,18 +55,18 @@ export class ItemsTableComponent implements OnInit {
     });
   }
 
-  copyToClipboard(text: string): void {
+  copyToClipboard(id: number): void {
     console.log("copied to clipboard");
-    this.clipboardService.copyFromContent(text);
+    this.clipboardService.copyFromContent(this.getTextById(id));
+    this.triggerCopyAnimation(id);
+    this.notificationService.notify("board.page.notifications.textCopied");
   }
 
   loadWholeText(id: number): void {
     this.boardItemsExtraTextVisibility[id] = !this.boardItemsExtraTextVisibility[id];
-    console.log("show whole text");
   }
 
   private refreshContent(): void {
-    console.log("refreshContent");
     this.boardService.getItems().subscribe((data) => {
       if (this.boardItems.items === undefined) {
         // first run
@@ -100,6 +101,27 @@ export class ItemsTableComponent implements OnInit {
       (err: any) => { console.log('message received: ' + err); }, // Called if at any point WebSocket API signals some kind of error.
       () => { console.log('complete'); } // Called when connection is closed (for whatever reason).
     );
+  }
+
+  private getTextById(id: number): string {
+    let result: string = "";
+    this.boardItems.items.forEach(function(bi) {
+      if (bi.id === id) {
+        result = bi.text;
+      }
+    });
+    return result;
+  }
+
+  private triggerCopyAnimation(id: number) {
+    let jumpClass = this.boardItemsJumpClass.get(id);
+    if (jumpClass !== true) {
+      this.boardItemsJumpClass.set(id, true);
+      let totok = this;
+      setTimeout(function(){
+        totok.boardItemsJumpClass.set(id, false);
+      }, 500);
+    }
   }
 
 }

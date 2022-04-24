@@ -1,0 +1,12 @@
+@import 'src/assets/styles/colors';
+
+div {
+  max-height: 4em;
+  text-align: center;
+  background-color: $base-theme-background-color;
+
+  span {
+    padding: 0.5em;
+    display: inline-block;
+  }
+}

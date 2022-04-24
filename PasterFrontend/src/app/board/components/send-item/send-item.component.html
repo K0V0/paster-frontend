@@ -10,10 +10,18 @@
       <div class="textareaStatusbar separatingLine">
         <div></div>
         <div class="text-right">
+
+          <button [disabled] = "!showClearButton"
+                  class=""
+                  (click)="deleteText($event)">
+            {{ 'board.page.clear' | t }}
+          </button>
+
           <button [disabled] = "!board.valid"
                   class="">
             {{ 'board.page.submit' | t }}
-        </button>
+          </button>
+
         </div>
       </div>
     </div>
