@@ -1,0 +1,10 @@
+@import 'src/assets/styles/colors';
+
+article {
+  padding: 1em 2em;
+
+  section {
+    background-color: $base-theme-background-color-2;
+    min-height: 6em;
+  }
+}

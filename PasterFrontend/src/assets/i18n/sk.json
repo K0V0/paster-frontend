@@ -71,6 +71,9 @@
         "gdpr": "GDPR",
         "cookies": "nastavenie Cookies",
         "sitemap": "mapa aplikácie"
+      },
+      "ads": {
+        "title": "Reklamy"
       }
     },
 

@@ -1,3 +1,4 @@
+import { AdsModule } from './modules/ads/ads.module';
 // moje moduly
 import { ValidationErrorsModule } from "./modules/validation-errors/validationErrors.module";
 import { LoginModule } from './modules/login/login.module';
@@ -24,6 +25,7 @@ import { NotificationModule } from "./modules/notification/notification.module";
     RegisterModule,
     PipesModule,
     NotificationModule,
+    AdsModule,
     // angular stuff
     FormsModule,
     ReactiveFormsModule,
