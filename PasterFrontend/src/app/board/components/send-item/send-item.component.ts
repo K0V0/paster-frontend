@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { BaseComponent } from "../../../_Base/components/base.component";
@@ -15,9 +16,10 @@ export class SendItemComponent extends BaseComponent implements OnInit {
   showClearButton: boolean;
 
   constructor(
-    private boardService: BoardService
+    private boardService: BoardService,
+    protected router: Router
   ) {
-    super();
+    super(router);
     this.text = new FormControl("", Validators.required)
     this.board = new FormGroup({
       "text": this.text

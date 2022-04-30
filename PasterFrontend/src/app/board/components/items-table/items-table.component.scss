@@ -5,11 +5,11 @@ section#boardItems {
   & > div {
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.125s ease-in-out;
-    //height: 0;
+    transition: transform 0.125s ease-in-out, opacity 0.125s ease-in-out;
 
     &.jump {
-      transform: scale(1.05);
+      transform: scale(2);
+      opacity: 0;
     }
 
     & > div {

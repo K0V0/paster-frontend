@@ -1,3 +1,4 @@
+import { TranslateComponent } from './../translate/translate.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule, Routes } from '@angular/router';
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: "logout",
     component: LogregComponent
+  },
+  {
+    path: "language",
+    component: TranslateComponent
   }
 ];
 
