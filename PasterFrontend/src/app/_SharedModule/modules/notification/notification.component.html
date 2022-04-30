@@ -1,6 +1,11 @@
 <div  *ngIf="text !== undefined && text.length > 0"
       [@showAnimation]>
 
-  <span> {{ text }} </span>
+  <div class="message">
+    <span> {{ text }} </span>
+  </div>
+
+  <button class="deleteItem"
+          (click)="hideNotification()">X</button>
 
 </div>

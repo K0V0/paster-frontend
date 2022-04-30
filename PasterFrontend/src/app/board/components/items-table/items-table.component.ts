@@ -1,3 +1,4 @@
+import { TranslateService } from './../../../_SharedModule/modules/translate/translate.service';
 import { formatDate } from '@angular/common';
 import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { ClipboardService } from 'ngx-clipboard';
@@ -26,7 +27,8 @@ export class ItemsTableComponent implements OnInit {
     private websocketService: WebsocketService,
     private clipboardService: ClipboardService,
     @Inject(LOCALE_ID) private locale: string,
-    private notificationService: NotificationService
+    private notificationService: NotificationService,
+    private translateService: TranslateService
   ) {
     this.mapper = new DtoMapperUtil<BoardItemResponseDTO, BoardItem>();
     // TODO sformatovat cas a odskusat deal so zonami a zimnym/letnym
@@ -59,7 +61,11 @@ export class ItemsTableComponent implements OnInit {
     console.log("copied to clipboard");
     this.clipboardService.copyFromContent(this.getTextById(id));
     this.triggerCopyAnimation(id);
-    this.notificationService.notify("board.page.notifications.textCopied");
+    this.notificationService.notify(
+      this.translateService.translate("board.page.notifications.textCopied.part1") +
+      " #" + this.getItemOrderById(id) + " " +
+      this.translateService.translate("board.page.notifications.textCopied.part2")
+      );
   }
 
   loadWholeText(id: number): void {
@@ -111,6 +117,17 @@ export class ItemsTableComponent implements OnInit {
       }
     });
     return result;
+  }
+
+  private getItemOrderById(id: number): number {
+    let i: number = -1;
+    for (let boardItem of this.boardItems.items) {
+        i++;
+        if (boardItem.id === id) {
+          break;
+        }
+    }
+    return i + 1;
   }
 
   private triggerCopyAnimation(id: number) {

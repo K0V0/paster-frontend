@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { BaseComponent } from "../../../../_Base/components/base.component";
@@ -27,9 +28,10 @@ export class RegisterComponent extends BaseComponent implements OnInit {
 
   constructor(
     private registerService: RegisterService,
-    private loginService: LoginService
+    private loginService: LoginService,
+    protected router: Router
   ) {
-    super();
+    super(router);
     this.user = new FormControl("", [
       Validators.required,
       CustomValidators.forbiddenCharacters
