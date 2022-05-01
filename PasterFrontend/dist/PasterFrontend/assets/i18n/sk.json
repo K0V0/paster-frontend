@@ -5,7 +5,7 @@
       "home": "Domov",
       "login": "Prihlásiť sa",
       "register": "Registrácia",
-      "board":  "Board",
+      "board":  "Schránka",
       "logout": "Užívateľ"
     },
 
@@ -126,7 +126,10 @@
         "submit": "Odoslať",
         "clear": "Vymazať text",
         "notifications": {
-          "textCopied": "Položka bola skopírovaná do Vašej schránky.",
+          "textCopied": {
+            "part1": "Položka",
+            "part2": "bola skopírovaná do Vašej schránky."
+          },
           "textPasted": "Položka bola vložená z Vašej schránky."
         },
         "itemsTable": {
@@ -138,7 +141,10 @@
     },
 
     "logout": {
-      "logout": "Odhlásiť sa"
+      "logout": "Odhlásiť sa",
+      "userInfo": {
+        "lastActivity": "Posledná aktivita"
+      }
     },
 
     "server": {
