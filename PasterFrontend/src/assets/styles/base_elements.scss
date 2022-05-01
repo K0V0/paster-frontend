@@ -39,7 +39,7 @@ input, button, .buttonComponent {
   &[type="radio"], &[type="checkbox"] {
     border-radius: 50%;
 
-    &:focus {
+    &:focus, &:checked {
       background-color: $inputs-border-focus;
       border-color: $inputs-background;
     }

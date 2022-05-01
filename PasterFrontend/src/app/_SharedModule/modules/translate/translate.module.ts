@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { TranslateComponent } from './translate.component';
 import { TranslationServerPipe } from './translate.server.pipe';
 import { TranslationPipe } from './translate.pipe';
@@ -9,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   declarations: [

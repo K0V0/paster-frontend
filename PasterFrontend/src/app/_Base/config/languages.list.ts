@@ -1,26 +1,51 @@
-import { Input } from '@angular/core';
+import { Language } from "../interfaces/base.dto.interface";
+
 export class LanguagesList {
 
-  languagesList: Map<string, string> = new Map([
+  public static readonly FALLBACK_LANG = 'en';
+
+  private static readonly languagesList: Map<string, string> = new Map([
     ["sk", "Slovenský"],
     ["en", "English"]
   ]);
 
-  constructor() {}
+  private static readonly compatibleLanguagesMappings: Map<string, string[]> = new Map([
+    ["sk", ["cz", "cs"]],
+    ["en", ["us"]]
+  ]);
 
-  public getAvailableLanguages(): string[] {
-    return Array.from(this.languagesList.keys());
+  public static getAvailableLanguages(): string[] {
+    return Array.from(LanguagesList.languagesList.keys());
   }
 
-  public getLanguageList(): Map<string, string> {
+  public static getLanguageList(): Map<string, string> {
     return this.languagesList;
   }
 
-  public getLangNameByCode(langCode: string): string {
-    let result: string | undefined = this.languagesList.get(langCode);
+  public static containsLanguage(langCode: string): boolean {
+    return LanguagesList.languagesList.get(langCode) !== undefined;
+  }
+
+  public static getLangNameByCode(langCode: string): string {
+    let result: string | undefined = LanguagesList.languagesList.get(langCode);
     if (result !== undefined) {
       return result;
     }
-    return "";
+    for (let lang of LanguagesList.compatibleLanguagesMappings) {
+      console.log("set lang from preferences");
+          console.log(lang[1]);
+          console.log(lang[1].indexOf(langCode) > -1);
+      if (lang[1].indexOf(langCode) > -1) { return lang[0]; }
+    }
+    //TODO ked bude logging dat ako warning
+    return LanguagesList.FALLBACK_LANG;
+  }
+
+  public static getUnderstanableLanguages(lang: string): string[] {
+    let result: string[] | undefined = LanguagesList.compatibleLanguagesMappings.get(lang);
+    if (result !== undefined) {
+      return result;
+    }
+    return [];
   }
 }

@@ -16,11 +16,11 @@ export class AppComponent implements OnInit, OnDestroy {
     private translateService: TranslateService,
     private loginService: LoginService,
     private widgetService: WidgetsService
-  ) {}
+  ) {
 
-  // TODO is equivalent of jquery document.ready ?
+  }
+
   ngOnInit() {
-    this.translateService.checkLang();
     this.loginService.checkLogin();
     this.widgetService.getStateObservable().subscribe(fadeBackground => {
       this.pageFaded = fadeBackground;
