@@ -30,8 +30,6 @@ export class TranslateComponent extends BaseComponent implements OnInit {
   }
 
   changeLanguage(): void {
-    console.log("changed");
-    console.log(this.langCode.value);
     this.translateService.setLang(this.langCode.value);
     super.redirectWithRefresh();
   }
