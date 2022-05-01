@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { WidgetsService } from './_SharedModule/modules/navigation/widgets.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { LoginService } from './_SharedModule/modules/login/services/login.service';

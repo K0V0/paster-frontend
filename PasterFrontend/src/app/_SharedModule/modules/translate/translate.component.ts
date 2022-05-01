@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, UrlTree } from '@angular/router';
 import { BaseComponent } from 'src/app/_Base/components/base.component';
 import { LanguagesList } from './../../../_Base/config/languages.list';
 import { TranslateService } from './translate.service';
@@ -33,6 +33,7 @@ export class TranslateComponent extends BaseComponent implements OnInit {
     console.log("changed");
     console.log(this.langCode.value);
     this.translateService.setLang(this.langCode.value);
+    super.redirectWithRefresh();
   }
 
 }
