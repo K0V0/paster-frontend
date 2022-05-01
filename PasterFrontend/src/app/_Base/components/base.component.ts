@@ -60,9 +60,8 @@ export abstract class BaseComponent implements ServerError, ServerErrors {
     return this.serverFormErrorMessage;
   }
 
-  protected redirectWithRefresh(url: string): void {
-    this.router.navigateByUrl('/', {skipLocationChange: true})
-      .then(() => this.router.navigate([url]));
+  protected redirectWithRefresh(): void {
+    window.location.reload();
   }
 
 }

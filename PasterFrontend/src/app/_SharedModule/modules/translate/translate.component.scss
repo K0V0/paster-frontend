@@ -1,0 +1,28 @@
+@import 'src/assets/styles/colors';
+
+div {
+  line-height: 2.25em;
+  border-radius: 0.25em;
+  transition: background-color 0.25s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $base-theme-hover-color;
+  }
+
+  label, input {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  input {
+    width: 1.5em;
+    height: 1.5em;
+    border-width: 0.25em;
+  }
+
+  label {
+    padding: 0em 0.5em;
+  }
+}

@@ -141,7 +141,10 @@
     },
 
     "logout": {
-      "logout": "Odhlásiť sa"
+      "logout": "Odhlásiť sa",
+      "userInfo": {
+        "lastActivity": "Posledná aktivita"
+      }
     },
 
     "server": {

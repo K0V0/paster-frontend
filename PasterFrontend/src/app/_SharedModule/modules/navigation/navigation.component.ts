@@ -1,3 +1,4 @@
+import { TranslateService } from './../translate/translate.service';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 import { LoginService } from "../login/services/login.service";
@@ -22,14 +23,17 @@ export class NavigationComponent implements OnInit {
   title = 'Main navigation';
   loggedIn: boolean;
   widgetStates: Map<string, boolean>;
+  currentLang: string;
 
   constructor(
     private loginService: LoginService,
     private widgetService: WidgetsService,
-    private router: Router
+    private router: Router,
+    private translateService: TranslateService
   ) {
     this.loggedIn = false;
     this.widgetStates = new Map;
+    this.currentLang = this.translateService.getCurrentLang().toUpperCase();
   }
 
   @HostListener('document:click', ['$event.target'])

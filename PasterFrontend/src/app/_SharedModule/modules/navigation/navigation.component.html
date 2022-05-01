@@ -11,7 +11,7 @@
         >
           <span class="buttonComponent"
                 (click)="toggleWidget('/language', $event)">
-            &#9873;
+            <b> &#9873; </b> <em> {{ currentLang }} </em>
           </span>
         </a>
       </div>
@@ -111,4 +111,10 @@
       *ngIf="widgetStates.get('/logout')"
       [@loginRegisterWidgetAnimation]>
   <app-logout class="logregFormWidget"></app-logout>
+</div>
+
+<div class="widget"
+      *ngIf="widgetStates.get('/language')"
+      [@loginRegisterWidgetAnimation]>
+  <app-translate class="logregFormWidget"></app-translate>
 </div>
