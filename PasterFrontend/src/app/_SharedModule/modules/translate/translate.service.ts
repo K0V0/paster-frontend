@@ -35,6 +35,10 @@ export class TranslateService {
     this.currentLang = 'sk';
   }
 
+  getCurrentLang(): string {
+    return this.currentLang;
+  }
+
   setLang(countryCode: string) {
     if (this.availableLanguages.indexOf(countryCode) >= 0) {
       this.currentLang = countryCode;

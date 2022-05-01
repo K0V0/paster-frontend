@@ -112,3 +112,9 @@
       [@loginRegisterWidgetAnimation]>
   <app-logout class="logregFormWidget"></app-logout>
 </div>
+
+<div class="widget"
+      *ngIf="widgetStates.get('/language')"
+      [@loginRegisterWidgetAnimation]>
+  <app-translate class="logregFormWidget"></app-translate>
+</div>

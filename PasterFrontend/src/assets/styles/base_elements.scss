@@ -35,6 +35,15 @@ input, button, .buttonComponent {
   &.ng-touched.ng-invalid {
     border-color:$inputs-border-invalid;
   }
+
+  &[type="radio"], &[type="checkbox"] {
+    border-radius: 50%;
+
+    &:focus {
+      background-color: $inputs-border-focus;
+      border-color: $inputs-background;
+    }
+  }
 }
 
 input {

@@ -1,4 +1,18 @@
 <form class="language"
-      (ngSubmit)="changeLanguage()">
+      [formGroup]="language"
+      (ngSubmit)="changeLanguage($event)">
+
+      <div *ngFor="let lang of availLanguages.getAvailableLanguages(); index as i">
+
+        <input type="radio"
+          [value]="lang"
+          formControlName="langCode"
+          [id]="'lang-'+lang"
+          (change)="changeLanguage($event)"
+          [checked]="(lang === 'sk')">
+
+        <label [for]="'lang-'+lang"> {{ availLanguages.getLangNameByCode(lang) }} </label>
+
+      </div>
 
 </form>
