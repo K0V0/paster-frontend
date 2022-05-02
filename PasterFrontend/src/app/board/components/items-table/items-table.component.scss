@@ -118,4 +118,21 @@ section#boardItems {
       }
     }
   }
+
+  @media (pointer:none), (pointer:coarse) {
+
+    & > div {
+
+      & > div {
+
+        div.itemButtonsSection {
+          opacity: 1;
+
+          div.left {
+            display: none;
+          }
+        }
+      }
+    }
+  }
 }

@@ -117,7 +117,8 @@
           "required": "Nevyplnené kontrolné heslo"
         },
         "passwordControlNotMatch": "Heslá sa nezhodujú"
-      }
+      },
+      "welcomeNotification": "Vitajte! Aplikáciu je možné začať okamžite používať. Ak ju už máte nainštalovanú na Vašich zariadeniach, môžete sa prihlásiť."
     },
 
     "board": {

@@ -20,9 +20,10 @@ div {
     padding: 0 3em;
 
     span {
+      word-break: break-word;
       flex-grow: 0;
       flex-shrink: 0;
-      flex-basis: auto;
+      flex-basis: 100%;
       padding: 0.5em;
       display: inline-block;
       vertical-align: middle;
@@ -33,7 +34,7 @@ div {
 
   button {
     position: absolute;
-    right: 0.5em;
+    right: 0.25em;
     z-index: 101;
     min-width: 2em;
     font-weight: bold;
