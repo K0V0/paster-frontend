@@ -1,3 +1,5 @@
+import { TranslateService } from './../../translate/translate.service';
+import { NotificationService } from './../../notification/notification.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
@@ -29,6 +31,8 @@ export class RegisterComponent extends BaseComponent implements OnInit {
   constructor(
     private registerService: RegisterService,
     private loginService: LoginService,
+    private notificationService: NotificationService,
+    private translateService: TranslateService,
     protected router: Router
   ) {
     super(router);
@@ -71,6 +75,8 @@ export class RegisterComponent extends BaseComponent implements OnInit {
       this.user.value, this.pass.value, this.pass2.value, this.email.value)
     .subscribe((data) => {
       this.loginService.saveJwtToken(data.jwtToken);
+      this.notificationService.notify(this.translateService.translate("register.welcomeNotification"));
+      this.router.navigate(['board']);
     },
     (error) => {
       this.setAllServerErrors(error);
