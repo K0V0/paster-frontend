@@ -28,8 +28,8 @@ export class WidgetsService {
   }
 
   public toggleState(url: string): void {
-    this.setState(url, !this.getState(url));
     this.clearOtherSetGiven(url);
+    this.setState(url, !this.getState(url));
     this.emitStateEvent();
   }
 

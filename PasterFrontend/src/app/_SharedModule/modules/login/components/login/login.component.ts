@@ -16,7 +16,6 @@ export class LoginComponent extends BaseComponent implements OnInit {
   login: FormGroup;
 
   constructor(
-        //setHeaders: { "Authorization": this.jwtService.getTokenWithPrefix() }
     private loginService: LoginService,
     protected router: Router
   ) {
