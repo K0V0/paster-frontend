@@ -7,22 +7,6 @@
             routerLink=''
             [routerLinkActiveOptions]="{ exact: true }"
             routerLinkActive="active"
-            [ngClass]="{'widgetEnabled': widgetStates.get('/language') }"
-        >
-          <span class="buttonComponent"
-                (click)="toggleWidget('/language', $event)">
-            <b> &#9873; </b> <em> {{ currentLang }} </em>
-          </span>
-        </a>
-      </div>
-    </li>
-
-    <li>
-      <div>
-        <a
-            routerLink=''
-            [routerLinkActiveOptions]="{ exact: true }"
-            routerLinkActive="active"
             [ngClass]="{'widgetEnabled': widgetStates.get('/') }"
         >
           <span class="buttonComponent">
@@ -87,6 +71,22 @@
                 class="buttonComponent"
           >
             {{ 'nav.logout' | t }}
+          </span>
+        </a>
+      </div>
+    </li>
+
+    <li>
+      <div>
+        <a
+            routerLink=''
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="active"
+            [ngClass]="{'widgetEnabled': widgetStates.get('/language') }"
+        >
+          <span class="buttonComponent"
+                (click)="toggleWidget('/language', $event)">
+            <b> &#9873; </b> <em> {{ currentLang }} </em>
           </span>
         </a>
       </div>

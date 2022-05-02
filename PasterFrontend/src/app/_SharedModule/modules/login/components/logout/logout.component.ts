@@ -1,8 +1,8 @@
+import { WidgetsService } from './../../../navigation/widgets.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from "@angular/router";
 import { BaseComponent } from 'src/app/_Base/components/base.component';
-import { isJSDocThisTag } from 'typescript';
 import { LoginService } from '../../services/login.service';
 
 @Component({
@@ -16,21 +16,21 @@ export class LogoutComponent extends BaseComponent implements OnInit {
 
   constructor(
     private loginService: LoginService,
-    protected router: Router
+    protected router: Router,
+    private widgetsService: WidgetsService
   ) {
     super(router);
     this.logout = new FormGroup({});
   }
 
   ngOnInit(): void {
-    // temporal fix for not refreshing page after logout
-    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.router.onSameUrlNavigation = 'reload';
   }
 
   doLogout(): void {
     this.loginService.doLogout().subscribe(data => {
       this.router.navigate(['/']);
+      this.widgetsService.clearAll();
     });
   }
 
