@@ -104,8 +104,11 @@ export class ItemsTableComponent implements OnInit {
         this.refreshContent();
         console.log('message received: ' + msg.autosync);
       },
-      (err: any) => { console.log('message received: ' + err); }, // Called if at any point WebSocket API signals some kind of error.
-      () => { console.log('complete'); } // Called when connection is closed (for whatever reason).
+      (err: any) => {
+        console.log('message received: ' + err);
+        this.listenForChangeTrigger(); // subscribing ends for some reason after around minute, recall
+      },
+      () => { console.log('socket connection closed'); }
     );
   }
 
