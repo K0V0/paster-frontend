@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   pageFaded: boolean;
 
   constructor(
-    private translateService: TranslateService,
+    private translateService: TranslateService, //called to initiate language guessing
     private loginService: LoginService,
     private widgetService: WidgetsService
   ) {
