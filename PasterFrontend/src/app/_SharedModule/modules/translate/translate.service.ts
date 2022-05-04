@@ -35,23 +35,26 @@ export class TranslateService {
   }
 
   private checkLang(): string {
-    console.log("checkLang()");
     let storedLang = this.localStorageService.get("language");
+    // return stored (set) language
     if (storedLang != null) {
-      console.log("loaded from storage");
       return storedLang;
     }
+    let bestMatchingLang = LanguagesList.FALLBACK_LANG;
+    // try to match lang from browser supported languages list
     if (navigator.languages !== undefined) {
       this.userSystemPrefferedLanguages = navigator.languages
         .map(lang => lang.trim().split(/-|_/)[0]);
       for (let lang of this.userSystemPrefferedLanguages) {
-        if (LanguagesList.getLangNameByCode(lang) !== LanguagesList.FALLBACK_LANG) {
-          this.localStorageService.set("language", lang);
-          return lang;
-        }
+          // if something better than default language is found in supported list returned by browser
+          if (lang !== bestMatchingLang) {
+            bestMatchingLang = lang;
+            this.localStorageService.set("language", LanguagesList.getBestSuitedLang(lang));
+            return bestMatchingLang;
+          }
       }
     }
-    return LanguagesList.FALLBACK_LANG;
+    return bestMatchingLang;
   }
 
   getCurrentLang(): string {
