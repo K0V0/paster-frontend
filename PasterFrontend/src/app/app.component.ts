@@ -27,13 +27,15 @@ export class AppComponent implements OnInit {
   }
 
   private checkLang(): void {
-    /*let lastUsedLang: string = this.translateService.getCurrentLang();
+    let wasLangStoredBefore: boolean = this.translateService.getStoredLang !== null;
+    let lastUsedLang: string = this.translateService.getCurrentLang();
     this.translateService.findAndSetLang();
     let currentLang: string = this.translateService.getCurrentLang();
     this.translateService.readVocabFiles();
     console.log(lastUsedLang);
-    console.log(currentLang);*/
-    //if (currentLang !== lastUsedLang) { window.location.reload(); }
+    console.log(currentLang);
+    // if language prevoiusly saved in cookies, then page is reloaded by switching widget
+    if ((currentLang !== lastUsedLang) && !wasLangStoredBefore) { window.location.reload(); }
   }
 
   private checkLogin(): void {

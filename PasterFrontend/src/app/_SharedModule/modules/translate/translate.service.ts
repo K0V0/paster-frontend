@@ -18,11 +18,9 @@ export class TranslateService {
     this.userSystemPrefferedLanguages = [];
     this.currentLang = LanguagesList.FALLBACK_LANG;
     this.vocab = [];
-    this.findAndSetLang();
-    this.readVocabFiles();
   }
 
-  private readVocabFiles() {
+  readVocabFiles() {
     // TODO dalej zistovat ako dostat v angular zoznam suborov v nejakom assets subfoldri
     var request = new XMLHttpRequest();
     request.open(
@@ -35,8 +33,9 @@ export class TranslateService {
     }
   }
 
-  private findAndSetLang(): void {
-    let storedLang = this.localStorageService.get("language");
+  findAndSetLang(): void {
+    console.log(this.vocab);
+    let storedLang = this.getStoredLang();
     // return stored (set) language
     if (storedLang != null) {
       this.currentLang = storedLang;
@@ -57,8 +56,12 @@ export class TranslateService {
     }
   }
 
+  getStoredLang(): string | null {
+    return this.localStorageService.get("language");
+  }
+
   getCurrentLang(): string {
-    let storedLang = this.localStorageService.get("language");
+    let storedLang = this.getStoredLang();
     if (storedLang !== null) {
       return storedLang;
     }
