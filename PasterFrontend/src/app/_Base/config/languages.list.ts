@@ -26,18 +26,17 @@ export class LanguagesList {
     return LanguagesList.languagesList.get(langCode) !== undefined;
   }
 
-  public static getLangNameByCode(langCode: string): string {
-    let result: string | undefined = LanguagesList.languagesList.get(langCode);
-    if (result !== undefined) {
-      return result;
+  public static getBestSuitedLang(langCode: string): string {
+    // return original language if found
+    if (LanguagesList.languagesList.has(langCode)) {
+      return langCode;
     }
+    // return language if requested language is compatible
     for (let lang of LanguagesList.compatibleLanguagesMappings) {
-      console.log("set lang from preferences");
-          console.log(lang[1]);
-          console.log(lang[1].indexOf(langCode) > -1);
       if (lang[1].indexOf(langCode) > -1) { return lang[0]; }
     }
     //TODO ked bude logging dat ako warning
+    // return default language if all methods before failed
     return LanguagesList.FALLBACK_LANG;
   }
 

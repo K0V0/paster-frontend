@@ -21,7 +21,28 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.checkLang();
+    this.checkLogin();
+    this.backgroundFadingEventListener();
+  }
+
+  private checkLang(): void {
+    let wasLangStoredBefore: boolean = this.translateService.getStoredLang !== null;
+    let lastUsedLang: string = this.translateService.getCurrentLang();
+    this.translateService.findAndSetLang();
+    let currentLang: string = this.translateService.getCurrentLang();
+    this.translateService.readVocabFiles();
+    console.log(lastUsedLang);
+    console.log(currentLang);
+    // if language prevoiusly saved in cookies, then page is reloaded by switching widget
+    if ((currentLang !== lastUsedLang) && !wasLangStoredBefore) { window.location.reload(); }
+  }
+
+  private checkLogin(): void {
     this.loginService.checkLogin();
+  }
+
+  private backgroundFadingEventListener(): void {
     this.widgetService.getStateObservable().subscribe(fadeBackground => {
       this.pageFaded = fadeBackground;
     });

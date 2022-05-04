@@ -16,12 +16,11 @@ export class TranslateService {
     private localStorageService: LocalStorageService
   ) {
     this.userSystemPrefferedLanguages = [];
-    this.currentLang = this.checkLang();
+    this.currentLang = LanguagesList.FALLBACK_LANG;
     this.vocab = [];
-    this.readVocabFiles()
   }
 
-  private readVocabFiles() {
+  readVocabFiles() {
     // TODO dalej zistovat ako dostat v angular zoznam suborov v nejakom assets subfoldri
     var request = new XMLHttpRequest();
     request.open(
@@ -34,31 +33,43 @@ export class TranslateService {
     }
   }
 
-  private checkLang(): string {
-    console.log("checkLang()");
-    let storedLang = this.localStorageService.get("language");
+  findAndSetLang(): void {
+    console.log(this.vocab);
+    let storedLang = this.getStoredLang();
+    // return stored (set) language
     if (storedLang != null) {
-      console.log("loaded from storage");
-      return storedLang;
+      this.currentLang = storedLang;
+      return;
     }
+    // try to match lang from browser supported languages list
     if (navigator.languages !== undefined) {
       this.userSystemPrefferedLanguages = navigator.languages
         .map(lang => lang.trim().split(/-|_/)[0]);
       for (let lang of this.userSystemPrefferedLanguages) {
-        if (LanguagesList.getLangNameByCode(lang) !== LanguagesList.FALLBACK_LANG) {
-          this.localStorageService.set("language", lang);
-          return lang;
-        }
+          // if something better than default language is found in supported list returned by browser
+          if (lang !== LanguagesList.FALLBACK_LANG) {
+            this.localStorageService.set("language", LanguagesList.getBestSuitedLang(lang));
+            this.currentLang = lang;
+            break;
+          }
       }
     }
-    return LanguagesList.FALLBACK_LANG;
+  }
+
+  getStoredLang(): string | null {
+    return this.localStorageService.get("language");
   }
 
   getCurrentLang(): string {
+    let storedLang = this.getStoredLang();
+    if (storedLang !== null) {
+      return storedLang;
+    }
     return this.currentLang;
   }
 
   setLang(countryCode: string) {
+    console.log("setLang()");
     if (LanguagesList.containsLanguage(countryCode)) {
       this.localStorageService.set("language", countryCode);
       this.currentLang = countryCode;
