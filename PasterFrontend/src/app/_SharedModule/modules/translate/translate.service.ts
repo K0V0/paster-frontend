@@ -1,39 +1,70 @@
-import { LocalStorageService } from './../../../_CoreModule/services/local-storage.service';
-import { LanguagesList } from './../../../_Base/config/languages.list';
-import { Injectable } from '@angular/core';
 import { JsonArray } from "@angular/compiler-cli/ngcc/src/packages/entry_point";
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
+import { LanguagesList } from './../../../_Base/config/languages.list';
+import { LocalStorageService } from './../../../_CoreModule/services/local-storage.service';
+import * as lang_sk from 'src/assets/i18n/sk.json';
+import * as lang_en from 'src/assets/i18n/en.json';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TranslateService {
 
+  //private translation_sk = [];
   private userSystemPrefferedLanguages: string[];
   private currentLang: string;
-  private readonly vocab: JsonArray;
+  private vocab: JsonArray;
+  private vocab2: any;
+  //private languageChanged: Subject<boolean>;
+  private stringsLoaded: Subject<boolean>;
 
   constructor(
-    private localStorageService: LocalStorageService
+    private localStorageService: LocalStorageService,
+    //private http: HttpClient
   ) {
     this.userSystemPrefferedLanguages = [];
     this.currentLang = LanguagesList.FALLBACK_LANG;
     this.vocab = [];
+    this.vocab2 = {};
+    //this.languageChanged = new Subject();
+    this.stringsLoaded = new Subject();
+    this.findAndSetLang();
+    this.readVocabFiles();
   }
 
-  readVocabFiles() {
-    // TODO dalej zistovat ako dostat v angular zoznam suborov v nejakom assets subfoldri
-    var request = new XMLHttpRequest();
+  private readVocabFiles() {
+
+    let lang: any = lang_sk;
+    this.vocab.push(lang['sk']);
+
+
+    //this.vocab2['sk'] = (lang_sk)['sk'];
+    //console.log(this.vocab2);
+    //console.log(JSON.parse(lang['sk']));
+    //this.vocab.push(lang['sk']);
+    //this.stringsLoaded.next(true);
+    //this.vocab.push(JSON.parse(lang_en));
+    /*var request = new XMLHttpRequest();
     request.open(
       'GET',
       '/assets/i18n/' + this.currentLang + '.json',
       false);
     request.send(null);
     if (request.status === 200) {
+      console.log(JSON.parse(request.responseText)[this.currentLang]);
       this.vocab.push(JSON.parse(request.responseText)[this.currentLang]);
-    }
+    }*/
+
+    /*this.http.get<string>('/assets/i18n/' + this.currentLang + '.json')
+      .subscribe((data) => {
+        console.log(data);
+        this.vocab = JSON.parse(data)[this.currentLang];
+        this.stringsLoaded.next(true);
+      });*/
   }
 
-  findAndSetLang(): void {
+  private findAndSetLang(): void {
     console.log(this.vocab);
     let storedLang = this.getStoredLang();
     // return stored (set) language
@@ -56,6 +87,10 @@ export class TranslateService {
     }
   }
 
+  getLoadingDoneObservable(): Subject<boolean> {
+    return this.stringsLoaded;
+  }
+
   getStoredLang(): string | null {
     return this.localStorageService.get("language");
   }
@@ -69,7 +104,6 @@ export class TranslateService {
   }
 
   setLang(countryCode: string) {
-    console.log("setLang()");
     if (LanguagesList.containsLanguage(countryCode)) {
       this.localStorageService.set("language", countryCode);
       this.currentLang = countryCode;
@@ -77,6 +111,7 @@ export class TranslateService {
   }
 
   translate(path: string, defaultTranslation: string | undefined = undefined) {
+    console.log("translate()");
     if (defaultTranslation === null) {
       defaultTranslation = undefined;
     }
