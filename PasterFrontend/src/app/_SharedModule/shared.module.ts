@@ -1,3 +1,4 @@
+import { CookieModule } from './modules/cookie/cookie.module';
 import { AdsModule } from './modules/ads/ads.module';
 // moje moduly
 import { ValidationErrorsModule } from "./modules/validation-errors/validationErrors.module";
@@ -26,6 +27,7 @@ import { NotificationModule } from "./modules/notification/notification.module";
     PipesModule,
     NotificationModule,
     AdsModule,
+    CookieModule,
     // angular stuff
     FormsModule,
     ReactiveFormsModule,
