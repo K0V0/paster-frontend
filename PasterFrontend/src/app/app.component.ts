@@ -23,8 +23,19 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.checkLang();
     this.checkLogin();
     this.backgroundFadingEventListener();
+  }
+
+  private checkLang(): void {
+    let storedLang: string | null = this.translateService.getStoredLang();
+    this.translateService.findAndSetLang();
+    this.translateService.readVocabFiles();
+    // ugly hack for behaviour seen on chrome on Windows computer
+    if (storedLang === null) {
+      window.location.reload();
+    }
   }
 
   private checkLogin(): void {

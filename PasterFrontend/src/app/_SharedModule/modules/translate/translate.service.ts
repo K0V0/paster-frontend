@@ -20,11 +20,9 @@ export class TranslateService {
     this.userSystemPrefferedLanguages = [];
     this.currentLang = LanguagesList.FALLBACK_LANG;
     this.vocab = [];
-    this.findAndSetLang();
-    this.readVocabFiles();
   }
 
-  private readVocabFiles() {
+  readVocabFiles() {
     //TODO hnus najvacsi, ale neviem ako zatial pristupovat ku konstantam podla nazvu ulozeneho v premennej
     let languageFile: any;
     switch(this.currentLang) {
@@ -41,11 +39,10 @@ export class TranslateService {
         break;
       }
    }
-
    this.vocab.push(<JsonArray> languageFile[this.currentLang]);
   }
 
-  private findAndSetLang(): void {
+  findAndSetLang(): void {
     console.log(this.vocab);
     let storedLang = this.getStoredLang();
     // return stored (set) language
