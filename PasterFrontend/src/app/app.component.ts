@@ -11,6 +11,7 @@ import { TranslateService } from "./_SharedModule/modules/translate/translate.se
 export class AppComponent implements OnInit {
   title = 'PasterFrontend';
   pageFaded: boolean;
+  stringsLoaded: boolean;
 
   constructor(
     private translateService: TranslateService, //called to initiate language guessing
@@ -18,6 +19,7 @@ export class AppComponent implements OnInit {
     private widgetService: WidgetsService
   ) {
     this.pageFaded = false;
+    this.stringsLoaded = false;
   }
 
   ngOnInit() {
@@ -27,15 +29,13 @@ export class AppComponent implements OnInit {
   }
 
   private checkLang(): void {
-    let wasLangStoredBefore: boolean = this.translateService.getStoredLang !== null;
-    let lastUsedLang: string = this.translateService.getCurrentLang();
+    let storedLang: string | null = this.translateService.getStoredLang();
     this.translateService.findAndSetLang();
-    let currentLang: string = this.translateService.getCurrentLang();
     this.translateService.readVocabFiles();
-    console.log(lastUsedLang);
-    console.log(currentLang);
-    // if language prevoiusly saved in cookies, then page is reloaded by switching widget
-    if ((currentLang !== lastUsedLang) && !wasLangStoredBefore) { window.location.reload(); }
+    // ugly hack for behaviour seen on chrome on Windows computer
+    if (storedLang === null) {
+      window.location.reload();
+    }
   }
 
   private checkLogin(): void {

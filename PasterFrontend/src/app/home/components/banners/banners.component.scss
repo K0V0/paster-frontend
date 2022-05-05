@@ -107,20 +107,9 @@ article.banner1 {
             background-color: $pc-highlight-color;
             color: white;
             vertical-align: middle;
-            display: inline-block;
+            display: inline;
             position: relative;
-
-            &::after {
-              content: "";
-              position: absolute;
-              display: inline-block;
-              width:0.125em;
-              background-color: black;
-              vertical-align: middle;
-              top:0;
-              bottom:0%;
-              //animation: blinker 1s infinite;
-            }
+            border-right: 0.125em solid $base-theme-font-color;
           }
         }
       }

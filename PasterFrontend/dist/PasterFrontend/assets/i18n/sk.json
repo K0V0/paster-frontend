@@ -13,10 +13,10 @@
       "banner1": {
         "heading1": "Kopírovanie medzi zariadeniami ?",
         "slogan1": "...ani klik naviac !",
-        "slogan2": "je aplikácia ktorá Vám umožní kopírovať a vkladať obsah medzi Vašimi prepojenými zariadeniami jednoducho a hlavne bez námahy.",
-        "slogan3": "Vyberte napríklad obsah, ktorý chcete skopírovať na Vašom počítači, použite kombináciu <b>CTRL + C.</b>",
-        "slogan4": "Teraz zoberte do ruky Váš telefón a napríklad v textovom poli použite <b>'Vložiť'</b>.",
-        "slogan5": "...alebo naopak, zoberte telefón, vyberte voľbu kopírovať a na počítači použite <b>CTRL + V.</b>",
+        "slogan2": "je aplikácia ktorá Vám umožní kopírovať a vkladať obsah medzi Vašimi prepojenými zariadeniami rovnako jednoducho ako medzi aplikáciami v jednom zariadení.",
+        "slogan3": "<b>Naozaj ani klik naviac!</b>",
+        "slogan4": "Vyberte napríklad niečo na Vašom počítači pomocou <b> CTRL + C </b> a na druhom zariadení použite <b> CTRL + C </b> alebo <b> \"Vložiť\" </b>.",
+        "slogan5": "Kde nie je možné nainštalovať aplikáciu, je rozhranie pre synchronizáciu s ostatnými zariadeniami dostupné cez túto webovú stránku.",
         "paste": "Vložiť"
       },
       "banner2": {

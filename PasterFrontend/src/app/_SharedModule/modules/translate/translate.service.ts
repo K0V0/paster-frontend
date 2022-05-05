@@ -1,36 +1,45 @@
-import { LocalStorageService } from './../../../_CoreModule/services/local-storage.service';
-import { LanguagesList } from './../../../_Base/config/languages.list';
-import { Injectable } from '@angular/core';
 import { JsonArray } from "@angular/compiler-cli/ngcc/src/packages/entry_point";
+import { Injectable } from '@angular/core';
+import * as lang_en from 'src/assets/i18n/en.json';
+import * as lang_sk from 'src/assets/i18n/sk.json';
+import { LanguagesList } from './../../../_Base/config/languages.list';
+import { LocalStorageService } from './../../../_CoreModule/services/local-storage.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TranslateService {
-
   private userSystemPrefferedLanguages: string[];
   private currentLang: string;
-  private readonly vocab: JsonArray;
+  private vocab: JsonArray;
 
   constructor(
     private localStorageService: LocalStorageService
   ) {
+    console.log("ideeeeeem");
     this.userSystemPrefferedLanguages = [];
     this.currentLang = LanguagesList.FALLBACK_LANG;
     this.vocab = [];
   }
 
   readVocabFiles() {
-    // TODO dalej zistovat ako dostat v angular zoznam suborov v nejakom assets subfoldri
-    var request = new XMLHttpRequest();
-    request.open(
-      'GET',
-      '/assets/i18n/' + this.currentLang + '.json',
-      false);
-    request.send(null);
-    if (request.status === 200) {
-      this.vocab.push(JSON.parse(request.responseText)[this.currentLang]);
-    }
+    //TODO hnus najvacsi, ale neviem ako zatial pristupovat ku konstantam podla nazvu ulozeneho v premennej
+    let languageFile: any;
+    switch(this.currentLang) {
+      case 'sk': {
+        languageFile = lang_sk;
+        break;
+      }
+      case 'en': {
+        languageFile = lang_en;
+        break;
+      }
+      default: {
+        languageFile = lang_en;
+        break;
+      }
+   }
+   this.vocab.push(<JsonArray> languageFile[this.currentLang]);
   }
 
   findAndSetLang(): void {
@@ -69,7 +78,6 @@ export class TranslateService {
   }
 
   setLang(countryCode: string) {
-    console.log("setLang()");
     if (LanguagesList.containsLanguage(countryCode)) {
       this.localStorageService.set("language", countryCode);
       this.currentLang = countryCode;

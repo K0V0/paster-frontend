@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from '@angular/router';
-import { shareReplay } from 'rxjs/operators';
 import { BaseComponent } from "../../../_Base/components/base.component";
 import { BoardService } from "../../services/board.service";
 import { WebsocketService } from './../../../_CoreModule/services/websocket.service';
