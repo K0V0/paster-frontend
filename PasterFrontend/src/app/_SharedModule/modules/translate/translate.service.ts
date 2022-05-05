@@ -16,6 +16,7 @@ export class TranslateService {
   constructor(
     private localStorageService: LocalStorageService
   ) {
+    console.log("ideeeeeem");
     this.userSystemPrefferedLanguages = [];
     this.currentLang = LanguagesList.FALLBACK_LANG;
     this.vocab = [];

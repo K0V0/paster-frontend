@@ -92,6 +92,13 @@ section#boardItems {
         }
       }
 
+      div.itemBaseSection {
+
+        span {
+          word-break: break-word;
+        }
+      }
+
       &:hover {
         background-color: $base-theme-hover-color;
 
@@ -124,9 +131,14 @@ section#boardItems {
     & > div {
 
       & > div {
+        padding-right: 3em;
 
         div.itemButtonsSection {
           opacity: 1;
+
+          button {
+            opacity: 1;
+          }
 
           div.left {
             display: none;
