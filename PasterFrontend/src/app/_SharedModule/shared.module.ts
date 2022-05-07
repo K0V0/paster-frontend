@@ -32,6 +32,7 @@ import { GdprModule } from './modules/gdpr/gdpr.module';
     CookieModule,
     GdprModule,
     SitemapModule,
+    GitModule,
     // angular stuff
     FormsModule,
     ReactiveFormsModule,
