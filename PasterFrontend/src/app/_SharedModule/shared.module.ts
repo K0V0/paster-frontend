@@ -1,3 +1,4 @@
+import { SitemapModule } from './modules/sitemap/sitemap.module';
 import { CookieModule } from './modules/cookie/cookie.module';
 import { AdsModule } from './modules/ads/ads.module';
 // moje moduly
@@ -15,6 +16,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ClipboardModule } from "ngx-clipboard";
 import { NotificationModule } from "./modules/notification/notification.module";
+import { GdprModule } from './modules/gdpr/gdpr.module';
 
 @NgModule({
   exports: [
@@ -28,6 +30,8 @@ import { NotificationModule } from "./modules/notification/notification.module";
     NotificationModule,
     AdsModule,
     CookieModule,
+    GdprModule,
+    SitemapModule,
     // angular stuff
     FormsModule,
     ReactiveFormsModule,
