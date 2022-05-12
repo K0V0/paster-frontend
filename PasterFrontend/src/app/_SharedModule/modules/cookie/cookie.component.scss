@@ -13,6 +13,7 @@ form {
   h3, h2 {
     font-weight: bold;
     margin-bottom: 0.5em;
+    padding : 0 0.125em;
   }
 
   h3 {
@@ -25,14 +26,14 @@ form {
 
   span {
     font-weight: normal;
-    padding-left: 0.125em;
+    padding: 0 0.25em;
     display: inline-block;
   }
 
   section {
     display: flex;
     align-items: center;
-    margin: 0.5em 0;
+    margin: 1.5em 0;
 
     figure {
       margin-right: 0.5em;
@@ -45,6 +46,7 @@ form {
     &.buttons {
       display: block;
       text-align: right;
+      margin-bottom: 0.5em;
 
       button {
         font-weight: bold;
