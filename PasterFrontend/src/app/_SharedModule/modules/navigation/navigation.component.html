@@ -118,3 +118,9 @@
       [@loginRegisterWidgetAnimation]>
   <app-translate class="logregFormWidget"></app-translate>
 </div>
+
+<div class="widget"
+     *ngIf="widgetStates.get('/cookies')"
+     [@loginRegisterWidgetAnimation]>
+  <app-cookies class="logregFormWidget"></app-cookies>
+</div>

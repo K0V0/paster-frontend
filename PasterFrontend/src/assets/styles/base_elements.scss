@@ -43,6 +43,11 @@ input, button, .buttonComponent {
       background-color: $inputs-border-focus;
       border-color: $inputs-background;
     }
+
+    &:disabled {
+      background-color: $inputs-text-disabled;
+      cursor: not-allowed;
+    }
   }
 }
 

@@ -1,0 +1,42 @@
+@import 'src/assets/styles/colors';
+
+div.cookiesDialog {
+  background-color: $base-theme-color;
+  z-index: 99;
+  padding-top: 0.75em;
+  padding-left: 0.5em;
+  padding-right:0.5em;
+  padding-bottom: 0.125em;
+  border-radius: 0.5em;
+  box-shadow: 0em 0em 0.25em 1px $widgets-shadow-color;
+
+  h3 {
+    font-size: 1.25em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+
+  section {
+    display: flex;
+    align-items: center;
+    margin: 0.5em 0;
+
+    figure {
+      margin-right: 0.5em;
+
+      input {
+        font-size: 2em;
+      }
+    }
+
+    &.buttons {
+      display: block;
+      text-align: right;
+
+      button {
+        font-weight: bold;
+      }
+    }
+  }
+
+}

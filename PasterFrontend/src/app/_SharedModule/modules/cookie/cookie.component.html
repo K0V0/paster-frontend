@@ -1,0 +1,51 @@
+<div class="cookiesDialog widget" *ngIf="!askedForCookies" [formGroup]="cookies">
+
+  <form class="cookies" (ngSubmit)="acceptCookies()">
+
+    <h3> {{ "cookies.title" | t }} </h3>
+
+    <span> {{ "cookies.description" | t }} </span>
+
+    <br>
+    <br>
+
+    <section>
+      <figure>
+        <input  type="checkbox"
+                name="cookiesBasic"
+                id="cookiesBasic"
+                checked="checked"
+                class="disabled"
+                disabled
+                >
+      </figure>
+      <div>
+        <h3> {{ "cookies.settingsBaseTitle" | t }} </h3>
+        <span> {{ "cookies.settingsBaseDescription" | t }} </span>
+      </div>
+    </section>
+
+    <br>
+
+    <section>
+      <figure>
+        <input  type="checkbox"
+                name="cookiesMarketing"
+                id="cookiesMarketing"
+                formControlName="marketing">
+      </figure>
+      <div>
+        <h3> {{ "cookies.settingsMarketingTitle" | t }} </h3>
+        <span> {{ "cookies.settingsMarketingDescription" | t }} </span>
+      </div>
+    </section>
+
+    <br>
+
+    <section class="buttons">
+      <button> {{ "cookies.save" | t }} </button>
+    </section>
+
+  </form>
+
+</div>

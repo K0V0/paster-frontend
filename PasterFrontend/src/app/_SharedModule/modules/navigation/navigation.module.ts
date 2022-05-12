@@ -10,6 +10,7 @@ import { RegisterModule } from '../register/register.module';
 import { TranslateModule } from "../translate/translate.module";
 import { Guard } from "./guard.service";
 import { NavigationComponent } from "./navigation.component";
+import { CookieModule } from '../cookie/cookie.module';
 
 const routes: Routes = [
   {
@@ -48,7 +49,8 @@ const routes: Routes = [
     RegisterModule,
     TranslateModule,
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    CookieModule
   ],
   exports: [
     RouterModule,

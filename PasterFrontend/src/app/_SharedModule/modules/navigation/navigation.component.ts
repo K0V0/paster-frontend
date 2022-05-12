@@ -1,7 +1,8 @@
-import { TranslateService } from './../translate/translate.service';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 import { LoginService } from "../login/services/login.service";
+import { CookieService } from './../cookie/cookie.service';
+import { TranslateService } from './../translate/translate.service';
 import { NavigationAnimations } from './navigation.animations';
 import { WidgetsService } from './widgets.service';
 
@@ -29,7 +30,8 @@ export class NavigationComponent implements OnInit {
     private loginService: LoginService,
     private widgetService: WidgetsService,
     private router: Router,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private cookiesService: CookieService
   ) {
     this.loggedIn = false;
     this.widgetStates = new Map;
@@ -48,6 +50,7 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit(): void {
     this.trackNavigationEvent(this.router);
+    this.checkCookiesWidget();
   }
 
   toggleWidget(url: string, event: Event): void {
@@ -67,6 +70,17 @@ export class NavigationComponent implements OnInit {
         this.widgetStates = this.widgetService.getStates();
       }
     });
+  }
+
+  private checkCookiesWidget(): void {
+    if (!this.cookiesService.cookiesAsked()) {
+      let totok = this;
+      setTimeout(function() {
+        if (!totok.cookiesService.cookiesAsked()) {
+          totok.widgetService.toggleState("/cookies");
+        }
+      }, 1);
+    }
   }
 
 }
