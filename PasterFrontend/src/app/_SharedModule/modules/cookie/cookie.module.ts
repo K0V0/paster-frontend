@@ -1,4 +1,4 @@
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { TranslateModule } from '../translate/translate.module';
 import { NgModule } from "@angular/core";
@@ -9,7 +9,8 @@ import { CookieService } from './cookie.service';
   imports: [
     TranslateModule,
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   declarations: [
     CookieComponent

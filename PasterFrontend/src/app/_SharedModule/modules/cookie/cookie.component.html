@@ -1,6 +1,7 @@
-<div class="cookiesDialog widget" *ngIf="!askedForCookies" [formGroup]="cookies">
-
-  <form class="cookies" (ngSubmit)="acceptCookies()">
+  <form class="cookies"
+        (ngSubmit)="acceptCookies()"
+        [formGroup]="cookies"
+        *ngIf="!askedForCookies">
 
     <h2> {{ "cookies.title" | t }} </h2>
 
@@ -48,4 +49,3 @@
 
   </form>
 
-</div>

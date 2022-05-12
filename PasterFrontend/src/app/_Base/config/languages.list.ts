@@ -6,12 +6,14 @@ export class LanguagesList {
 
   private static readonly languagesList: Map<string, string> = new Map([
     ["sk", "Slovenský"],
-    ["en", "English"]
+    ["en", "English"],
+    ["ua", "український"]
   ]);
 
   private static readonly compatibleLanguagesMappings: Map<string, string[]> = new Map([
     ["sk", ["cz", "cs"]],
-    ["en", ["us"]]
+    ["en", ["us", "gb"]],
+    ["ua", ["by", "ru", "rus"]]
   ]);
 
   public static getAvailableLanguages(): string[] {

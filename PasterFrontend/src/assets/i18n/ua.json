@@ -16,8 +16,7 @@
       "settingsBaseDescription": "Ukladajú najzákladnejšie informácie nevyhnutné pre samotný beh aplikácie, napríklad aj tieto nastavenia",
       "settingsMarketingTitle": "Marketingové",
       "settingsMarketingDescription": "Cookies ukladajúce marketingové údaje ktoré pomáhajú pri poskytovaní viac relevantnej reklamy",
-      "save": "Uložiť nastavenia",
-      "saved": "Nastavenia súborov cookies boli uložené"
+      "save": "Uložiť nastavenia"
     },
 
     "home": {
@@ -154,7 +153,6 @@
 
     "logout": {
       "logout": "Odhlásiť sa",
-      "relog": "Prepnúť účet",
       "userInfo": {
         "lastActivity": "Posledná aktivita"
       }

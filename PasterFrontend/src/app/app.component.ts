@@ -1,6 +1,3 @@
-import { CookieService } from './_SharedModule/modules/cookie/cookie.service';
-import { CookieComponent } from './_SharedModule/modules/cookie/cookie.component';
-import { LocalStorageService } from './_CoreModule/services/local-storage.service';
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from './_SharedModule/modules/login/services/login.service';
 import { WidgetsService } from './_SharedModule/modules/navigation/widgets.service';
@@ -20,7 +17,6 @@ export class AppComponent implements OnInit {
     private translateService: TranslateService, //called to initiate language guessing
     private loginService: LoginService,
     private widgetService: WidgetsService,
-    private cookiesService: CookieService
   ) {
     this.pageFaded = false;
     this.stringsLoaded = false;
@@ -30,7 +26,6 @@ export class AppComponent implements OnInit {
     this.checkLang();
     this.checkLogin();
     this.backgroundFadingEventListener();
-    this.askedForCookies();
   }
 
   private checkLang(): void {
@@ -53,7 +48,4 @@ export class AppComponent implements OnInit {
     });
   }
 
-  private askedForCookies(): void {
-
-  }
 }

@@ -76,9 +76,7 @@ export class NavigationComponent implements OnInit {
     if (!this.cookiesService.cookiesAsked()) {
       let totok = this;
       setTimeout(function() {
-        if (!totok.cookiesService.cookiesAsked()) {
-          totok.widgetService.toggleState("/cookies");
-        }
+        totok.widgetService.toggleState("/cookies");
       }, 1);
     }
   }

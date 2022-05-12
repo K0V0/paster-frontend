@@ -1,6 +1,6 @@
 @import 'src/assets/styles/colors';
 
-div.cookiesDialog {
+form {
   background-color: $base-theme-color;
   z-index: 99;
   padding-top: 0.75em;
@@ -26,6 +26,7 @@ div.cookiesDialog {
   span {
     font-weight: normal;
     padding-left: 0.125em;
+    display: inline-block;
   }
 
   section {

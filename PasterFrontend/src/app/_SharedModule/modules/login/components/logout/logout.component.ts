@@ -28,8 +28,16 @@ export class LogoutComponent extends BaseComponent implements OnInit {
   }
 
   doLogout(): void {
+    this.accountLeaveAction("/");
+  }
+
+  doRelog(): void {
+    this.accountLeaveAction("/login");
+  }
+
+  private accountLeaveAction(path: string): void {
     this.loginService.doLogout().subscribe(data => {
-      this.router.navigate(['/']);
+      this.router.navigate([path]);
       this.widgetsService.clearAll();
     });
   }
