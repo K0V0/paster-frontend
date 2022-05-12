@@ -31,3 +31,7 @@ export interface Language {
   langCode: string;
   langName: string;
 }
+
+export interface Cookie {
+  marketing: boolean;
+}

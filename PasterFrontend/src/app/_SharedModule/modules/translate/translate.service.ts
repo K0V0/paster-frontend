@@ -2,6 +2,7 @@ import { JsonArray } from "@angular/compiler-cli/ngcc/src/packages/entry_point";
 import { Injectable } from '@angular/core';
 import * as lang_en from 'src/assets/i18n/en.json';
 import * as lang_sk from 'src/assets/i18n/sk.json';
+import * as lang_ua from 'src/assets/i18n/ua.json';
 import { LanguagesList } from './../../../_Base/config/languages.list';
 import { LocalStorageService } from './../../../_CoreModule/services/local-storage.service';
 
@@ -34,6 +35,10 @@ export class TranslateService {
         languageFile = lang_en;
         break;
       }
+      case 'ua': {
+        languageFile = lang_ua;
+        break;
+      }
       default: {
         languageFile = lang_en;
         break;
@@ -43,7 +48,6 @@ export class TranslateService {
   }
 
   findAndSetLang(): void {
-    console.log(this.vocab);
     let storedLang = this.getStoredLang();
     // return stored (set) language
     if (storedLang != null) {

@@ -6,7 +6,7 @@ import { Subject } from 'rxjs';
 })
 export class WidgetsService {
 
-  private static readonly widgetsUrls: string[] = ["/register", "/login", "/logout", "/language"];
+  private static readonly widgetsUrls: string[] = ["/register", "/login", "/logout", "/language", "/cookies"];
 
   private widgetStates: Map<string, boolean>;
   private openedState: Subject<boolean>;

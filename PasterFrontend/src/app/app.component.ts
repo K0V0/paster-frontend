@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   constructor(
     private translateService: TranslateService, //called to initiate language guessing
     private loginService: LoginService,
-    private widgetService: WidgetsService
+    private widgetService: WidgetsService,
   ) {
     this.pageFaded = false;
     this.stringsLoaded = false;

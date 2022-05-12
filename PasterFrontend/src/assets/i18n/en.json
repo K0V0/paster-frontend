@@ -9,6 +9,17 @@
       "logout": "User"
     },
 
+    "cookies": {
+      "title": "Cookies settings",
+      "description": "Cookies are tiny files consisting from text strings and key-value pairs stored inside your browser cache",
+      "settingsBaseTitle": "Necessary",
+      "settingsBaseDescription": "Stores basic values and settings that are necessary for application to run, for example even this settings",
+      "settingsMarketingTitle": "Marketing",
+      "settingsMarketingDescription": "Cookies that store data required by algorithms that can provide more relevant advertisements",
+      "save": "Save settings",
+      "saved": "Cookies settings have been updated"
+    },
+
     "home": {
       "banner1": {
         "heading1": "Copy & paste between devices ?",
@@ -143,6 +154,7 @@
 
     "logout": {
       "logout": "Log out",
+      "relog": "Swithc account",
       "userInfo": {
         "lastActivity": "Last activity"
       }

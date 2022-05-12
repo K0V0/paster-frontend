@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ClipboardModule } from "ngx-clipboard";
 import { NotificationModule } from "./modules/notification/notification.module";
 import { GdprModule } from './modules/gdpr/gdpr.module';
+import { GitModule } from './modules/git/git.module';
 
 @NgModule({
   exports: [

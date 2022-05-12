@@ -1,3 +1,4 @@
+import { TranslateService } from './../translate/translate.service';
 import { Injectable } from "@angular/core";
 import { Subject } from 'rxjs';
 
@@ -8,7 +9,9 @@ export class NotificationService {
   private openedState: Subject<string>;
   private timeoutId: any;
 
-  constructor() {
+  constructor(
+    private translateService: TranslateService
+  ) {
     this.openedState = new Subject;
   }
 
@@ -16,6 +19,10 @@ export class NotificationService {
     this.closeNotification();
     this.openedState.next(message);
     this.bounceNotification();
+  }
+
+  notifyTranslated(messageId: string): void {
+    this.notify(this.translateService.translate(messageId));
   }
 
   closeNotification(): void {

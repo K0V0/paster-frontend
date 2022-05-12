@@ -9,6 +9,17 @@
       "logout": "Užívateľ"
     },
 
+    "cookies": {
+      "title": "Nastavenia cookies",
+      "description": "Cookies sú malé súbory ktoré pozostávajú z textových reťazcov a sú ukladané v pamäti Vašeho webového prehliadača",
+      "settingsBaseTitle": "Nevyhnutné",
+      "settingsBaseDescription": "Ukladajú najzákladnejšie informácie nevyhnutné pre samotný beh aplikácie, napríklad aj tieto nastavenia",
+      "settingsMarketingTitle": "Marketingové",
+      "settingsMarketingDescription": "Cookies ukladajúce marketingové údaje ktoré pomáhajú pri poskytovaní viac relevantnej reklamy",
+      "save": "Uložiť nastavenia",
+      "saved": "Nastavenia súborov cookies boli uložené"
+    },
+
     "home": {
       "banner1": {
         "heading1": "Kopírovanie medzi zariadeniami ?",
@@ -143,6 +154,7 @@
 
     "logout": {
       "logout": "Odhlásiť sa",
+      "relog": "Prepnúť účet",
       "userInfo": {
         "lastActivity": "Posledná aktivita"
       }

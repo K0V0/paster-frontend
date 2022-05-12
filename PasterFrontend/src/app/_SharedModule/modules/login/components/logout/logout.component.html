@@ -3,6 +3,7 @@
       (ngSubmit)="doLogout()">
 
   <div>
+
     <div class="wrap">
       <h4>Meno používateľa</h4>
       <br>
@@ -10,9 +11,15 @@
       <br>
       <i> {{ "logout.userInfo.lastActivity" | t }} : </i>
     </div>
-    <div class="wrap">
-      <button> {{ 'logout.logout' | t }} </button>
+
+    <div>
+      <button type="button" (click)="doRelog()"> {{ 'logout.relog' | t }} </button>
     </div>
+
+    <div>
+      <button type="submit"> {{ 'logout.logout' | t }} </button>
+    </div>
+
   </div>
 
 </form>

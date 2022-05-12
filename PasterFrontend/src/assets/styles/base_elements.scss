@@ -38,10 +38,21 @@ input, button, .buttonComponent {
 
   &[type="radio"], &[type="checkbox"] {
     border-radius: 50%;
+    border-color: $inputs-background;
 
-    &:focus, &:checked {
+    &:focus {
+      background-color: $inputs-background;
+      border-color: $inputs-background;
+    }
+
+    &:checked {
       background-color: $inputs-border-focus;
       border-color: $inputs-background;
+    }
+
+    &:disabled {
+      background-color: $inputs-text-disabled;
+      cursor: not-allowed;
     }
   }
 }

@@ -10,7 +10,7 @@ import { LoginService } from "./services/login.service";
   imports: [
     ReactiveFormsModule,
     ValidationErrorsModule,
-    TranslateModule
+    TranslateModule,
   ],
   declarations: [
     LoginComponent,

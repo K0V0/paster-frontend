@@ -8,9 +8,9 @@ div.errorPlaceholder {
     font-size: 0.875em;
     font-weight: normal;
     display: inline-block;
+    line-height: 1.25em;
     margin: 0.25em;
     padding: 0.25em;
-    //border-radius: 0.25em;
     color: $widgets-error-font-color;
     background-color: $widgets-error-background-color;
     transition: transform $transition-fast ease-in-out;
