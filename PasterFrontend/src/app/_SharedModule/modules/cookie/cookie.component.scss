@@ -10,10 +10,22 @@ div.cookiesDialog {
   border-radius: 0.5em;
   box-shadow: 0em 0em 0.25em 1px $widgets-shadow-color;
 
-  h3 {
-    font-size: 1.25em;
+  h3, h2 {
     font-weight: bold;
     margin-bottom: 0.5em;
+  }
+
+  h3 {
+    font-size: 1.25em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  span {
+    font-weight: normal;
+    padding-left: 0.125em;
   }
 
   section {
