@@ -371,3 +371,27 @@ article.banner4 {
     }
   }
 }
+
+article.banner2, article.banner3, article.banner4 {
+
+  section.figures {
+    text-align: center;
+
+    figure {
+      margin-right: 1.5em;
+    }
+  }
+
+  @media only screen and (min-width: 1152px) {
+
+    section.figures {
+      flex-basis: 16em;
+      flex-grow: 1;
+      flex-shrink: 0;
+    }
+
+    section.infos {
+      flex-grow: 10;
+    }
+  }
+}
