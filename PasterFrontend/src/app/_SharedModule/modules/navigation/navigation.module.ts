@@ -11,6 +11,7 @@ import { TranslateModule } from "../translate/translate.module";
 import { Guard } from "./guard.service";
 import { NavigationComponent } from "./navigation.component";
 import { CookieModule } from '../cookie/cookie.module';
+import { GdprComponent } from '../gdpr/gdpr.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: "cookies",
     component: LogregComponent
+  },
+  {
+    path: "gdpr",
+    component: GdprComponent
   }
 ];
 

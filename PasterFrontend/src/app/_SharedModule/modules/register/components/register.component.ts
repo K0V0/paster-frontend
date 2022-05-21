@@ -20,6 +20,7 @@ export class RegisterComponent extends BaseComponent implements OnInit {
   pass: FormControl;
   pass2: FormControl;
   email: FormControl;
+  gdpr: FormControl;
   register: FormGroup;
 
   // TODO servica ktora by pri dopisani mena spravila request na backend pre zistenie
@@ -52,11 +53,15 @@ export class RegisterComponent extends BaseComponent implements OnInit {
       Validators.required,
       Validators.email
     ]);
+    this.gdpr = new FormControl(false, [
+      Validators.requiredTrue
+    ]);
     this.register = new FormGroup({
       'user': this.user,
       'pass': this.pass,
       'pass2': this.pass2,
-      'email': this.email
+      'email': this.email,
+      'gdpr': this.gdpr
     }, {
       validators: [
         UserRegistrationValidators.passwordMatch
@@ -72,7 +77,7 @@ export class RegisterComponent extends BaseComponent implements OnInit {
 
   doRegistration() {
     this.registerService.doRegister(
-      this.user.value, this.pass.value, this.pass2.value, this.email.value)
+      this.user.value, this.pass.value, this.pass2.value, this.email.value, this.gdpr.value)
     .subscribe((data) => {
       this.loginService.saveJwtToken(data.jwtToken);
       this.notificationService.notify(this.translateService.translate("register.welcomeNotification"));

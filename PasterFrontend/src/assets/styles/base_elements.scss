@@ -96,3 +96,18 @@ b {
 i {
   font-style: italic;
 }
+
+h1 {
+  font-size:1.75em;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h1, h2 {
+  line-height: 1em;
+}
