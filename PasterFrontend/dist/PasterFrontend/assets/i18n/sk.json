@@ -288,7 +288,8 @@
           "s1": "Pred prístupom na API je potrebné požiadať o vystavenie kľúča na adrese",
           "s2": "Vo správe uveďte aj svoju adresu/kontakt na ktorý odpovedať.",
           "s3": "Dokuemtácia k použitiu API sa nachádza na",
-          "s4": "GitHub repozitári pre backend"
+          "s4": "GitHub repozitári pre backend",
+          "s5": "Endpointy sa nachádzajú na:"
         }
       }
     }

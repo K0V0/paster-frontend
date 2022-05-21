@@ -24,9 +24,11 @@ export interface ServerErrors {
 export interface Ws {
 
 }
+
 export interface WsRefresh extends Ws {
   autosync: boolean;
 }
+
 export interface Language {
   langCode: string;
   langName: string;

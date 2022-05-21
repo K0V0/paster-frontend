@@ -73,10 +73,11 @@
           "configurations": {
             "production": {
               "browserTarget": "PasterFrontend:build:production",
-              "proxyConfig": "proxy.conf.json"
+              "proxyConfig": "proxy.prod.conf.json"
             },
             "development": {
-              "browserTarget": "PasterFrontend:build:development"
+              "browserTarget": "PasterFrontend:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
