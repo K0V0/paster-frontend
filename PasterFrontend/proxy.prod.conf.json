@@ -1,6 +1,6 @@
 {
   "/": {
-    "target": "https://0.0.0.0:4004",
+    "target": "https://api.paster.cloud",
     "secure": false,
     "changeOrigin": true
   }

@@ -108,7 +108,14 @@ export class ItemsTableComponent implements OnInit {
         console.log('message received: ' + err);
         this.listenForChangeTrigger(); // subscribing ends for some reason after around minute, recall
       },
-      () => { console.log('socket connection closed'); }
+      () => {
+        console.log('socket connection closed');
+        /*this.websocketService.getNewWebsocket().subscribe((msg: WsRefresh) => {
+          console.log("kokoooot");
+        });*/
+        //this.websocketService.sendMessage("kt");
+        //this.listenForChangeTrigger();
+      }
     );
   }
 

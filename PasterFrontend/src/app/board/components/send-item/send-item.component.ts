@@ -3,7 +3,6 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from '@angular/router';
 import { BaseComponent } from "../../../_Base/components/base.component";
 import { BoardService } from "../../services/board.service";
-import { WebsocketService } from './../../../_CoreModule/services/websocket.service';
 
 @Component({
   selector: 'app-board-send-item',
@@ -18,8 +17,7 @@ export class SendItemComponent extends BaseComponent implements OnInit {
 
   constructor(
     private boardService: BoardService,
-    protected router: Router,
-    private websocketService: WebsocketService
+    protected router: Router
   ) {
     super(router);
     this.text = new FormControl("", Validators.required)
