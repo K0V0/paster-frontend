@@ -20,19 +20,37 @@
       "saved": "Nastavenia súborov cookies boli uložené"
     },
 
+    "gdpr": {
+      "title": "Bezpečnosť a ochrana osobných údajov - GDPR",
+      "description": "Táto stránka Vás oboznámi s osobnými údajmi zbieranými v našich aplikáciách a účelom ich využitia.",
+      "username": {
+        "title": "Používateľské meno",
+        "description1": "Pseudonym, Váš jedinečný identifikátor reprezentujúci Vašu identitu pri využívaní aplikácie."
+      },
+      "email": {
+        "title": "E-mailová adresa",
+        "description1": "Odosielanie notifikácií a varovaní ohľadom činnosti aplikácie/bezpečnosti Vašeho účtu.",
+        "description2": "Overovací mechanizmus pre úkony správy Vašeho účtu ako napr. zmena/obnova hesla, zrušenie účtu."
+      },
+      "cookies": {
+        "title": "Cookies",
+        "description1": "Viac v sekcii \"nastavenia cookies\"."
+      }
+    },
+
     "home": {
       "banner1": {
         "heading1": "Kopírovanie medzi zariadeniami ?",
         "slogan1": "...ani klik naviac !",
-        "slogan2": "je aplikácia ktorá Vám umožní kopírovať a vkladať obsah medzi Vašimi prepojenými zariadeniami rovnako jednoducho ako medzi aplikáciami v jednom zariadení.",
-        "slogan3": "<b>Naozaj ani klik naviac!</b>",
-        "slogan4": "Vyberte napríklad niečo na Vašom počítači pomocou <b> CTRL + C </b> a na druhom zariadení použite <b> CTRL + C </b> alebo <b> \"Vložiť\" </b>.",
+        "slogan2": "je aplikácia ktorá Vám umožní kopírovať a vkladať obsah medzi Vašimi prepojenými zariadeniami rovnako jednoducho ako medzi aplikáciami v každom z týchto zariadení.",
+        "slogan3": "Naozaj ani klik naviac!",
+        "slogan4": "Vyberte napríklad niečo na Vašom počítači pomocou <b> CTRL + C </b> a na druhom zariadení použite <b> CTRL + V </b> alebo <b> \"Vložiť\" </b>.",
         "slogan5": "Kde nie je možné nainštalovať aplikáciu, je rozhranie pre synchronizáciu s ostatnými zariadeniami dostupné cez túto webovú stránku.",
         "paste": "Vložiť"
       },
       "banner2": {
         "heading1": "Nestraťte nič!",
-        "slogan1": "Vďaka histórií, ktorá si pamätá.",
+        "slogan1": "Vďaka histórií zo všetkých zariadení, ktorá si pamätá - a je dostupná na všetkých zariadeniach.",
         "slogan2": "Ani v prípade, že sa Vaše zariadenia rozhodnú ísť do 'kremíkového neba'.",
         "slogan3": "Všetky dáta sú dostupné po prihlásení aj cez túto web stránku."
       },
@@ -110,6 +128,7 @@
         "pass": "Heslo...",
         "pass2": "Zopakovať heslo...",
         "email": "E-mail...",
+        "gdpr": "Súhlasím s uchovaním a spracovaním osobných údajov v rámci smernice GDPR",
         "submit": "Zaregistrovať sa"
       },
       "validationErrors": {
@@ -122,7 +141,11 @@
           "minlength": "Heslo je príliš krátke"
         },
         "email": {
-          "required": "Nezadaný e-mail"
+          "required": "Nezadaný e-mail",
+          "email": "Nesprávny formát e-mailovej adresy"
+        },
+        "gdpr": {
+          "required": "Bez súhlasu na spracovanie osobných údajov nemožno pokračovať"
         },
         "pass2": {
           "required": "Nevyplnené kontrolné heslo"
