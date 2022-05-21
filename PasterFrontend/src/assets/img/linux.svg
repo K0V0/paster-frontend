@@ -34,7 +34,7 @@
    id="namedview12"
    showgrid="true"
    inkscape:zoom="1.63"
-   inkscape:cx="145"
+   inkscape:cx="38.865031"
    inkscape:cy="266.38037"
    inkscape:window-x="0"
    inkscape:window-y="26"
@@ -48,13 +48,8 @@
 <metadata
    id="metadata2"> Svg Vector Icons : http://www.onlinewebfonts.com/icon <rdf:RDF><cc:Work
      rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-       rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata>
-<circle
-   style="opacity:1;fill:#b0ddff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:16;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
-   id="path823"
-   cx="256"
-   cy="256"
-   r="248" /><g
+       rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata>
+<g
    id="g8"
    transform="matrix(0.36122387,0,0,0.36122387,75.040147,56.284363)"
    style="fill:#ffffff;fill-opacity:1"><g

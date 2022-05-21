@@ -13,6 +13,8 @@
       <em>Ctrl</em>
     </figure>
 
+    <!--<span class="arrow">&rarr;</span>-->
+
     <figure class="phone">
       <div>
         <div>
@@ -36,8 +38,6 @@
 
   <section class="infos">
     <span> <h2> <b>Paster.cloud</b> {{ "home.banner1.slogan2" | t }}</h2> </span>
-    <span [innerHtml]=" '<br>' + ('home.banner1.slogan4' | t )"></span>
-    <span [innerHtml]="('home.banner1.slogan5' | t)"></span>
   </section>
 
 </article>
@@ -46,10 +46,9 @@
 <article class="banner5">
 
   <section class="figures">
-    <figure class="clock">
-      <div class="hours"></div>
-      <div class="minutes"></div>
-      <div class="minutes before"></div>
+    <figure class="copy">
+      <div class="device1"></div>
+      <div class="device2"></div>
     </figure>
   </section>
 
@@ -109,8 +108,26 @@
   <section class="infos">
       <span> <h1> {{ "home.banner3.heading1" | t }} </h1> </span>
       <span> {{ "home.banner3.slogan1" | t }} </span>
-      <span> {{ "home.banner3.slogan2" | t }} </span>
       <span> {{ "home.banner3.slogan3" | t }} <br> {{ "home.banner3.slogan3-2" | t }} </span>
+  </section>
+
+</article>
+
+<article class="banner6">
+
+  <section class="figures">
+    <figure class="community">
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+  </section>
+
+  <section class="infos">
+      <span> <h1> {{ "home.banner6.heading1" | t }} </h1> </span>
+      <span> {{ "home.banner6.slogan1" | t }} </span>
+      <span> {{ "home.banner6.slogan2" | t }} </span>
+      <span> {{ "home.banner6.slogan3" | t }} </span>
   </section>
 
 </article>

@@ -57,7 +57,6 @@
       "banner3": {
         "heading1": "Zadarmo a žiadne háčiky.",
         "slogan1": "Prevádzka je hradená z príjmov z reklamy/inzercie.",
-        "slogan2": "Žiadny špijóni. Aplikácie sú vyvíjané ako slobodný softvér a zdrojové kódy sú verejne dostupné.",
         "slogan3": "Verzia zadarmo nie je z hľadiska počtu funkcií alebo časového obmedzenia žiadnou podradnou verziou.",
         "slogan3-2": "Platená verzia len navyšuje inak dostupné funkcie a služby ako napríklad množstvo pamäti a podobne."
       },
@@ -65,6 +64,12 @@
         "heading1": "Nastavené a funkčné do 5 minút.",
         "slogan1": "Stačí sa zaregistrovať na tomto webe, nainštalovať aplikácie na Vaše zariadenia a je možné sa okamžite prihlásiť a začať používať.",
         "slogan2": "Žiadne daľšie obťažovanie s overovaním, prijímaním obťažujúcich marketingových ponúk, noviniek a otázok."
+      },
+      "banner6": {
+        "heading1": "Komunita & transparentnosť",
+        "slogan1": "Aplikácie sú vyvíjané ako slobodný softvér a zdrojové kódy sú verejne dostupné. Žiadni špijóni v skrini.",
+        "slogan2": "Vývoj začal \"v garáži\" ako projekt pre získanie rozhľadu a schopností v nových programovacích jazykoch a prostrediach.",
+        "slogan3": "Nové zaujímavé funkcie a nápady sú už na stole."
       },
       "download": {
         "win": {
@@ -99,7 +104,9 @@
       "legal": {
         "gdpr": "GDPR",
         "cookies": "nastavenie Cookies",
-        "sitemap": "mapa aplikácie"
+        "sitemap": "mapa aplikácie",
+        "developers": "pre vývojárov",
+        "changelog": "zoznam zmien"
       },
       "ads": {
         "title": "Reklamy"
