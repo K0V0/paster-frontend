@@ -277,6 +277,20 @@
           }
         }
       }
+    },
+
+    "developers": {
+      "title": "Pre vývojárov",
+      "description": "Užitočné odkazy a informácie pre vývojárov, nadšencov a zvedavcov...",
+      "api": {
+        "description": "Prístup na REST API",
+        "info": {
+          "s1": "Pred prístupom na API je potrebné požiadať o vystavenie kľúča na adrese",
+          "s2": "Vo správe uveďte aj svoju adresu/kontakt na ktorý odpovedať.",
+          "s3": "Dokuemtácia k použitiu API sa nachádza na",
+          "s4": "GitHub repozitári pre backend"
+        }
+      }
     }
   }
 }

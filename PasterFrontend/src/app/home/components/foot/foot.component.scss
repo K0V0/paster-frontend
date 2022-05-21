@@ -10,14 +10,6 @@ article {
     line-height: 1.125em;
     color: $base-theme-font-color-2;
 
-    a {
-      color: $base-theme-font-color-2;
-
-      &:hover {
-        color: $base-theme-font-color;
-      }
-    }
-
     div {
       padding-left: 0.5em;
       margin: 0.25em 0;
