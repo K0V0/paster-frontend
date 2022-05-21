@@ -17,7 +17,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ClipboardModule } from "ngx-clipboard";
 import { NotificationModule } from "./modules/notification/notification.module";
 import { GdprModule } from './modules/gdpr/gdpr.module';
-import { GitModule } from './modules/git/git.module';
+import { DevelopersModule } from './modules/developers/developers.module';
+import { ChangesModule } from './modules/changes/changes.module';
 
 @NgModule({
   exports: [
@@ -33,7 +34,8 @@ import { GitModule } from './modules/git/git.module';
     CookieModule,
     GdprModule,
     SitemapModule,
-    GitModule,
+    DevelopersModule,
+    ChangesModule,
     // angular stuff
     FormsModule,
     ReactiveFormsModule,

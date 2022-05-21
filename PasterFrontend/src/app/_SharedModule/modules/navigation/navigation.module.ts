@@ -12,6 +12,9 @@ import { Guard } from "./guard.service";
 import { NavigationComponent } from "./navigation.component";
 import { CookieModule } from '../cookie/cookie.module';
 import { GdprComponent } from '../gdpr/gdpr.component';
+import { DevelopersComponent } from '../developers/developers.component';
+import { SitemapComponent } from '../sitemap/sitemap.component';
+import { ChangesComponent } from '../changes/changes.component';
 
 const routes: Routes = [
   {
@@ -46,6 +49,18 @@ const routes: Routes = [
   {
     path: "gdpr",
     component: GdprComponent
+  },
+  {
+    path: "developers",
+    component: DevelopersComponent
+  },
+  {
+    path: "sitemap",
+    component: SitemapComponent
+  },
+  {
+    path: "changelog",
+    component: ChangesComponent
   }
 ];
 
