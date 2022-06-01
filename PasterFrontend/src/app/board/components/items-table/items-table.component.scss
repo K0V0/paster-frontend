@@ -77,6 +77,11 @@ section#boardItems {
           overflow: hidden;
           z-index: 2;
 
+          i {
+            font-weight: normal;
+            font-size: 0.75em;
+          }
+
           &::after {
             display: block;
             z-index: -1;
@@ -126,6 +131,26 @@ section#boardItems {
     }
   }
 
+  @media only screen and (max-width: 640px) {
+
+    & > div {
+
+      & > div {
+        padding-right: 3em;
+
+        div.itemButtonsSection {
+
+          div.left {
+
+            span.deviceString {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
   @media (pointer:none), (pointer:coarse) {
 
     & > div {
@@ -147,4 +172,5 @@ section#boardItems {
       }
     }
   }
+
 }

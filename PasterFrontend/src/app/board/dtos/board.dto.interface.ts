@@ -10,6 +10,8 @@ export interface BoardItemResponseDTO extends Response {
   preview: string;
   timestamp: number;
   isLarge: boolean;
+  platform: string;
+  deviceName: string;
 }
 
 export interface BoardItems {
@@ -21,4 +23,6 @@ export interface BoardItem {
   preview: string;
   timestamp: string;
   text: string;
+  deviceName: string;
+  platform: string;
 }

@@ -24,13 +24,7 @@ export class WebsocketService/*<RQdto, RSdto>*/ {
     return this.ws.pipe(shareReplay());
   }
 
-  public getNewWebsocket(): Observable<WsRefresh> {
-    this.ws = webSocket<WsRefresh>(this.ENDPOINT);
-    return this.ws.pipe(shareReplay());
-  }
-
-  public sendMessage(msg: string): void {
-    //TODO dummy implementacia
+  public sendAutosyncRequest(): void {
     let m: WsRefresh = {
       autosync: true
     }

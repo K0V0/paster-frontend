@@ -1,4 +1,3 @@
-import { TranslateService } from './../../../_SharedModule/modules/translate/translate.service';
 import { formatDate } from '@angular/common';
 import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { ClipboardService } from 'ngx-clipboard';
@@ -8,6 +7,7 @@ import { BoardItem, BoardItemResponseDTO, BoardItems } from "../../dtos/board.dt
 import { BoardService } from "../../services/board.service";
 import { IHash, WsRefresh } from './../../../_Base/interfaces/base.dto.interface';
 import { NotificationService } from './../../../_SharedModule/modules/notification/notification.service';
+import { TranslateService } from './../../../_SharedModule/modules/translate/translate.service';
 import { TableItemsAnimations } from './items-table-animations';
 
 @Component({
@@ -21,6 +21,8 @@ export class ItemsTableComponent implements OnInit {
   boardItems: BoardItems;
   boardItemsExtraTextVisibility: IHash;
   boardItemsJumpClass: Map<number, boolean>;
+  deviceNameFormatter: Function;
+  platformNameFormatter: Function;
 
   constructor(
     private boardService: BoardService,
@@ -30,12 +32,20 @@ export class ItemsTableComponent implements OnInit {
     private notificationService: NotificationService,
     private translateService: TranslateService
   ) {
+    this.deviceNameFormatter = function(x: string) {
+      return x.length == 0 ? null : x;
+    };
+    this.platformNameFormatter = function(x: string) {
+      return translateService.translate("board.page.platforms." + x);
+    }
     this.mapper = new DtoMapperUtil<BoardItemResponseDTO, BoardItem>();
     // TODO sformatovat cas a odskusat deal so zonami a zimnym/letnym
     // TODO lokalizacia formatu casu a datumu (America/EU verzia)
     this.mapper.setRules({
       status: null,
-      timestamp: (x:number) => formatDate(new Date(x), 'dd. MM. yyyy', this.locale),
+      timestamp: (x: number) => formatDate(new Date(x), 'dd. MM. yyyy', this.locale),
+      deviceName: (x: string) => this.deviceNameFormatter(x),
+      platform: (x: string) => this.platformNameFormatter(x)
     })
     this.boardItems = <BoardItems>{};
     this.boardItemsExtraTextVisibility = {};
@@ -110,11 +120,6 @@ export class ItemsTableComponent implements OnInit {
       },
       () => {
         console.log('socket connection closed');
-        /*this.websocketService.getNewWebsocket().subscribe((msg: WsRefresh) => {
-          console.log("kokoooot");
-        });*/
-        //this.websocketService.sendMessage("kt");
-        //this.listenForChangeTrigger();
       }
     );
   }

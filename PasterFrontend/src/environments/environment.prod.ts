@@ -8,5 +8,6 @@ export const environment = {
     "/user/login",
     "/user/register",
     "/user/logout"
-  ]
+  ],
+  deviceType: "webapp"
 };
