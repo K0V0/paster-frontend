@@ -1,0 +1,7 @@
+{
+  "/": {
+    "target": "https://api.paster.cloud",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

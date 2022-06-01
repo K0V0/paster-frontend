@@ -1,0 +1,62 @@
+<section id="boardItems">
+  <div  [@tableItemAppendAnimation]
+        *ngFor="let item of boardItems.items; index as i;"
+        [ngClass]="(boardItemsJumpClass.get(item.id) === true) ? 'jump' : ''">
+
+    <div  (click)="copyToClipboard(item.id);"
+          [id]="'item' + item.id">
+
+      <div class="itemBaseSection"
+            *ngIf="!boardItemsExtraTextVisibility[item.id]">
+        <span>{{ item.preview }}</span>
+      </div>
+
+      <div class="itemButtonsSection">
+
+        <div class="left">
+          <span>
+            {{ i+1 }}
+          </span>
+          <span>
+            {{ item.timestamp }}
+          </span>
+          <span class="deviceString" *ngIf="item.deviceName === null">
+            <i> {{ item.platform }} </i>
+          </span>
+          <span class="deviceString" *ngIf="item.deviceName !== null">
+            <i> {{ item.deviceName }} | {{ item.platform }} </i>
+          </span>
+        </div>
+
+        <div class="right">
+          <button [@hideFullTextButtonAppendAnimation]
+                  *ngIf="boardItemsExtraTextVisibility[item.id]"
+                  (click)="loadWholeText(item.id); $event.stopPropagation()"
+                  class="hideFullText">
+            {{ "board.page.itemsTable.hideFullText" | t }}
+          </button>
+          <button (click)="deleteItem(item.id); $event.stopPropagation()"
+                  class="deleteItem">
+            {{ "board.page.itemsTable.delete" | t }}
+          </button>
+        </div>
+
+      </div>
+
+      <div  *ngIf="item.preview !== item.text && !boardItemsExtraTextVisibility[item.id]"
+            class="itemMoreSection separatingLine">
+
+        <span (click)="loadWholeText(item.id); $event.stopPropagation()">
+          {{ "board.page.itemsTable.more" | t }}
+        </span>
+
+      </div>
+
+      <div class="itemFulltextSection"
+            *ngIf="item.preview !== item.text && boardItemsExtraTextVisibility[item.id]">
+        {{ item.text }}
+      </div>
+
+    </div>
+  </div>
+</section>

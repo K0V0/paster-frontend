@@ -1,0 +1,90 @@
+<form class="register"
+      [formGroup]="register"
+      (ngSubmit)="doRegistration()">
+
+  <div>
+    <div class="wrap">
+      <input type="text"
+             formControlName="user"
+             placeholder="{{ 'register.page.user' | t }}">
+    </div>
+    <app-local-field-error fieldRef="user"
+                           formGroupRef="register"
+                           [parentComponentContext]="this">
+    </app-local-field-error>
+    <app-server-field-error fieldRef="user"
+                            [errorsObject]="this.serverFieldsErrors">
+    </app-server-field-error>
+  </div>
+
+  <div>
+    <div class="wrap">
+      <input type="text"
+             formControlName="email"
+             placeholder="{{ 'register.page.email' | t }}">
+    </div>
+    <app-local-field-error fieldRef="email"
+                           formGroupRef="register"
+                           [parentComponentContext]="this">
+    </app-local-field-error>
+    <app-server-field-error fieldRef="email"
+                            [errorsObject]="this.serverFieldsErrors">
+    </app-server-field-error>
+  </div>
+
+  <div>
+    <div class="wrap">
+      <input type="password"
+             formControlName="pass"
+             placeholder="{{ 'register.page.pass' | t }}">
+    </div>
+    <app-local-field-error fieldRef="pass"
+                           formGroupRef="register"
+                           [parentComponentContext]="this">
+    </app-local-field-error>
+    <app-server-field-error fieldRef="pass"
+                            [errorsObject]="this.serverFieldsErrors">
+    </app-server-field-error>
+  </div>
+
+  <div>
+    <div class="wrap">
+      <input type="password"
+             formControlName="pass2"
+             placeholder="{{ 'register.page.pass2' | t }}">
+    </div>
+    <app-local-field-error fieldRef="pass2"
+                           formGroupRef="register"
+                           [parentComponentContext]="this">
+    </app-local-field-error>
+    <app-server-field-error fieldRef="pass2"
+                            [errorsObject]="this.serverFieldsErrors">
+    </app-server-field-error>
+  </div>
+
+  <div class="gdprAccept">
+    <div class="wrap">
+      <input type="checkbox"
+             formControlName="gdpr">
+      <label for="gdpr"> {{ "register.page.gdpr" | t }} </label>
+    </div>
+    <app-local-field-error fieldRef="gdpr"
+                           formGroupRef="register"
+                           [parentComponentContext]="this">
+    </app-local-field-error>
+    <app-server-field-error fieldRef="gdpr"
+                            [errorsObject]="this.serverFieldsErrors">
+    </app-server-field-error>
+  </div>
+
+  <div class="text-right">
+      <button [disabled] = "!register.valid"> {{ 'register.page.submit' | t }} </button>
+  </div>
+
+  <app-local-form-error formGroupRef="register"
+                        [parentComponentContext]="this">
+  </app-local-form-error>
+  <app-server-form-error [errorsObject]="this.serverFormError">
+  </app-server-form-error>
+
+</form>

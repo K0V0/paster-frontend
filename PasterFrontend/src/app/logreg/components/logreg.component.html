@@ -1,0 +1,15 @@
+<section class="logreg">
+
+  <div *ngIf="currentUrl == '/login'" [@logregAnimation]>
+    <app-login class="logregFormStandalone"></app-login>
+  </div>
+
+  <div *ngIf="currentUrl == '/register'" [@logregAnimation]>
+    <app-register class="logregFormStandalone"></app-register>
+  </div>
+
+  <div *ngIf="currentUrl == '/cookies'" [@logregAnimation]>
+    <app-cookies class="logregFormStandalone"></app-cookies>
+  </div>
+
+</section>

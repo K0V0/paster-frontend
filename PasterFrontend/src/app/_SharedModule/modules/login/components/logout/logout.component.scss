@@ -1,0 +1,38 @@
+@import 'src/assets/styles/colors';
+
+form {
+  text-align: center;
+
+  div {
+
+    div {
+
+      button, h4, picture, i {
+        display: inline-block;
+      }
+
+      h4 {
+        font-size: 1.125em;
+        font-weight: bold;
+      }
+
+      picture {
+        width: 4em;
+        height: 4em;
+        background-color: $base-theme-background-color-2;
+        margin:0.5em;
+        border-radius: 0.5em;
+      }
+
+      i {
+        font-size: 0.75em;
+        font-weight: normal;
+        font-style: italic;
+      }
+
+      button {
+        white-space: nowrap;
+      }
+    }
+  }
+}

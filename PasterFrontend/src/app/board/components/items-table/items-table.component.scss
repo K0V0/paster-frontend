@@ -1,0 +1,176 @@
+@import 'src/assets/styles/colors';
+
+section#boardItems {
+
+  & > div {
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.125s ease-in-out, opacity 0.125s ease-in-out;
+
+    &.jump {
+      transform: scale(2);
+      opacity: 0;
+    }
+
+    & > div {
+      padding:0.25em;
+      margin: 0.25em 0;
+      border-radius: 0.25em;
+      background-color: $base-theme-color;
+      position: relative;
+      min-height: 3em;
+      transition: background-color 0.25s ease-in-out;
+
+      div.itemButtonsSection {
+        position: absolute;
+        top: 0.3125em;
+        right: 0.3125em;
+        left: 0.3125em;
+        opacity: 0;
+        transition: opacity 0.25s ease-in-out;
+
+        div {
+          display: inline-block;
+          line-height: 2.25em;
+
+          &.left {
+            float: left;
+          }
+
+          &.right {
+            float:right;
+            opacity: 0.9;
+          }
+        }
+
+        button {
+          min-width: 2em;
+          font-weight: bold;
+
+          &.deleteItem {
+
+            &:hover {
+              background-color: $inputs-border-invalid;
+              color: white;
+            }
+          }
+
+          &.hideFullText {
+
+            &:hover {
+              background-color: $button-background-hover;
+              color: black;
+            }
+          }
+        }
+
+        span {
+          position: relative;
+          display: inline-block;
+          vertical-align: middle;
+          color: black;
+          font-weight: bold;
+          line-height: 1.5em;
+          border-radius: 3em;
+          padding: 0 0.5em;
+          margin: 0 0.25em;
+          overflow: hidden;
+          z-index: 2;
+
+          i {
+            font-weight: normal;
+            font-size: 0.75em;
+          }
+
+          &::after {
+            display: block;
+            z-index: -1;
+            content: '';
+            position: absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            opacity: 0.9;
+            background-color: $base-theme-background-color;
+          }
+        }
+      }
+
+      div.itemBaseSection {
+
+        span {
+          word-break: break-word;
+        }
+      }
+
+      &:hover {
+        background-color: $base-theme-hover-color;
+
+        div.itemButtonsSection {
+          opacity: 1;
+        }
+      }
+
+      div.itemMoreSection {
+        margin-top: 0.125em;
+        padding-top: 0.125em;
+        text-align: center;
+
+        span {
+          margin-top: 0.25em;
+          display: block;
+          font-weight: bold;
+          cursor:pointer;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 640px) {
+
+    & > div {
+
+      & > div {
+        padding-right: 3em;
+
+        div.itemButtonsSection {
+
+          div.left {
+
+            span.deviceString {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (pointer:none), (pointer:coarse) {
+
+    & > div {
+
+      & > div {
+        padding-right: 3em;
+
+        div.itemButtonsSection {
+          opacity: 1;
+
+          button {
+            opacity: 1;
+          }
+
+          div.left {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+}

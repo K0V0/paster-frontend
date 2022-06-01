@@ -1,0 +1,22 @@
+<section>
+  <div>
+
+    <figure>
+      <picture [ngClass]="platform">
+      </picture>
+    </figure>
+
+    <h2>{{ platforms.get(platform)?.getPlatformName() }}</h2>
+
+    <span class="versionNumber">{{ platforms.get(platform)?.getReleasedVersionNumber() }}</span>
+
+    <h3>{{ platforms.get(platform)?.getDescription() }}</h3>
+
+    <div>
+      <button [disabled]="!platforms.get(platform)?.getHasRelease()">
+        {{ platforms.get(platform)?.getDownloadButtonText() }}
+      </button>
+    </div>
+
+  </div>
+</section>

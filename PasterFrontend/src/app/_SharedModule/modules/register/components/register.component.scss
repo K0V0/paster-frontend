@@ -1,0 +1,29 @@
+form {
+
+  div.gdprAccept {
+    margin-top:0.5em;
+    margin-bottom: 0.5em;
+
+    div.wrap {
+      display: flex;
+      align-items: center;
+
+      input, label {
+        display: inline-block;
+      }
+
+      input[type=checkbox] {
+        flex: 0 0;
+        font-size: 2em;
+        margin-right:0.25em;
+      }
+
+      label {
+        flex: 1 1 auto;
+        font-weight: normal;
+        font-style: italic;
+        font-size: 0.875em;
+      }
+    }
+  }
+}

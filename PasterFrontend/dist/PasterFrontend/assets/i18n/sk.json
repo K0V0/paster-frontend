@@ -1,0 +1,302 @@
+{
+  "sk": {
+
+    "nav": {
+      "home": "Domov",
+      "login": "Prihlásiť sa",
+      "register": "Registrácia",
+      "board":  "Schránka",
+      "logout": "Užívateľ"
+    },
+
+    "cookies": {
+      "title": "Nastavenia cookies",
+      "description": "Cookies sú malé súbory ktoré pozostávajú z textových reťazcov a sú ukladané v pamäti Vašeho webového prehliadača",
+      "settingsBaseTitle": "Nevyhnutné",
+      "settingsBaseDescription": "Ukladajú najzákladnejšie informácie nevyhnutné pre samotný beh aplikácie, napríklad aj tieto nastavenia",
+      "settingsMarketingTitle": "Marketingové",
+      "settingsMarketingDescription": "Cookies ukladajúce marketingové údaje ktoré pomáhajú pri poskytovaní viac relevantnej reklamy",
+      "save": "Uložiť nastavenia",
+      "saved": "Nastavenia súborov cookies boli uložené"
+    },
+
+    "gdpr": {
+      "title": "Bezpečnosť a ochrana osobných údajov - GDPR",
+      "description": "Táto stránka Vás oboznámi s osobnými údajmi zbieranými v našich aplikáciách a účelom ich využitia.",
+      "username": {
+        "title": "Používateľské meno",
+        "description1": "Pseudonym, Váš jedinečný identifikátor reprezentujúci Vašu identitu pri využívaní aplikácie."
+      },
+      "email": {
+        "title": "E-mailová adresa",
+        "description1": "Odosielanie notifikácií a varovaní ohľadom činnosti aplikácie/bezpečnosti Vašeho účtu.",
+        "description2": "Overovací mechanizmus pre úkony správy Vašeho účtu ako napr. zmena/obnova hesla, zrušenie účtu."
+      },
+      "cookies": {
+        "title": "Cookies",
+        "description1": "Viac v sekcii \"nastavenia cookies\"."
+      }
+    },
+
+    "home": {
+      "banner1": {
+        "heading1": "Kopírovanie medzi zariadeniami ?",
+        "slogan1": "...ani klik naviac !",
+        "slogan2": "je aplikácia ktorá Vám umožní kopírovať a vkladať obsah medzi Vašimi prepojenými zariadeniami rovnako jednoducho ako medzi aplikáciami v každom z týchto zariadení.",
+        "slogan3": "Naozaj ani klik naviac!",
+        "slogan4": "Vyberte napríklad niečo na Vašom počítači pomocou <b> CTRL + C </b> a na druhom zariadení použite <b> CTRL + V </b> alebo <b> \"Vložiť\" </b>.",
+        "slogan5": "Kde nie je možné nainštalovať aplikáciu, je rozhranie pre synchronizáciu s ostatnými zariadeniami dostupné cez túto webovú stránku.",
+        "paste": "Vložiť"
+      },
+      "banner2": {
+        "heading1": "Nestraťte nič!",
+        "slogan1": "Vďaka histórií zo všetkých zariadení, ktorá si pamätá - a je dostupná na všetkých zariadeniach.",
+        "slogan2": "Ani v prípade, že sa Vaše zariadenia rozhodnú ísť do 'kremíkového neba'.",
+        "slogan3": "Všetky dáta sú dostupné po prihlásení aj cez túto web stránku."
+      },
+      "banner3": {
+        "heading1": "Zadarmo a žiadne háčiky.",
+        "slogan1": "Prevádzka je hradená z príjmov z reklamy/inzercie.",
+        "slogan3": "Verzia zadarmo nie je z hľadiska počtu funkcií alebo časového obmedzenia žiadnou podradnou verziou.",
+        "slogan3-2": "Platená verzia len navyšuje inak dostupné funkcie a služby ako napríklad množstvo pamäti a podobne."
+      },
+      "banner4": {
+        "heading1": "Nastavené a funkčné do 5 minút.",
+        "slogan1": "Stačí sa zaregistrovať na tomto webe, nainštalovať aplikácie na Vaše zariadenia a je možné sa okamžite prihlásiť a začať používať.",
+        "slogan2": "Žiadne daľšie obťažovanie s overovaním, prijímaním obťažujúcich marketingových ponúk, noviniek a otázok."
+      },
+      "banner6": {
+        "heading1": "Komunita & transparentnosť",
+        "slogan1": "Aplikácie sú vyvíjané ako slobodný softvér a zdrojové kódy sú verejne dostupné. Žiadni špijóni v skrini.",
+        "slogan2": "Vývoj začal \"v garáži\" ako projekt pre získanie rozhľadu a schopností v nových programovacích jazykoch a prostrediach.",
+        "slogan3": "Nové zaujímavé funkcie a nápady sú už na stole."
+      },
+      "download": {
+        "win": {
+          "download": "Stiahnuť",
+          "description": "Inštalačný .exe súbor pre operačné systémy windows verzie 7, 9, 10 a 11"
+        },
+        "linux": {
+          "download": "Stiahnuť",
+          "description": "Inštalačný balíček .deb pre systémy debian/ubuntu a ich deriváty"
+        },
+        "mac": {
+          "download": "Stiahnuť",
+          "description": "Balík .dmg pre počítače Apple so systémom OS X Leopard a vyšší"
+        },
+        "android": {
+          "download": "Google Play store",
+          "description": "Aplikácia pre smartfóny so systémom Android"
+        },
+        "ios": {
+          "download": "Apple AppStore",
+          "description": "Aplikácia pre telefóny/tablety/iPody Apple so systémom iOS verzie 8 a vyššie"
+        },
+        "notReleased": "Verzia zatiaľ nebola vydaná.",
+        "soon": "Už čoskoro"
+      },
+      "credits": {
+        "credits": "Kredit",
+        "1": {
+          "work": "Jadro systému & Web frontend"
+        }
+      },
+      "legal": {
+        "gdpr": "GDPR",
+        "cookies": "nastavenie Cookies",
+        "sitemap": "mapa aplikácie",
+        "developers": "pre vývojárov",
+        "changelog": "zoznam zmien"
+      },
+      "ads": {
+        "title": "Reklamy"
+      }
+    },
+
+    "login": {
+      "page": {
+        "user": "Meno užívatela...",
+        "pass": "Heslo...",
+        "submit": "Prihlásiť sa"
+      },
+      "validationErrors": {
+        "user": {
+          "required": "Nevyplnené meno používateľa"
+        },
+        "pass": {
+          "required": "Nevyplnené heslo"
+        }
+      }
+    },
+
+    "register": {
+      "page": {
+        "user": "Meno užívatela...",
+        "pass": "Heslo...",
+        "pass2": "Zopakovať heslo...",
+        "email": "E-mail...",
+        "gdpr": "Súhlasím s uchovaním a spracovaním osobných údajov v rámci smernice GDPR",
+        "submit": "Zaregistrovať sa"
+      },
+      "validationErrors": {
+        "user": {
+          "required": "Nevyplnené meno používateľa",
+          "forbiddenCharacters": "Nepovolené znaky. Povolené sú písmená, číslice a \". - _\""
+        },
+        "pass": {
+          "required": "Nevyplnené heslo",
+          "minlength": "Heslo je príliš krátke"
+        },
+        "email": {
+          "required": "Nezadaný e-mail",
+          "email": "Nesprávny formát e-mailovej adresy"
+        },
+        "gdpr": {
+          "required": "Bez súhlasu na spracovanie osobných údajov nemožno pokračovať"
+        },
+        "pass2": {
+          "required": "Nevyplnené kontrolné heslo"
+        },
+        "passwordControlNotMatch": "Heslá sa nezhodujú"
+      },
+      "welcomeNotification": "Vitajte! Aplikáciu je možné začať okamžite používať. Ak ju už máte nainštalovanú na Vašich zariadeniach, môžete sa prihlásiť."
+    },
+
+    "board": {
+      "page": {
+        "text": "Text...",
+        "submit": "Odoslať",
+        "clear": "Vymazať text",
+        "notifications": {
+          "textCopied": {
+            "part1": "Položka",
+            "part2": "bola skopírovaná do Vašej schránky."
+          },
+          "textPasted": "Položka bola vložená z Vašej schránky."
+        },
+        "itemsTable": {
+          "delete": "X",
+          "more": "Zobraziť celý text...",
+          "hideFullText": "Zobraziť len náhľad"
+        },
+        "platforms": {
+          "UNKNOWN": "Neznáme zariadenie",
+          "ANDROID": "Android",
+          "WEBAPP": "Web aplikácia"
+        }
+      }
+    },
+
+    "logout": {
+      "logout": "Odhlásiť sa",
+      "relog": "Prepnúť účet",
+      "userInfo": {
+        "lastActivity": "Posledná aktivita"
+      }
+    },
+
+    "server": {
+      "user": {
+        "login": {
+          "credentials": {
+            "wrong": "Nesprávne používateľské meno alebo heslo."
+          },
+          "username": {
+            "required":"Nevyplnené meno používateľa",
+            "empty": "Nevyplnené meno používateľa",
+            "format": {
+              "whitespaces": {
+                "denied": "Použitie medzier kdekoľvek v mene používateľa nie je povolené"
+              }
+            }
+          },
+          "password": {
+            "required":"Nevyplnené heslo",
+            "empty": "Nevyplnené heslo"
+          }
+        },
+        "register": {
+          "username": {
+            "required":"Nevyplnené meno používateľa",
+            "empty": "Nevyplnené meno používateľa",
+            "format": {
+              "whitespaces": {
+                "denied": "Použitie medzier kdekoľvek v mene používateľa nie je povolené",
+                "around": {
+                  "denied":"Použitie medzier kdekoľvek v mene používateľa nie je povolené"
+                },
+                "beginning": {
+                  "denied":"Použitie medzier kdekoľvek v mene používateľa nie je povolené"
+                },
+                "end": {
+                  "denied":"Použitie medzier kdekoľvek v mene používateľa nie je povolené"
+                }
+              },
+              "characters": {
+                "denied": "Nepovolené znaky. Povolené sú písmená, číslice a \". - _\""
+              }
+            },
+            "taken": "Zvolené používateľské meno už je obsadené."
+          },
+          "password": {
+            "required": "Nevyplnené heslo",
+            "empty": "Nevyplnené heslo",
+            "format": {
+              "whitespaces": {
+                "around": {
+                  "denied": "Heslo nesmie začínať alebo končiť medzerou"
+                }
+              },
+              "length":{
+                "long": "Heslo je príliš dlhé, povolené rozmedzie je 8-32 znakov",
+                "short": "Heslo je príliš krátke, minimum je 8 znakov"
+              }
+            }
+          },
+          "passwordConfirmation": {
+            "required": "Nevyplnené kontrolné heslo",
+            "empty": "Nevyplnené kontrolné heslo",
+            "nomatch": "Heslá sa nezhodujú"
+          },
+          "email": {
+            "required": "Nezadaný e-mail",
+            "empty": "Nezadaný e-mail",
+            "format": {
+              "wrong": "Neplatná e-mailová adresa"
+            }
+          }
+        }
+      },
+      "item": {
+        "request": {
+          "missing": "Položka chýba",
+          "empty": "Položka chýba",
+          "maxsize": {
+            "reached": "Prekročená maximálna povolená velkosť"
+          }
+        },
+        "repsonse": {
+          "missing": "Položka nenájdená",
+          "access": {
+            "denied": "Nemáte právo na prístup k tejto položke"
+          }
+        }
+      }
+    },
+
+    "developers": {
+      "title": "Pre vývojárov",
+      "description": "Užitočné odkazy a informácie pre vývojárov, nadšencov a zvedavcov...",
+      "api": {
+        "description": "Prístup na REST API",
+        "info": {
+          "s1": "Pred prístupom na API je potrebné požiadať o vystavenie kľúča na adrese",
+          "s2": "Vo správe uveďte aj svoju adresu/kontakt na ktorý odpovedať.",
+          "s3": "Dokuemtácia k použitiu API sa nachádza na",
+          "s4": "GitHub repozitári pre backend",
+          "s5": "Endpointy sa nachádzajú na:"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@import 'src/assets/styles/colors';
+
+nav {
+  background-color: $menubars-background-color;
+  text-align: right;
+  padding: 0.5em 0;
+
+  ul {
+    font-size: 1.25em;
+    display: inline-block;
+    padding: 0 0.25em;
+    width: 100%;
+    z-index: 100;
+
+    li {
+      display: inline-block;
+      position: relative;
+
+      a {
+        font-size: 1em;
+        text-decoration: none;
+        padding: 0;
+
+        span {
+          display: inline-block;
+          padding: 0.125em 0.25em;
+
+          b {
+            vertical-align: middle;
+          }
+
+          em {
+            font-size: 0.75em;
+            vertical-align: middle;
+          }
+        }
+
+        &.widgetEnabled/*, &.active*/ {
+
+          span {
+            background-color: $button-background-hover;
+            border-color: $inputs-border-focus;
+          }
+        }
+      }
+    }
+  }
+}
+
+div.widget {
+  position: fixed;
+  padding: 1em;
+  right:0;
+}

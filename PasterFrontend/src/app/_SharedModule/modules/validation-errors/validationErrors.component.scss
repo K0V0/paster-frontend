@@ -1,0 +1,39 @@
+@import 'src/assets/styles/colors';
+
+div.errorPlaceholder {
+  text-align: left;
+  max-height: 3em;
+
+  span {
+    font-size: 0.875em;
+    font-weight: normal;
+    display: inline-block;
+    line-height: 1.25em;
+    margin: 0.25em;
+    padding: 0.25em;
+    color: $widgets-error-font-color;
+    background-color: $widgets-error-background-color;
+    transition: transform $transition-fast ease-in-out;
+    text-align: left;
+
+    &.blink {
+      transform: scale(1.1);
+    }
+
+    &:before {
+      content: "!";
+      display: inline-block;
+      font-weight: bold;
+      background-color: $widgets-error-badge-background-color;
+      color: $widgets-error-badge-font-color;
+      border-radius: 2em;
+      width:1em;
+      height: 1em;
+      line-height: 1em;
+      text-align: center;
+      border: 0.125em solid $widgets-error-bagge-border-color;
+      position: relative;
+      bottom:1px;
+    }
+  }
+}

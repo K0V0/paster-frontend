@@ -1,0 +1,50 @@
+@import 'src/assets/styles/colors';
+
+div {
+  text-align: center;
+  background-color: $base-theme-background-color;
+  position: absolute;
+  top: 0;
+  left:0;
+  right:0;
+  bottom: 0;
+  z-index: 100;
+  overflow: hidden;
+  background-color: $base-theme-hover-color;
+  display: flex;
+  padding: 0.5em;
+  align-items: center;
+  justify-content: center;
+
+  div.message {
+    padding: 0 3em;
+
+    span {
+      word-break: break-word;
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 100%;
+      padding: 0.5em;
+      display: inline-block;
+      vertical-align: middle;
+      background-color: $base-theme-background-color;
+      border-radius: 1em;
+    }
+  }
+
+  button {
+    position: absolute;
+    right: 0.25em;
+    z-index: 101;
+    min-width: 2em;
+    font-weight: bold;
+
+    &.deleteItem {
+
+      &:hover {
+        background-color: $inputs-border-invalid;
+        color: white;
+      }
+    }
+  }
+}

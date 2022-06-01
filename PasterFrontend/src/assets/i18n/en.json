@@ -1,0 +1,252 @@
+{
+  "en": {
+
+    "nav": {
+      "home": "Home",
+      "login": "Log in",
+      "register": "Registration",
+      "board":  "Clipboard",
+      "logout": "User"
+    },
+
+    "cookies": {
+      "title": "Cookies settings",
+      "description": "Cookies are tiny files consisting from text strings and key-value pairs stored inside your browser cache",
+      "settingsBaseTitle": "Necessary",
+      "settingsBaseDescription": "Stores basic values and settings that are necessary for application to run, for example even this settings",
+      "settingsMarketingTitle": "Marketing",
+      "settingsMarketingDescription": "Cookies that store data required by algorithms that can provide more relevant advertisements",
+      "save": "Save settings",
+      "saved": "Cookies settings have been updated"
+    },
+
+    "home": {
+      "banner1": {
+        "heading1": "Copy & paste between devices ?",
+        "slogan1": "...not even one extra click !",
+        "slogan2": "is shared cloud-based clipboard which allows You to copy and paste content between Your devices as easy as between applications on each device.",
+        "slogan3": "<b>Not even one extra unnecessary click, we promise!</b>",
+        "slogan4": "For example, choose content on Your computer by using <b> CTRL + C </b> and use <b> CTRL + C </b> or <b> \"Paste\" </b> option on Your another device(s).",
+        "slogan5": "When there is no possibility to install application(s), interface of this web page can be used to synchronize with other devices.",
+        "paste": "Paste"
+      },
+      "banner2": {
+        "heading1": "Do not loose anything!",
+        "slogan1": "History - it exists.",
+        "slogan2": "Even in case when your devices decided to do to 'silicon heaven'.",
+        "slogan3": "All data are accessible through this webpage."
+      },
+      "banner3": {
+        "heading1": "Free. Not free traps.",
+        "slogan1": "Operation and maintenance are paid just from ads income.",
+        "slogan2": "No spies. Application is developed ad open source software with source codes and API available for public.",
+        "slogan3": "Free version is not just purposely made half-working crap with more limitations than functionality.",
+        "slogan3-2": "Paid version only extends amounts of services like memory, storage time limit, etc..."
+      },
+      "banner4": {
+        "heading1": "Set up and ready to go within 5 minutes",
+        "slogan1": "Just register on this webpage, download and install given apps for your devices and You are able to instantly use this service.",
+        "slogan2": "No for long-lasting multistep and complicated sign-up process with multiple of unnecessary questions and marketing spam and complicated configuration."
+      },
+      "download": {
+        "win": {
+          "download": "Download",
+          "description": "Installable executable file for Microsoft Windows systems version 7 and up"
+        },
+        "linux": {
+          "download": "Download",
+          "description": "Installable .deb archive for Debian based Linux distributions like Debian, Ubuntu, Mint and it's derivatives"
+        },
+        "mac": {
+          "download": "Download",
+          "description": ".dmg package for Apple computers with MacOS version Leopard and higher"
+        },
+        "android": {
+          "download": "Get on Google Play",
+          "description": "Application for smart phones and devices with Android system"
+        },
+        "ios": {
+          "download": "Get on Apple AppStore",
+          "description": "Application for Apple iPhone/iPad/iPod devices with iOS version 8 and higher"
+        },
+        "notReleased": "Version not released yet",
+        "soon": "Coming soon..."
+      },
+      "credits": {
+        "credits": "Credits",
+        "1": {
+          "work": "System API core & Web frontend"
+        }
+      },
+      "legal": {
+        "gdpr": "GDPR",
+        "cookies": "Cookies settings",
+        "sitemap": "Sitemap"
+      },
+      "ads": {
+        "title": "Ads"
+      }
+    },
+
+    "login": {
+      "page": {
+        "user": "User name...",
+        "pass": "Password...",
+        "submit": "Log in"
+      },
+      "validationErrors": {
+        "user": {
+          "required": "Username is empty"
+        },
+        "pass": {
+          "required": "Password is empty"
+        }
+      }
+    },
+
+    "register": {
+      "page": {
+        "user": "User name...",
+        "pass": "Password...",
+        "pass2": "Retype password...",
+        "email": "E-mail...",
+        "submit": "Registration"
+      },
+      "validationErrors": {
+        "user": {
+          "required": "Username is empty",
+          "forbiddenCharacters": "Not allowed characters. Only letters, numbers and \". - _\" are allowed"
+        },
+        "pass": {
+          "required": "Empty password",
+          "minlength": "Password is too short"
+        },
+        "email": {
+          "required": "E-mail not provided"
+        },
+        "pass2": {
+          "required": "Control password empty"
+        },
+        "passwordControlNotMatch": "Passwords did not match"
+      },
+      "welcomeNotification": "Welcome! Now You are ready to go! If You have installed application on your devices already, You are able to log in now."
+    },
+
+    "board": {
+      "page": {
+        "text": "Text...",
+        "submit": "Send",
+        "clear": "Clear text",
+        "notifications": {
+          "textCopied": {
+            "part1": "Item",
+            "part2": "has been copied into your clipboard"
+          },
+          "textPasted": "Item has been copied from your clipboard"
+        },
+        "itemsTable": {
+          "delete": "X",
+          "more": "Show more...",
+          "hideFullText": "Collapse..."
+        }
+      }
+    },
+
+    "logout": {
+      "logout": "Log out",
+      "relog": "Swithc account",
+      "userInfo": {
+        "lastActivity": "Last activity"
+      }
+    },
+
+    "server": {
+      "user": {
+        "login": {
+          "credentials": {
+            "wrong": "Username or password wrong"
+          },
+          "username": {
+            "required":"Username is empty",
+            "empty": "Username is empty",
+            "format": {
+              "whitespaces": {
+                "denied": "Using spaces anywhere in the username is denied"
+              }
+            }
+          },
+          "password": {
+            "required":"Empty password",
+            "empty": "Empty password"
+          }
+        },
+        "register": {
+          "username": {
+            "required":"Empty username",
+            "empty": "Empty username",
+            "format": {
+              "whitespaces": {
+                "denied": "Using spaces anywhere in the username is denied",
+                "around": {
+                  "denied":"Using spaces anywhere in the username is denied"
+                },
+                "beginning": {
+                  "denied":"Using spaces anywhere in the username is denied"
+                },
+                "end": {
+                  "denied":"Using spaces anywhere in the username is denied"
+                }
+              },
+              "characters": {
+                "denied": "Not allowed characters. Only letters, numbers and \". - _\" are allowed"
+              }
+            },
+            "taken": "Choosen username is already occupied"
+          },
+          "password": {
+            "required": "Empty password",
+            "empty": "Empty password",
+            "format": {
+              "whitespaces": {
+                "around": {
+                  "denied": "Space(s) are not allowed at the beginning or the end of the password"
+                }
+              },
+              "length":{
+                "long": "Password is too long, must be within 8 to 32 characters",
+                "short": "Password is too short, must be within 8 to 32 characters"
+              }
+            }
+          },
+          "passwordConfirmation": {
+            "required": "Control password empty",
+            "empty": "Control password empty",
+            "nomatch": "Passwords did not match"
+          },
+          "email": {
+            "required": "E-mail not provided",
+            "empty": "E-mail not provided",
+            "format": {
+              "wrong": "Not a valid format of e-mail address"
+            }
+          }
+        }
+      },
+      "item": {
+        "request": {
+          "missing": "Item is missing",
+          "empty": "Item is missing",
+          "maxsize": {
+            "reached": "Maximum size limit exceeded"
+          }
+        },
+        "repsonse": {
+          "missing": "Item not found",
+          "access": {
+            "denied": "You have no sufficient rights to access this item"
+          }
+        }
+      }
+    }
+  }
+}

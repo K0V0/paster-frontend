@@ -1,0 +1,40 @@
+<form class="board"
+      [formGroup]="board"
+      (ngSubmit)="sendText()">
+
+  <div>
+    <div class="wrap">
+      <textarea type="text"
+                formControlName="text"
+                placeholder="{{ 'board.page.text' | t }}"></textarea>
+      <div class="textareaStatusbar separatingLine">
+        <div></div>
+        <div class="text-right">
+
+          <button [disabled] = "!showClearButton"
+                  class=""
+                  (click)="deleteText($event)">
+            {{ 'board.page.clear' | t }}
+          </button>
+
+          <button [disabled] = "!board.valid"
+                  class="">
+            {{ 'board.page.submit' | t }}
+          </button>
+
+        </div>
+      </div>
+    </div>
+    <!--<app-local-field-error fieldRef="text"
+                           formGroupRef="board"
+                           [parentComponentContext]="this">
+    </app-local-field-error>
+    <app-server-field-error fieldRef="text"
+                            [errorsObject]="this.serverFieldsErrors">
+    </app-server-field-error>-->
+  </div>
+
+  <!--<app-server-form-error [errorsObject]="this.serverFormError">
+  </app-server-form-error>-->
+
+</form>

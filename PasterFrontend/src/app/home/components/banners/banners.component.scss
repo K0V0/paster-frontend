@@ -1,0 +1,537 @@
+
+@import 'src/assets/styles/colors';
+
+$pc-color: #999;
+$pc-monitor-color: #ddd;
+$pc-logo-color: #fff;
+$pc-highlight-color: $base-theme-hover-color;
+
+article {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &:nth-child(2n) {
+    background-color: $base-theme-background-color-2;
+  }
+
+  section {
+
+    &.figures {
+
+      @media only screen and (max-width: 640px) {
+        font-size: 0.75em;
+      }
+
+      figure {
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        box-sizing: border-box;
+        border-style: solid;
+        margin: 1em;
+
+        &::after, &::before {
+          content: "";
+          position: absolute;
+          display: block;
+        }
+
+        em {
+          font-size: 3em;
+          background-color: $base-theme-font-color-2;
+          color: $base-theme-background-color;
+          padding: 0.125em 0.25em;
+          border-radius: 0.25em;
+          margin: 0.125em;
+          position: relative;
+          z-index: 10;
+        }
+      }
+    }
+
+    &.infos {
+      color: $base-theme-font-color-2;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 18em;
+
+      span {
+        display: block;
+        margin-bottom: 0.75em;
+        font-size: 1.25em;
+        line-height: 1.125em;
+
+        h1 {
+          font-size: 2em;
+          font-weight: bold;
+          line-height: 1em;
+        }
+      }
+    }
+  }
+}
+
+article.banner1 {
+
+  flex-direction: column;
+
+  section.figures {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    figure {
+      background-color: $pc-monitor-color;
+      border-color: $pc-color;
+      border-width: 0.5em;
+
+      div {
+        height: 100%;
+        overflow: hidden;
+
+        div {
+          background-color: white;
+          height: 100%;
+
+          h1, span {
+            line-height: 1.125em;
+            font-weight: bold;
+          }
+
+          span {
+            background-color: $pc-highlight-color;
+            color: white;
+            vertical-align: middle;
+            display: inline;
+            position: relative;
+            border-right: 0.125em solid $base-theme-font-color;
+          }
+        }
+      }
+    }
+
+    figure.pc {
+      border-radius: 0.5em;
+      border-bottom-width: 2em;
+      width: 20em;
+      height: 14em;
+      margin-bottom: 6em;
+
+      em {
+        float: right;
+        margin-top: 0.875em;
+      }
+
+      &::after {
+        width: 10em;
+        top: 13.5em;
+        left: 4.5em;
+        background-color: $pc-color;
+        height: 5em;
+        border-top-left-radius: 5em;
+        border-top-right-radius: 5em;
+      }
+
+      &::before {
+        top: 12em;
+        background-color: $pc-logo-color;
+        width: 1em;
+        height: 1em;
+        border-radius: 0.5em;
+        left: 9em;
+      }
+
+      div {
+
+        div {
+          margin-top: 1em;
+          margin-left:1em;
+          margin-right: 1em;
+          padding-top:0.25em;
+          padding-left: 0.25em;
+          padding-right: 0.25em;
+
+          h1 {
+            font-size: 1.75em;
+          }
+
+          span {
+            font-size: 1.875em;
+          }
+        }
+      }
+    }
+
+    /*span.arrow {
+      font-weight: bold;
+      font-size: 10em;
+
+    }*/
+
+    figure.notebook {
+      width: 16em;
+      height: 10em;
+      border-top-left-radius: 0.5em;
+      border-top-right-radius: 0.5em;
+      margin-bottom: 5.5em;
+
+      em {
+        float: left;
+        margin-top: 0.5em;
+      }
+
+      &::after {
+        width: 16em;
+        height: 1.25em;
+        background-color: $pc-color;
+        top: 9.75em;
+        left: -0.5em;
+        border-bottom-left-radius: 2em;
+        border-bottom-right-radius: 2em;
+      }
+
+      div {
+
+        div {
+          margin-top: 0.75em;
+          margin-left: 0.75em;
+          margin-right: 0.75em;
+          padding: 0.25em;
+
+          span, h1 {
+            font-size: 1.5em;
+            line-height: 1.125em;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    figure.phone {
+      width: 8em;
+      height: 12em;
+      border-radius: 0.5em;
+      border-bottom-width: 1.25em;
+
+      em {
+        bottom: 2em;
+        font-size: 2.5em;
+      }
+
+      &::after {
+        background-color: $pc-logo-color;
+        top: 10.5em;
+        left: 3em;
+        width: 0.75em;
+        height: 0.75em;
+        border-radius: 0.75em;
+      }
+
+      div {
+
+        div {
+          margin-top: 1em;
+
+          span {
+
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  section.infos {
+    margin-top:1em;
+    flex-basis: 6em;
+  }
+}
+
+article.banner2 {
+
+  section.figures {
+
+    figure.clock {
+      width: 15em;
+      height: 15em;
+      border: 0.5em solid $pc-color;
+      background-color: $white;
+      border-radius: 16em;
+
+      &::before, &::after {
+        width: 1em;
+        height: 1em;
+        background-color: $pc-color;
+        border-radius: 1em;
+      }
+
+      &::before {
+        top: 0.5em;
+        left: 6.5em;
+      }
+
+      &::after {
+        top: 6.5em;
+        left: 6.5em;
+      }
+
+      div {
+        width: 0.5em;
+        position: absolute;
+        left: 6.75em;
+        border-radius: 0.25em;
+        transform-origin: bottom center;
+
+        &.hours {
+          top: 3em;
+          height: 4em;
+          background-color: $pc-color;
+          transform: rotate(90deg);
+        }
+
+        &.minutes {
+          top:2em;
+          height: 5em;
+          background-color: $pc-color;
+          transform: rotate(30deg);
+
+          &.before {
+            background-color: $pc-highlight-color;
+            transform: rotate(-30deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+article.banner3 {
+
+  section.figures {
+
+    figure.zero {
+      font-weight: bold;
+      overflow: hidden;
+      margin-top: 0;
+
+      span {
+        font-size: 18em;
+        letter-spacing: -0.0625em;
+
+        &.num {
+          color: $pc-highlight-color;
+        }
+
+        &.prc {
+          color: $pc-color;
+        }
+      }
+    }
+  }
+}
+
+article.banner4 {
+
+  section.figures {
+
+    figure.timer {
+      width: 15em;
+      height: 15em;
+      border: 0.5em solid $pc-color;
+      background-color: $white;
+      border-radius: 16em;
+
+      &::before, &::after {
+        width: 1em;
+        height: 1em;
+        left:6.5em;
+      }
+
+      &::before {
+        top: 6.5em;
+        background-color: $pc-highlight-color;
+        border-radius: 1em;
+      }
+
+      &::after {
+        background-color: $pc-color;
+        border-radius: 1em;
+        top: 0.5em;
+      }
+
+      div {
+        position: absolute;
+        width: 10em;
+        height: 10em;
+        background-image: conic-gradient($pc-highlight-color 0deg, $pc-highlight-color 25deg, transparent 26deg, transparent 360deg);
+        border-radius: 50%;
+        top:2em;
+        left: 2em;
+      }
+    }
+  }
+}
+
+article.banner5 {
+
+  section.figures {
+
+    figure.copy {
+      width: 15em;
+      height: 13em;
+      position: relative;
+
+      div {
+        position: absolute;
+        width: 8em;
+        height: 6em;
+        border: 0.5em solid $pc-color;
+        border-radius: 0.375em;
+        background-color: white;
+
+        &:before {
+          position: absolute;
+          content: "";
+          display: block;
+          top: 10%;
+          bottom: 10%;
+          width: 50%;
+          left: 10%;
+          background-color: $pc-monitor-color;
+          box-sizing: border-box;
+        }
+
+        &:after {
+          position: absolute;
+          display: block;
+          content: "";
+          top: 5%;
+          right: 5%;
+          background-color: $base-theme-font-color;
+          color: white;
+          font-size: 2em;
+          width: 1em;
+          border-radius: 50%;
+          padding: 0.25em;
+          font-weight: bold;
+        }
+
+        &.device1 {
+          border-right-width: 0.75em;
+
+          &:before {
+            border: 0.25em solid $pc-highlight-color;
+          }
+
+          &:after {
+            content: "1";
+          }
+        }
+
+        &.device2 {
+          border-left-width: 0.75em;
+          bottom:0;
+          right:0;
+
+          &:before {
+            background-color: $pc-highlight-color;
+          }
+
+          &:after {
+            content: "2";
+          }
+        }
+      }
+    }
+  }
+}
+
+article.banner6 {
+
+  section.figures {
+
+    figure.community {
+      width: 12em;
+      height: 12em;
+      background-color: white;
+      border:0.5em solid $pc-color;
+      position: relative;
+      border-radius: 50%;
+      margin: 2em;
+      //margin-right: 3em;
+      //margin-bottom: 3em;
+      margin-top: 1em;
+
+      div {
+        position: absolute;
+        top:0;
+        left:0;
+        right: 0;
+        bottom: 0;
+
+        &:before {
+          content: "";
+          display: block;
+          width: 3em;
+          height: 3em;
+          background-color: $base-theme-hover-color;
+          position: absolute;
+          top: 9em;
+          left: 3.5em;
+          border-radius: 50%;
+          border: 0.5em solid $base-theme-background-color-2;
+        }
+
+        &:nth-child(2) {
+          transform: rotate(120deg);
+        }
+
+        &:nth-child(3) {
+          transform: rotate(240deg);
+        }
+      }
+    }
+  }
+}
+
+article.banner2, article.banner3, article.banner4, article.banner5, article.banner6 {
+
+  section.figures {
+    text-align: center;
+
+    figure {
+      margin-right: 1.5em;
+    }
+  }
+
+  @media only screen and (min-width: 1152px) {
+
+    section.figures {
+      flex-basis: 16em;
+      flex-grow: 1;
+      flex-shrink: 0;
+    }
+
+    section.infos {
+      flex-grow: 10;
+    }
+  }
+}
+
+article.banner1 {
+
+  section.infos {
+
+    @media only screen and (min-width: 1152px) {
+      width: 85%;
+      margin-left: 7.5%;
+      margin-right: 7.5%;
+    }
+  }
+}

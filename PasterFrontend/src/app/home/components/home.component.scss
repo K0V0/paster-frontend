@@ -1,0 +1,14 @@
+@import 'src/assets/styles/colors';
+
+article.downloads {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  app-download {
+    width: 33%;
+    min-width: 20em;
+  }
+}

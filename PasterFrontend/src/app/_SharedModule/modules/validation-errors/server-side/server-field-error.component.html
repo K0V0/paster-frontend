@@ -1,0 +1,7 @@
+<div @errorMessagesAnimation
+     class="errorPlaceholder"
+     *ngFor="let em of errorMessage | keyvalue">
+      <span #serverFieldErrorText>
+          {{ em.key | ts: em.value }}
+      </span>
+</div>

@@ -1,0 +1,71 @@
+@import 'src/assets/styles/colors';
+
+section {
+  width: 100%;
+  text-align: center;
+  padding: 1em;
+  vertical-align: top;
+  color: $base-theme-font-color-2;
+
+  div {
+
+    figure {
+      width: 10em;
+      height: 10em;
+      //background-color: $base-theme-background-color-2;
+      display: inline-block;
+      margin: 1em;
+
+      picture {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-size: contain;
+        background-color: $base-theme-hover-color;
+        border-radius: 50%;
+
+          &.win {
+            background-image: url('^assets/img/win.svg');
+          }
+
+          &.linux {
+            background-image: url('^assets/img/linux.svg');
+          }
+
+          &.mac {
+            background-image: url('^assets/img/apple.svg');
+          }
+
+          &.android {
+            background-image: url('^assets/img/android.svg');
+          }
+
+          &.ios {
+            background-image: url('^assets/img/apple.svg');
+          }
+      }
+    }
+
+    h2 {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    h3 {
+      padding-top: 0.75em;
+    }
+
+    span.versionNumber {
+      font-style: italic;
+      font-size: 0.875em;
+    }
+
+    div {
+      margin: 1em 0;
+
+      button {
+        font-weight: bold;
+      }
+    }
+  }
+}

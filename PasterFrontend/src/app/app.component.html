@@ -1,0 +1,12 @@
+<header>
+  <app-notification></app-notification>
+  <app-navigation></app-navigation>
+</header>
+
+<main [ngClass]="{'disabled': pageFaded }">
+  <router-outlet></router-outlet>
+</main>
+
+<footer>
+
+</footer>
