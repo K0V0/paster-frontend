@@ -178,6 +178,11 @@
           "delete": "X",
           "more": "Zobraziť celý text...",
           "hideFullText": "Zobraziť len náhľad"
+        },
+        "platforms": {
+          "UNKNOWN": "Neznáme zariadenie",
+          "ANDROID": "Android",
+          "WEBAPP": "Web aplikácia"
         }
       }
     },

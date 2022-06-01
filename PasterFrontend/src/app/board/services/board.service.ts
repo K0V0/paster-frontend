@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { Injectable } from "@angular/core";
 import { RequestService } from "../../_CoreModule/services/request.service";
 import { Observable } from "rxjs";
@@ -14,7 +15,7 @@ export class BoardService {
   sendText(text: string): Observable<null> {
     return this.requestService.post(
       'api/v1/board/item',
-      { text: text });
+      { text: text, platform: environment.deviceType });
   }
 
   getItems(): Observable<BoardItemsResponseDTO> {

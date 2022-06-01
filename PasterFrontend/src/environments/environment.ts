@@ -4,17 +4,18 @@
 
 export const environment = {
   production: false,
-  backendUrl: "https://0.0.0.0:4004",
-  websocketUrl: "wss://0.0.0.0:4004/websocket",
-  //backendUrl: "https://api.paster.cloud",
-  //websocketUrl: "wss://api.paster.cloud/websocket",
+  //backendUrl: "https://0.0.0.0:4004",
+  //websocketUrl: "wss://0.0.0.0:4004/websocket",
+  backendUrl: "https://api.paster.cloud",
+  websocketUrl: "wss://api.paster.cloud/websocket",
   apiVersion: 1,
   apiKey: "hDXb3efYoLpXGDhXfKGuv2t9qT0eArr0",
   excludedJwtInterceptorEndpoints: [
     "/user/login",
     "/user/register",
     "/user/logout"
-  ]
+  ],
+  deviceType: "webapp"
 };
 
 /*

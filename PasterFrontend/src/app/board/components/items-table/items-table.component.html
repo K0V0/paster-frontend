@@ -20,6 +20,12 @@
           <span>
             {{ item.timestamp }}
           </span>
+          <span class="deviceString" *ngIf="item.deviceName === null">
+            <i> {{ item.platform }} </i>
+          </span>
+          <span class="deviceString" *ngIf="item.deviceName !== null">
+            <i> {{ item.deviceName }} | {{ item.platform }} </i>
+          </span>
         </div>
 
         <div class="right">
