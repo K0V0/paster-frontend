@@ -7,7 +7,6 @@ import {
   SimpleChanges,
   ViewChild
 } from '@angular/core';
-import { IHash } from 'src/app/_Base/interfaces/base.dto.interface';
 import { ValidationErrorsAnimations } from "../validationErrors.animations";
 
 @Component({
@@ -22,20 +21,24 @@ export class ServerFieldErrorComponent implements OnChanges {
   @Input() fieldRef: string;
   @Input() errorsObject: any;
   @ViewChild('serverFieldErrorText') serverErrorSpanElem: any;
-  errorMessage: JsonObject;
+  errorCode: string;
+  errorMessage: string;
 
   constructor(private renderer: Renderer2) {
     this.fieldRef = "";
-    this.errorMessage = {};
+    this.errorCode = "";
+    this.errorMessage = "";
   }
 
   // TODO preco tu proste nejde vlozit parent kontext a sledovat changes na nom pomocou
   //  subscribe
   ngOnChanges(changes: SimpleChanges) {
     // TODO zbavit sa neurcitych typov ak to je mozne
-    let e: any;
-    if ((e = this.errorsObject[this.fieldRef]) != null) {
-      if (this.errorMessage == e) {
+    let fieldErrorsObject: any = this.errorsObject[this.fieldRef];
+    if (fieldErrorsObject !== null && fieldErrorsObject !== undefined) {
+      // TODO skaredy hack, ale zatial z backendu viac ako jedna chyba na jedno policko naraz nepride
+      let e: any = fieldErrorsObject[0];
+      if (this.errorCode == e['code']) {
         // bounce
         this.renderer.addClass(this.serverErrorSpanElem.nativeElement, 'blink');
         setTimeout(
@@ -43,11 +46,13 @@ export class ServerFieldErrorComponent implements OnChanges {
           500);
       } else {
         // zobrazit
-        this.errorMessage = e;
+        console.log(e['code']);
+        this.errorCode = e['code'];
+        this.errorMessage = e['message'];
       }
     } else {
       // schovat error
-      this.errorMessage = {};
+      this.errorCode = "";
     }
   }
 
