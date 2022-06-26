@@ -1,4 +1,3 @@
-import { JsonObject } from '@angular/compiler-cli/ngcc/src/packages/entry_point';
 import {
   Component,
   Input,
