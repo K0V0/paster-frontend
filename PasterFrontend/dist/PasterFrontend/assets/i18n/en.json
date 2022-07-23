@@ -20,6 +20,24 @@
       "saved": "Cookies settings have been updated"
     },
 
+    "gdpr": {
+      "title": "General data protection regulation - GDPR",
+      "description": "This site explains what personal data are collected and processed and purpose of their usage.",
+      "username": {
+        "title": "User name",
+        "description1": "Unique identificator for your identity accross linked applications."
+      },
+      "email": {
+        "title": "E-mail address",
+        "description1": "Sending informations and notifications limited to activity connected with Your account.",
+        "description2": "Part of authentication mechanisms/process related to management and actions of Your user account."
+      },
+      "cookies": {
+        "title": "Cookies",
+        "description1": "More in section \"cookies settings\"."
+      }
+    },
+
     "home": {
       "banner1": {
         "heading1": "Copy & paste between devices ?",
@@ -39,7 +57,6 @@
       "banner3": {
         "heading1": "Free. Not free traps.",
         "slogan1": "Operation and maintenance are paid just from ads income.",
-        "slogan2": "No spies. Application is developed ad open source software with source codes and API available for public.",
         "slogan3": "Free version is not just purposely made half-working crap with more limitations than functionality.",
         "slogan3-2": "Paid version only extends amounts of services like memory, storage time limit, etc..."
       },
@@ -47,6 +64,12 @@
         "heading1": "Set up and ready to go within 5 minutes",
         "slogan1": "Just register on this webpage, download and install given apps for your devices and You are able to instantly use this service.",
         "slogan2": "No for long-lasting multistep and complicated sign-up process with multiple of unnecessary questions and marketing spam and complicated configuration."
+      },
+      "banner6": {
+        "heading1": "Community & transparency",
+        "slogan1": "Apps are developed as open-source project, so source codes are publicly available. No spies under the table.",
+        "slogan2": "Development began as garage project to get hands on new technologies and acquire new skills.",
+        "slogan3": "More new and interesting features are planned."
       },
       "download": {
         "win": {
@@ -81,7 +104,9 @@
       "legal": {
         "gdpr": "GDPR",
         "cookies": "Cookies settings",
-        "sitemap": "Sitemap"
+        "sitemap": "Sitemap",
+        "developers": "For developers",
+        "changelog": "Changelog"
       },
       "ads": {
         "title": "Ads"
@@ -110,6 +135,7 @@
         "pass": "Password...",
         "pass2": "Retype password...",
         "email": "E-mail...",
+        "gdpr": "I agree with collecting and processing data according to GDPR law.",
         "submit": "Registration"
       },
       "validationErrors": {
@@ -126,6 +152,9 @@
         },
         "pass2": {
           "required": "Control password empty"
+        },
+        "gdpr": {
+          "required": "Cannot continue without agreement with collecting/processing data (GDPR)"
         },
         "passwordControlNotMatch": "Passwords did not match"
       },
@@ -148,6 +177,11 @@
           "delete": "X",
           "more": "Show more...",
           "hideFullText": "Collapse..."
+        },
+        "platforms": {
+          "UNKNOWN": "Unknown device",
+          "ANDROID": "Android",
+          "WEBAPP": "Web app"
         }
       }
     },
@@ -245,6 +279,21 @@
           "access": {
             "denied": "You have no sufficient rights to access this item"
           }
+        }
+      }
+    },
+
+    "developers": {
+      "title": "For developers",
+      "description": "Usefull informations and links for developers, amateurs and geeks and people who wanted to get involved.",
+      "api": {
+        "description": "Access to backend REST API",
+        "info": {
+          "s1": "In current implementation it is required to send me e-mail to make api key for You.",
+          "s2": "Please write Your contact details (return e-mail address) in the message.",
+          "s3": "Documentation for API & Endpoints usage can be found on",
+          "s4": "GitHub repository for backend part",
+          "s5": "Endpoints are located on:"
         }
       }
     }
