@@ -181,7 +181,7 @@
         },
         "platforms": {
           "UNKNOWN": "Neznáme zariadenie",
-          "ANDROID": "Android",
+          "MOBILE_ANDROID": "Android",
           "WEBAPP": "Web aplikácia"
         }
       }
