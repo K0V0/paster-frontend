@@ -180,7 +180,7 @@
         },
         "platforms": {
           "UNKNOWN": "Unknown device",
-          "ANDROID": "Android",
+          "MOBILE_ANDROID": "Android",
           "WEBAPP": "Web app"
         }
       }
