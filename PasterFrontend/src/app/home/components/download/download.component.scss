@@ -7,6 +7,10 @@ section {
   vertical-align: top;
   color: $base-theme-font-color-2;
 
+  @media only screen and (max-width: 480px) {
+    padding: 1em 0em;
+  }
+
   div {
 
     figure {
