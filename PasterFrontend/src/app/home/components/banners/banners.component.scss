@@ -69,6 +69,10 @@ article {
           line-height: 1em;
         }
       }
+
+      @media only screen and (max-width: 640px) {
+        flex-basis: auto;
+      }
     }
   }
 }
