@@ -33,7 +33,7 @@ export class ItemsTableComponent implements OnInit {
     private translateService: TranslateService
   ) {
     this.deviceNameFormatter = function(x: string) {
-      return x.length == 0 ? null : x;
+      return x;
     };
     this.platformNameFormatter = function(x: string) {
       return translateService.translate("board.page.platforms." + x);
