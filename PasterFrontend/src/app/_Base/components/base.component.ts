@@ -1,5 +1,5 @@
+import { JsonObject } from '@angular/compiler-cli/ngcc/src/utils';
 import { Router } from '@angular/router';
-import { JsonObject } from "@angular/compiler-cli/ngcc/src/packages/entry_point";
 import { ServerError, ServerErrors } from "../interfaces/base.dto.interface";
 
 export abstract class BaseComponent implements ServerError, ServerErrors {

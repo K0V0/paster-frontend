@@ -1,4 +1,4 @@
-import { JsonObject } from "@angular/compiler-cli/ngcc/src/packages/entry_point";
+import { JsonObject } from "@angular/compiler-cli/ngcc/src/utils";
 
 export interface IHash {
   [details: string] : any;
