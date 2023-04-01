@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class CustomValidators {\n  static forbiddenCharacters(c) {\n    let REGEX = /[^\\w\\.\\s\\-]+/;\n    return REGEX.test(c.value) ? {\n      forbiddenCharacters: {\n        value: c.value\n      }\n    } : null;\n  }\n}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class CookieCrate {\n  constructor() {\n    this.marketing = false;\n  }\n}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
