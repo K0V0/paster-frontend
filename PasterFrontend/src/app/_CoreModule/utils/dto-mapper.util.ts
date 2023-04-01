@@ -9,7 +9,7 @@ export interface Schema {
 @Injectable({
   providedIn: 'root'
 })
-export class DtoMapperUtil<Source, Destination> {
+export class DtoMapperUtil<Source extends {}, Destination> {
   private conversionRules: Schema;
 
   constructor() {

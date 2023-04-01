@@ -1,4 +1,4 @@
-import { JsonValue } from '@angular/compiler-cli/ngcc/src/packages/entry_point';
+import { JsonValue } from '@angular/compiler-cli/ngcc/src/utils';
 import { Pipe, PipeTransform } from '@angular/core';
 import {TranslateService} from "./translate.service";
 

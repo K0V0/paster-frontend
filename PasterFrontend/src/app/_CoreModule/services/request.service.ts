@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { JsonObject } from "@angular/compiler-cli/ngcc/src/packages/entry_point";
 import { environment } from 'src/environments/environment';
+import { JsonObject } from '@angular/compiler-cli/ngcc/src/utils';
 
 @Injectable({
   providedIn: 'root',

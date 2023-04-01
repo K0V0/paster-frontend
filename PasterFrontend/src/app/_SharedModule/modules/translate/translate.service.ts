@@ -1,4 +1,4 @@
-import { JsonArray } from "@angular/compiler-cli/ngcc/src/packages/entry_point";
+import { JsonArray } from '@angular/compiler-cli/ngcc/src/utils';
 import { Injectable } from '@angular/core';
 import * as lang_en from 'src/assets/i18n/en.json';
 import * as lang_sk from 'src/assets/i18n/sk.json';

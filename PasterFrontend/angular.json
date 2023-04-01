@@ -109,5 +109,8 @@
       }
     }
   },
-  "defaultProject": "PasterFrontend"
+  "defaultProject": "PasterFrontend",
+  "cli": {
+    "analytics": false
+  }
 }
