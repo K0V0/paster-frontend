@@ -13,7 +13,7 @@ export interface EnviromentVars {
 }
 
 export const environment: EnviromentVars = {
-  production: false,
+  production: true,
   // @ts-ignore
   apiUrl: "https://0.0.0.0:4004",
   // @ts-ignore
