@@ -4,13 +4,13 @@ import {environment} from "../../../environments/environment";
 declare global {
   interface Window {
     env?: {
-      production?: boolean;
-      apiUrl?: string;
-      websocketUrl?: string;
-      apiVersion?: string;
-      apiKey?: string;
+      IS_PRODUCTION?: boolean;
+      BACKEND_API?: string;
+      BACKEND_WEBSOCKET?: string;
+      API_VERSION?: string;
+      API_KEY?: string;
       excludedJwtInterceptorEndpoints?: string[];
-      deviceType?: string
+      DEVICE_TYPE?: string
     };
   }
 }
@@ -29,13 +29,13 @@ export class ConfigurationService {
   public readonly deviceType: string
 
   constructor() {
-    this.production = window?.env?.production || environment.production;
-    this.apiUrl = window?.env?.apiUrl || environment.apiUrl;
-    this.apiKey = window?.env?.apiKey || environment.apiKey;
-    this.websocketUrl = window?.env?.websocketUrl || environment.websocketUrl;
-    this.apiVersion = window?.env?.apiVersion || environment.apiVersion;
+    this.production = window?.env?.IS_PRODUCTION || environment.production;
+    this.apiUrl = window?.env?.BACKEND_API || environment.apiUrl;
+    this.apiKey = window?.env?.API_KEY || environment.apiKey;
+    this.websocketUrl = window?.env?.BACKEND_WEBSOCKET || environment.websocketUrl;
+    this.apiVersion = window?.env?.API_VERSION || environment.apiVersion;
     this.excludedJwtInterceptorEndpoints = window?.env?.excludedJwtInterceptorEndpoints || environment.excludedJwtInterceptorEndpoints;
-    this.deviceType = window?.env?.deviceType || environment.deviceType;
+    this.deviceType = window?.env?.DEVICE_TYPE || environment.deviceType;
   }
 
 }
