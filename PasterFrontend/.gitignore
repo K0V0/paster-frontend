@@ -42,3 +42,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# docker stuff (not for public repo, held in separate repo)
+Dockerfile
+setenv.sh
+/src/assets/env.js

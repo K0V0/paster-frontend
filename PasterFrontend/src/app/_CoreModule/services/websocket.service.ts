@@ -1,10 +1,10 @@
-import { environment } from './../../../environments/environment';
-import { Injectable } from '@angular/core';
-import { Observable, Subject } from "rxjs";
-import { webSocket } from "rxjs/webSocket";
-import { WsRefresh } from './../../_Base/interfaces/base.dto.interface';
-import { JwtService } from './jwt.service';
-import { shareReplay } from 'rxjs/operators';
+import {Injectable} from '@angular/core';
+import {Observable, Subject} from "rxjs";
+import {webSocket} from "rxjs/webSocket";
+import {WsRefresh} from './../../_Base/interfaces/base.dto.interface';
+import {JwtService} from './jwt.service';
+import {shareReplay} from 'rxjs/operators';
+import {ConfigurationService} from "./configuration.service";
 
 @Injectable({
   providedIn: 'root',
@@ -15,8 +15,8 @@ export class WebsocketService/*<RQdto, RSdto>*/ {
 
   private ws: Subject<WsRefresh>;
 
-  public constructor(private jwtService: JwtService) {
-    this.ENDPOINT = environment.websocketUrl + "?jwtToken=" + jwtService.getToken() + "&apiKey=" + environment.apiKey;
+  public constructor(private jwtService: JwtService, private configurationService: ConfigurationService) {
+    this.ENDPOINT = configurationService.websocketUrl + "?jwtToken=" + jwtService.getToken() + "&apiKey=" + configurationService.apiKey;
     this.ws = webSocket<WsRefresh>(this.ENDPOINT);
   }
 
