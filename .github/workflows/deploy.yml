@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Prepare some variables
         id: vars
-        run: echo "::set-output name=timestamp::$(date +%s)"
+        run: echo "::set-output name=timestamp::$(date +%Y-%m-%d_%H-%M)"
 
       - name: Setup SSH
         uses: MrSquaare/ssh-setup-action@v3
