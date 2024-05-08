@@ -38,7 +38,7 @@ jobs:
         run: cp -r ./PasterFrontend/. ./temp/
 
       - name: Build Docker image
-        run: docker build -t k0v0/kovo-docker-repo ./temp/paster-cloud/frontend/
+        run: docker build -t k0v0/kovo-docker-repo ./temp/
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
@@ -51,13 +51,12 @@ jobs:
           docker tag k0v0/kovo-docker-repo k0v0/kovo-docker-repo:paster-cloud-frontend-${{ steps.timestamp.outputs.timestamp }}
           docker push k0v0/kovo-docker-repo:paster-cloud-frontend-${{ steps.timestamp.outputs.timestamp }}
 
-      - name: Notify target environment
-        run: |
-          # Use webhook or SSH to notify target environment to pull new Docker image
-          # Example with webhook:
-          curl -X POST -d '{"image": "your_dockerhub_username/your_repository_name:latest"}' https://your.webhook.endpoint
+      #- name: Notify target environment
+      #  run: |
+      #    # Use webhook or SSH to notify target environment to pull new Docker image
+      #    # Example with webhook:
+      #    curl -X POST -d '{"image": "your_dockerhub_username/your_repository_name:latest"}' https://your.webhook.endpoint
 
       - name: Clean up
-        run: rm -rf temp
+        run: rm -rf ./temp
 
-    # You can add more steps here as needed
