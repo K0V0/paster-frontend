@@ -47,3 +47,4 @@ Thumbs.db
 Dockerfile
 setenv.sh
 /src/assets/env.js
+nginx.conf
