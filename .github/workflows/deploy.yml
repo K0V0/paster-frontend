@@ -18,7 +18,7 @@ jobs:
         uses: MrSquaare/ssh-setup-action@v3
         with:
           host: github.com
-          private-key: ${{ secrets.SSH_KEY }}
+          private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           private-key-name: github
 
       - name: Checkout repository with dockerfiles
