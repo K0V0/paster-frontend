@@ -40,6 +40,15 @@ jobs:
       - name: Copy app source into temp directory
         run: cp -r ./PasterFrontend/. ./temp/
 
+      - name: debug
+        run: ls -la
+
+      - name: debug2
+        run: cd temp
+
+      - name: debug3
+        run: ls -la
+
       - name: Build Docker image
         run: docker build -t k0v0/kovo-docker-repo ./temp/
 
