@@ -37,12 +37,6 @@ jobs:
       - name: Checkout repository with current source code
         uses: actions/checkout@v4
 
-      - name: debug
-        run: |
-          ls -la
-          cd ./temp/
-          ls -la
-        
       - name: Copy app source into temp directory
         run: cp -r ./PasterFrontend/. ./temp/
 
