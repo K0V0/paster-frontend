@@ -32,7 +32,7 @@ jobs:
         run: git clone git@github.com:K0V0/kovostack-dockerfiles.git
 
       - name: Build Docker image
-        run: docker build -t k0v0/kovo-docker-repo ./temp_repo/paster-cloud/frontend/
+        run: docker build -t k0v0/kovo-docker-repo ./kovostack-dockerfiles/paster-cloud/frontend/
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
@@ -52,6 +52,6 @@ jobs:
           curl -X POST -d '{"image": "your_dockerhub_username/your_repository_name:latest"}' https://your.webhook.endpoint
 
       - name: Clean up
-        run: rm -rf temp_repo
+        run: rm -rf kovostack-dockerfiles
 
     # You can add more steps here as needed
