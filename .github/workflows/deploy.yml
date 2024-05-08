@@ -21,15 +21,11 @@ jobs:
           private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           private-key-name: github
 
-      #- name: Checkout repository with dockerfiles
-      #  uses: actions/checkout@v4
-      #  with:
-      #    repository: K0V0/kovostack-dockerfiles
-      #    token: ${{ secrets.MAIN_ACCESS_TOKEN }}
-      #    ref: main
+      - name: Checkout repository with current source code
+        uses: actions/checkout@v4
 
-      #- name: debug3
-      #  run: ls -la
+      - name: debug4
+        run: ls -la
 
       - name: Clone repository with dockerfiles into temp directory
         run: git clone git@github.com:K0V0/kovostack-dockerfiles.git
@@ -39,9 +35,6 @@ jobs:
 
       - name: Copy project related dockerfiles into temp directory
         run: cp -rf ./kovostack-dockerfiles/paster-cloud/frontend/. ./temp/
-
-      #- name: Checkout repository with current source code
-      #  uses: actions/checkout@v4
 
       - name: Copy app source into temp directory
         run: cp -rf ./PasterFrontend/. ./temp/
