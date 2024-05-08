@@ -15,10 +15,11 @@ jobs:
         run: echo "::set-output name=timestamp::$(date +%s)"
 
       - name: Setup SSH
-        uses: MrSquaare/ssh-setup-action@v1
+        uses: MrSquaare/ssh-setup-action@v3
         with:
           host: github.com
           private-key: ${{ secrets.SSH_KEY }}
+          private-key-name: github
 
       - name: Checkout repository with dockerfiles
         uses: actions/checkout@v4
