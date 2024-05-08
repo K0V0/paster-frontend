@@ -29,10 +29,19 @@ jobs:
           ref: main
 
       - name: Clone repository with dockerfiles into temp directory
-        run: git clone git@github.com:K0V0/kovostack-dockerfiles.git temp
+        run: git clone git@github.com:K0V0/kovostack-dockerfiles.git
+
+      - name: Copy project related dockerfiles into temp directory
+        run: cp -r ./kovostack-dockerfiles/paster-cloud/frontend/. ./temp/
 
       - name: Checkout repository with current source code
         uses: actions/checkout@v4
+
+      - name: debug
+        run: |
+          ls -la
+          cd ./temp/
+          ls -la
         
       - name: Copy app source into temp directory
         run: cp -r ./PasterFrontend/. ./temp/
